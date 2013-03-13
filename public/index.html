@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Foxglove Lettering | Melbourne, Australia</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
+    <link href="favicon.png" rel="icon">
+    <style>
+      * { margin: 0; padding: 0; }
+      html { background-color: white; color: black; text-align: center; text-rendering: optimizeLegibility; font-family: sans-serif; }
+      h1 img { width: 400px; }
+      html, body, header { width: 100%; height: 100%; }
+      html { display: table; }
+      body { display: table-row; }
+      header { display: table-cell; vertical-align: middle; }
+      header h1 { padding-bottom: 25px; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><a href="mailto:hello@THISDOMAIN.com"><img src="logo.jpg" alt="Foxglove Lettering" /></a></h1>
+    </header>
+    <script>
+      (function(links) {
+        for (var i = 0; i < links.length; i++)
+          links[i].href = links[i].href.replace("THISDOMAIN.com", window.location.host);
+      })(document.getElementsByTagName("a"));
+    </script>
+  </body>
+</html>
