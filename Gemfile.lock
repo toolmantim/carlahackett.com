@@ -4,6 +4,7 @@ GEM
     puma (1.6.3)
       rack (~> 1.2)
     rack (1.5.2)
+    rb-fsevent (0.9.3)
     sass (3.3.0.alpha.121)
 
 PLATFORMS
@@ -11,4 +12,5 @@ PLATFORMS
 
 DEPENDENCIES
   puma
+  rb-fsevent
   sass (>= 3.3.0.alpha.121)
