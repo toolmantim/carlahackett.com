@@ -338,11 +338,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-#header p span, #main section h2 {
+#main section h2 {
   font-family: "alegreya-sc", serif;
   text-transform: lowercase;
   font-weight: normal; }
-  #header p span i, #main section h2 i {
+  #main section h2 i {
     font-family: "alegreya", serif;
     font-style: italic;
     font-size: 90%;
@@ -352,11 +352,37 @@ table {
 html {
   font-family: 'alegreya', serif;
   color: #aaaaaa;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; }
+
+* {
   box-sizing: border-box; }
 
+hr {
+  border: none;
+  border-top: 1px solid #eeeeee;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+form input, form button {
+  padding: 8px 10px;
+  width: 100%; }
+form input {
+  border: 4px solid #eeeeee; }
+form button {
+  border: none;
+  background: #eeeeee;
+  color: #999;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "alegreya-sc", serif;
+  font-size: 14px;
+  text-transform: uppercase; }
+form > * + * {
+  margin-top: 10px; }
+
 #header, #main {
-  max-width: 1000px;
+  max-width: 1300px;
   margin-left: auto;
   margin-right: auto; }
 
@@ -364,60 +390,11 @@ html {
   margin-top: 50px;
   margin-bottom: 50px;
   line-height: 1; }
-  #header h1, #header p {
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle; }
   #header h1 {
-    width: 43%;
     text-align: center; }
     #header h1 img {
-      width: 300px;
-      max-width: 300px; }
-  #header p {
-    width: 57%;
-    color: #aaaaaa; }
-    #header p em {
-      display: block;
-      text-transform: lowercase;
-      font-size: 40px;
-      margin-bottom: 10px; }
-    #header p span {
-      font-size: 19px; }
-  @media (max-width: 900px) {
-    #header h1, #header p {
-      width: 100%; }
-    #header h1 {
-      margin-bottom: 50px; }
-      #header h1 img {
-        width: 80%; }
-    #header p {
-      text-align: center; } }
-  @media (max-width: 500px) {
-    #header p em {
-      font-size: 22px;
-      margin-bottom: 25px; }
-    #header p span {
-      font-size: 17px;
-      max-width: 14em;
-      display: inline-block;
-      line-height: 21px; } }
-
-#work {
-  height: 300px;
-  overflow: hidden; }
-  #work > div {
-    width: 100%;
-    height: 100%;
-    text-align: center; }
-    #work > div img {
-      height: 100%; }
-  @media (max-width: 900px) {
-    #work {
-      height: 400px; } }
-  @media (max-width: 500px) {
-    #work {
-      height: 300px; } }
+      width: 400px;
+      max-width: 400px; }
 
 #main {
   display: table;
@@ -426,7 +403,8 @@ html {
     display: table-row; }
     #main > div > section {
       display: table-cell;
-      width: 50%; }
+      width: 50%;
+      vertical-align: top; }
   #main section {
     padding: 50px; }
     #main section h2 {
@@ -436,11 +414,11 @@ html {
       color: #aaaaaa; }
       #main section h2 span {
         display: block; }
-    #main section > aside, #main section > div {
+    #main section > aside, #main section > aside + div {
       display: inline-block;
       width: 50%;
       vertical-align: top; }
-      #main section > aside > :first-child, #main section > div > :first-child {
+      #main section > aside > :first-child, #main section > aside + div > :first-child {
         margin-top: 0; }
     #main section > aside {
       width: 43%;
@@ -460,8 +438,11 @@ html {
       text-transform: lowercase;
       font-size: 100%;
       margin-top: 25px; }
+    #main section div.thumbnails img {
+      width: 134px;
+      height: 134px; }
     @media (max-width: 400px) {
-      #main section > aside, #main section > div {
+      #main section > aside, #main section > aside + div {
         width: 95%;
         padding-left: 5%;
         padding-right: 5%; }
