@@ -1,5 +1,4 @@
 var express = require('express'),
-    routes = require('./routes'),
     http = require('http'),
     path = require('path');
 
@@ -21,7 +20,9 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
+app.get('/', function(req, res) {
+  res.render('index', { title: 'Express' });
+});
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Foxglove site running on http://localhost:' + app.get('port') + '/');
