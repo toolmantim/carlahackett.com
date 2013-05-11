@@ -1,1 +1,1 @@
-web: puma -p $PORT
+web: node app.js
