@@ -18,4 +18,4 @@ read message
 
 git commit -au -m "$message" && \
 git push && \
-git push heroku
+git push heroku HEAD:master
