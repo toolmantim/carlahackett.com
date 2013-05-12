@@ -1,13 +1,15 @@
 var express = require('express'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    exphbs = require('express3-handlebars');
 
 var app = express();
 
-// all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
+
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
 app.use(express.compress());
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -16,15 +18,14 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-// development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Express' });
+  res.render('home', {title:'Foxglove Lettering'});
 });
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log('Foxglove site running on http://localhost:' + app.get('port') + '/');
+  console.log("Foxglove site running on http://localhost:" + app.get('port') + "/");
 });
