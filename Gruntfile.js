@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     sass: {
       styles: {
         files: {
-          'sass/styles.css': [
+          'public/styles.css': [
             'components/normalize-css/normalize.css',
             'sass/styles.scss'
           ]

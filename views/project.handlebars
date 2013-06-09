@@ -1,0 +1,23 @@
+{{#project}}
+<section id="project">
+  <div>
+    <div class="about">
+      <h2>{{about.name}}</h2>
+      <div class="text">
+        {{{about.text}}}
+      </div>
+      {{#../nextProject}}
+        <div class="next-project">
+          <a href="/projects/{{slug}}#project">
+            <h3>Next Project</h3>
+            {{about.name}}
+          </a>
+        </div>
+      {{/../nextProject}}
+    </div>
+    <div class="photos">
+      {{#photos}}<img src="/projects/{{../slug}}/photos/{{filename}}" class="{{size}}" alt="{{title}}" />{{/photos}}
+    </div>
+  </div>
+</section>
+{{/project}}

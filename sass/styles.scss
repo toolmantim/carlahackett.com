@@ -22,7 +22,7 @@ form {
   > * + * { margin-top: 10px; }
 }
 
-#header, #main { max-width: 1300px; margin-left: auto; margin-right: auto; }
+#header, main, body > footer { max-width: 1300px; margin-left: auto; margin-right: auto; }
 
 #header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
@@ -32,65 +32,107 @@ form {
   }
 }
 
-#main {
+%display-table {
   display: table; border-collapse:collapse;
-  > div {
+  > * {
     display: table-row;
-    > section { display: table-cell; width: 50%; vertical-align: top; }
-  }
-  section {
-    padding: 50px;
-    h2 {
-      text-align: center; font-size: 21px; @extend %small-caps; margin-bottom: 50px; color: $grey;
-      span {
-        display: block;
-      }
-    }
-    > aside, > aside + div {
-      display: inline-block;
-      width: 50%;
+    > * {
+      display: table-cell;
       vertical-align: top;
-      > :first-child { margin-top: 0; }
+      padding: 50px;
+      width: 50%;
+      + * { border-left: 1px solid $light-grey; }
     }
-    > aside {
-      width: 43%; padding-right: 7%; text-align: center; font-size: 14px;
-      p { margin: 15px 0; }
-      p + p { margin-top: -10px; }
-      img, svg { width: 100%; max-width: 160px; }
-    }
-    > div {
-      h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin-top: 25px; }
-    }
-    div.thumbnails {
-      $size: 134px;
-      img { width: $size; height: $size; }
-    }
-    @media (max-width: 400px) {
-      > aside, > aside + div {
-        width: 95%; padding-left: 5%; padding-right: 5%;
-      }
-      > aside {
-        margin-bottom: 15px;
-      }
-    }
-  }
-  section + section {
-    border-left: 1px solid $light-grey;
-  }
-  > div + div {
-    section { border-top: 1px solid $light-grey; }
-  }
-
-  @media (max-width: 700px) {
-    display: block;
-    > div {
-      display: block;
-      > section { display: block; width: 80%; padding-left: 10%; padding-right: 10%; }
-    }
-    section + section { border: none; border-top: 1px solid $light-grey; }
   }
 }
 
-#footer {
-  padding: 100px 0 150px 0; text-align: center; border-top: 1px solid $light-grey;
+.feature {
+  > aside, > aside + * {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    text-align: left;
+    > :first-child { margin-top: 0; }
+  }
+  > aside {
+    text-align: center; font-size: 14px;
+    p { margin: 15px 0; }
+    p + p { margin-top: -10px; }
+  }
+  > aside.image {
+    img, svg { width: 100%; max-width: 160px; }
+  }
+  > div.text {
+    h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0 0 10px; }
+    h3 + p { margin-top: 0; }
+    p + h3 { margin-top: 25px; }
+  }
+  h2 {
+    text-align: center; font-size: 21px; @extend %small-caps; margin-bottom: 50px; color: $grey;
+    span {
+      display: block;
+    }
+  }
+}
+
+main section.home {
+  div.thumbnails {
+    $size: 216px; line-height: 0; margin: 20px 0;
+    a {
+      -webkit-transition: 200ms;
+      -webkit-filter: grayscale(100%);
+      &:hover { -webkit-filter: grayscale(0%); }
+      img { width: $size; height: $size; padding: 5px; }
+    }
+  }
+}
+
+section#project {
+  width: 100%;
+  .about, .photos {
+    padding: 50px;
+    display: block;
+    border-bottom: 1px solid $light-grey;
+  }
+  .about {
+    width: 30%;
+    float: right;
+    padding-left: 0;
+    vertical-align: top;
+    position: -webkit-sticky;
+    top: 0;
+    h2 {
+      font: 300 36px $serif;
+      line-height: 1;
+      margin: 0 0 .5em;
+      text-align: left;
+      text-transform: none;
+      &:before {
+        content: 'Project';
+        display: block;
+        $grey: #aaa;
+        text-transform: lowercase;
+        font: 18px $serif-sc;
+        line-height: 1;
+      }
+    }
+  }
+  .photos {
+    width: 70%;
+    img { margin: 0; padding: 3px 5px; }
+    img.full { width: 100%; }
+    img.half { width: 50%; }
+    img.third { width: 33.333333%; }
+  }
+}
+
+body > footer {
+  > div {
+    @extend %display-table;
+  }
+}
+
+.flourish {
+  padding: 100px 0 133px 0;
+  text-align: center;
 }
