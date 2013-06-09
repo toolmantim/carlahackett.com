@@ -447,6 +447,11 @@ body > footer > div {
   .feature h2 span {
     display: block; }
 
+body > footer > div > div:first-child > * {
+  border-top: none; }
+body > footer > div > div > * {
+  border-top: 1px solid #eeeeee; }
+
 main section.home div.thumbnails {
   line-height: 0;
   margin: 20px 0; }
@@ -464,8 +469,7 @@ section#project {
   width: 100%; }
   section#project .about, section#project .photos {
     padding: 50px;
-    display: block;
-    border-bottom: 1px solid #eeeeee; }
+    display: block; }
   section#project .about {
     width: 30%;
     float: right;
@@ -485,6 +489,20 @@ section#project {
         text-transform: lowercase;
         font: 18px "alegreya-sc", serif;
         line-height: 1; }
+    section#project .about .next-project a {
+      display: block;
+      margin-top: 50px;
+      text-decoration: none; }
+      section#project .about .next-project a h3 {
+        font-family: "alegreya-sc", serif;
+        font-weight: normal;
+        text-transform: lowercase;
+        font-size: 100%;
+        margin: 0;
+        color: #aaaaaa; }
+      section#project .about .next-project a span {
+        font-size: 150%;
+        text-decoration: underline; }
   section#project .photos {
     width: 70%; }
     section#project .photos img {

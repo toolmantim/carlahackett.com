@@ -75,6 +75,12 @@ form {
   }
 }
 
+body > footer > div {
+  @extend %display-table;
+  > div:first-child > * { border-top: none; }
+  > div > * { border-top: 1px solid $light-grey; }
+}
+
 main section.home {
   div.thumbnails {
     $size: 216px; line-height: 0; margin: 20px 0;
@@ -92,7 +98,6 @@ section#project {
   .about, .photos {
     padding: 50px;
     display: block;
-    border-bottom: 1px solid $light-grey;
   }
   .about {
     width: 30%;
@@ -116,6 +121,13 @@ section#project {
         line-height: 1;
       }
     }
+    .next-project a {
+      display: block;
+      margin-top: 50px;
+      text-decoration: none;
+      h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0; color: $grey; }
+      span { font-size: 150%; text-decoration: underline; }
+    }
   }
   .photos {
     width: 70%;
@@ -123,12 +135,6 @@ section#project {
     img.full { width: 100%; }
     img.half { width: 50%; }
     img.third { width: 33.333333%; }
-  }
-}
-
-body > footer {
-  > div {
-    @extend %display-table;
   }
 }
 
