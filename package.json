@@ -7,7 +7,7 @@
     "npm":  "1.2.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node node_modules/supervisor/lib/cli-wrapper.js app.js"
   },
   "dependencies": {
     "express": "3.x",
