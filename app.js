@@ -60,10 +60,12 @@ app.get('/projects', function(req, res) {
 app.get('/projects/:slug', function(req, res) {
   var project = findProject(req.params.slug);
   if (!project) return res.send(404);
+  var next = nextProject(project);
   res.render('project', {
     title: project.about.name + ' | Foxglove Lettering',
     project: project,
-    nextProject: nextProject(project)
+    nextProject: next,
+    preRender: '/projects/' + next.slug
   });
 });
 

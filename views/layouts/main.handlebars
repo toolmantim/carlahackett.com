@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{{{title}}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href="favicon.png" rel="icon">
+    <link href="/favicon.png" rel="icon">
     <link href="http://foxglovelettering.com/" rel="canonical">
     <script src="http://use.edgefonts.net/alegreya;alegreya-sc.js" async></script>
     <link href="/styles.css" rel="stylesheet">
@@ -14,6 +14,9 @@
     <meta property="og:url" content="http://foxglovelettering.com/">
     <meta property="og:image" content="http://foxglovelettering.com/logo.jpg">
     <meta property="og:site_name" content="Foxglove Lettering">
+    {{#if preRender}}
+      <link href="{{preRender}}" rel="prerender">
+    {{/if}}
   </head>
   <body>
     <header id="header">

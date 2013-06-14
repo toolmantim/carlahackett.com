@@ -1,7 +1,0 @@
-{
-  "name": "foxglove-site",
-  "version": "1.0.0",
-  "dependencies": {
-    "normalize-css": "~2.1.1"
-  }
-}

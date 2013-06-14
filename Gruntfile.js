@@ -9,31 +9,21 @@ module.exports = function(grunt) {
 
     sass: {
       styles: {
-        files: {
-          'public/styles.css': [
-            'components/normalize-css/normalize.css',
-            'sass/styles.scss'
-          ]
-        }
-      }
-    },
-
-    cssmin: {
-      styles: {
         options: {
-          keepSpecialComments: '0',
-          report: 'gzip'
+          require: './sass/sass_css_importer',
+          loadPath: 'components',
+          sourcemap: true,
+          style: 'compressed'
         },
         files: {
-          'public/styles.css': 'sass/styles.css'
+          'public/styles.css': 'sass/styles.scss'
         }
       }
     }
 
   });
 
-  grunt.registerTask('css', ['sass', 'cssmin']);
-  grunt.registerTask('default', ['css']);
+  grunt.registerTask('default', ['sass', 'watch']);
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };

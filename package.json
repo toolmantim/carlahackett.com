@@ -17,9 +17,8 @@
   "devDependencies": {
     "supervisor": "0.5.x",
     "grunt": "0.4.x",
-    "grunt-contrib-sass": "0.3.x",
+    "grunt-contrib-sass": "git://github.com/gruntjs/grunt-contrib-sass.git#e85ee70ccb8839867172b57ca1378293291f8037",
     "grunt-contrib-watch": "0.3.x",
-    "grunt-contrib-cssmin": "0.6.x",
     "matchdep": "0.1.x"
   }
 }
