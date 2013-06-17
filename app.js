@@ -17,16 +17,15 @@ app.use(express.logger('dev'));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
-var allProjects = projects.all();
-
 function findProject(slug) {
-  return allProjects
+  return projects.all()
     .filter(function(project) {
       return project.slug == slug;
     })[0];
 }
 
 function nextProject(project) {
+  var allProjects = projects.all();
   for (var i = 0; i < allProjects.length; i++) {
     var prev = allProjects[i-1];
     if (prev && prev.slug == project.slug) return allProjects[i];
@@ -48,7 +47,7 @@ if ('development' == app.get('env')) {
 app.get('/', function(req, res) {
   res.render('home', {
     title: 'Foxglove Lettering',
-    projects: allProjects,
+    projects: projects.all(),
     noHeaderLink: true
   });
 });
@@ -84,5 +83,8 @@ app.get('/projects/:slug/cover.jpg', function(req, res) {
 });
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Foxglove site running on http://localhost:" + app.get('port') + "/");
+  var url = "http://localhost:" + app.get('port') + "/";
+  console.log("Foxglove site running at " + url);
+  if (process.env["OPEN_BROWSER"])
+    require('child_process').spawn('open', [url]);
 });
