@@ -15,7 +15,7 @@ app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
     imageUrl: function() {
-      return "//" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
+      return "http://" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
     },
     markdown: function(options) {
       return marked(options.fn(this));
