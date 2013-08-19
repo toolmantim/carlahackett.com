@@ -2,7 +2,7 @@
 <section id="project">
   <div>
     <div class="about">
-      <h2>{{about.name}}</h2>
+      <h2>{{{about.name}}}</h2>
       <div class="text">
         {{{about.text}}}
       </div>
@@ -10,13 +10,13 @@
         <div class="next-project">
           <a href="/projects/{{slug}}#project">
             <h3>Next Project</h3>
-            <span>{{about.name}}</span>
+            <span>{{{about.name}}}</span>
           </a>
         </div>
       {{/../nextProject}}
     </div>
     <div class="photos">
-      {{#photos}}<img src="/projects/{{../slug}}/photos/{{filename}}" class="{{size}}" alt="{{title}}" />{{/photos}}
+      {{#photos}}<img src="{{imageUrl "/projects/" ../slug "/photos/" filename}}" class="{{size}}" alt="{{title}}" />{{/photos}}
     </div>
   </div>
 </section>

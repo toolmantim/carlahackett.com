@@ -2,13 +2,27 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     exphbs = require('express3-handlebars'),
+    marked = require('marked'),
     projects = require('./lib/projects');
 
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000")
+
+app.engine('handlebars', exphbs({
+  defaultLayout: 'main',
+  helpers: {
+    imageUrl: function() {
+      return "//" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
+    },
+    markdown: function(options) {
+      return marked(options.fn(this));
+    }
+  }
+}));
+
 app.set('view engine', 'handlebars');
 
 app.use(express.compress());
@@ -49,6 +63,12 @@ app.get('/', function(req, res) {
     title: 'Foxglove Lettering',
     projects: projects.all(),
     noHeaderLink: true
+  });
+});
+
+app.get('/about', function(req, res) {
+  res.render('about', {
+    title: 'About Foxglove Lettering'
   });
 });
 

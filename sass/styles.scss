@@ -1,11 +1,11 @@
 @import "normalize-css/normalize";
 
-$serif: 'alegreya', serif;
-$serif-sc: 'alegreya-sc', serif;
+$serif: 'Archer SSm A', 'Archer SSm B', serif;
+$serif-sc: 'Archer SSm Smallcaps A', 'Archer SSm Smallcaps B', serif;
 
-$dark-grey: #666;
-$grey: #aaa;
-$light-grey: #eee;
+$dark-grey: #222;
+$grey: #999;
+$light-grey: #ddd;
 
 $input-border-color: $light-grey;
 $input-border-color-hover: darken($light-grey, 5%);
@@ -19,8 +19,8 @@ $link-color-hover: darken($dark-grey, 10%);
 }
 
 %small-caps {
-  font-family: $serif-sc; text-transform: lowercase; font-weight: normal;
-  i { font-family: $serif; font-style: italic; font-size: 90%; margin-left: .1em; margin-right: .1em; }
+  font-family: $serif-sc; text-transform: lowercase; font-weight: 500;
+  i { font-family: $serif; font-style: italic; font-size: 80%; margin-left: .1em; margin-right: .1em; }
 }
 
 %display-table {
@@ -59,12 +59,13 @@ $link-color-hover: darken($dark-grey, 10%);
 %shadow-bounce {
   -webkit-animation: .5s shadow-bounce both infinite;
 }
+%sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
 
 html {
-  font-family: 'alegreya', serif; color: $grey; text-rendering: optimizeLegibility;
-  @extend %transition; transition-duration: 350ms;
-  &.wf-loading { opacity: 0; }
-  &.wf-active  { opacity: 1; }
+  font-family: $serif; line-height: 1.8; font-size: 15px; color: $grey; text-rendering: optimizeLegibility;
 }
 
 * { box-sizing: border-box; }
@@ -79,7 +80,8 @@ form {
     &:focus { outline: none; }
   }
   input {
-    border: 4px solid $input-border-color;
+    font-size: 14px;
+    border: 2px solid $input-border-color;
     &:hover { border-color: $input-border-color-hover; }
     &:focus, &:active { border-color: $input-border-color-focus; }
   }
@@ -87,12 +89,9 @@ form {
     border: none;
     background: $input-border-color;
     color: #999;
+    @extend %small-caps;
     text-align: center;
-    text-transform: uppercase;
-    font-family: $serif-sc;
-    font-size: 14px;
-    text-transform: uppercase;
-    padding: 15px 18px;
+    padding: 10px 0;
     &:hover { background-color: $input-border-color-hover; }
     &:active, &:focus { background-color: $input-border-color-focus; }
   }
@@ -104,9 +103,10 @@ a {
   text-decoration: none;
   @extend %transition;
   &:hover, &:active { color: $link-color-hover; }
+  &:hover { border-bottom: 1px solid $link-color; }
 }
 
-#header, main, body > footer { max-width: 1300px; margin-left: auto; margin-right: auto; }
+#header, main, body > footer, body > nav { max-width: 1300px; margin-left: auto; margin-right: auto; }
 
 #header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
@@ -129,6 +129,7 @@ a {
     p { margin: 15px 0; }
     p + p { margin-top: -10px; }
   }
+
   > aside.image {
     width: 100%; max-width: 200px; margin-right: 40px;
     > img, > .icon { width: 100%; border-radius: 50%; }
@@ -137,7 +138,7 @@ a {
     }
   }
   > div.text {
-    h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0 0 10px; }
+    h3 { @extend %small-caps; font-size: 100%; margin: 0 0 10px; }
     h3 + p { margin-top: 0; }
     p + h3 { margin-top: 25px; }
   }
@@ -172,9 +173,6 @@ a {
   }
 }
 
-.feature.mailing-list {
-}
-
 body > footer > div {
   @extend %display-table;
   > div:first-child > * { border-top: none; }
@@ -183,9 +181,14 @@ body > footer > div {
 
 main section.home {
   div.thumbnails {
-    $size: 216px; line-height: 0; margin: 20px 0; text-align: center;
+    $size: 300px; line-height: 0; margin: 20px auto; text-align: center; max-width: 1200px;
     a {
-      img { width: $size; height: $size; padding: 5px; }
+      @extend %transition; display: inline-block;
+      img { width: $size - 10px; height: $size - 10px; margin: 5px; border: 1px solid transparent; border: 1px solid rgba(0,0,0,.15); }
+      &:hover {
+        border: none; opacity: .9;
+        img { border-color: rgba(0,0,0,.3); }
+      }
     }
   }
 }
@@ -201,8 +204,7 @@ section#project {
     float: right;
     padding-left: 0;
     vertical-align: top;
-    position: -webkit-sticky;
-    position: sticky;
+    @extend %sticky;
     top: 0;
     h2 {
       font: 300 36px $serif;
@@ -217,14 +219,23 @@ section#project {
         text-transform: lowercase;
         font: 18px $serif-sc;
         line-height: 1;
+        margin-bottom: .2em;
       }
     }
-    .next-project a {
-      display: block;
-      margin-top: 50px;
-      text-decoration: none;
-      h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0; color: $grey; }
-      span { font-size: 150%; }
+    blockquote {
+      margin: 0; padding: 0; font-style: italic; font-size: 14px; margin-top: 1.5em; width: 90%;
+      &:first-letter {
+        margin-left: -.3em;
+      }
+    }
+    .next-project {
+      margin-top: 40px;
+      h2 { display: block; margin-bottom: 0; }
+      a {
+        line-height: 1.5;
+        h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0; color: $grey; }
+        span { font-size: 110%; }
+      }
     }
   }
   .photos {
@@ -236,7 +247,42 @@ section#project {
   }
 }
 
-.flourish {
-  padding: 100px 0 133px 0;
-  text-align: center;
+section.about-us {
+  // width: 650px; margin: 0 auto; padding: 40px 0;
+  h1 { font: 300 36px $serif; }
+  h2 { font: 300 18px $serif; margin-top: 1.5em; }
+  > .photos, > .text {
+    width: 50%;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 80px 0;
+  }
+  > .photos {
+    padding-right: 30px;
+    img { width: 100%; margin-bottom: 20px; }
+  }
+  > .text {
+    @extend %sticky;
+    top: 40px;
+    font-size: 15px; line-height: 1.8;
+    > *:first-child { margin-top: 0; }
+  }
+}
+
+
+.feature.mailing-list, .feature.connect {
+  padding-bottom: 100px;
+}
+
+.feature.mailing-list {
+}
+
+
+.feature.connect {
+  vertical-align: middle; text-align: center;
+  a {
+    @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px;
+  }
 }
