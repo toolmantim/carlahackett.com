@@ -2,6 +2,7 @@
 
 $serif: 'Archer SSm A', 'Archer SSm B', serif;
 $serif-sc: 'Archer SSm Smallcaps A', 'Archer SSm Smallcaps B', serif;
+$display-font: 'Whitney A', 'Whitney B', sans-serif;
 
 $dark-grey: #222;
 $grey: #999;
@@ -12,7 +13,13 @@ $input-border-color-hover: darken($light-grey, 5%);
 $input-border-color-focus: darken($light-grey, 12%);
 
 $link-color: $dark-grey;
+$link-underline-color: $light-grey;
+$link-underline-color-hover: $grey;
 $link-color-hover: darken($dark-grey, 10%);
+
+$text-color: $grey;
+
+$display-heading-color: $dark-grey;
 
 %transition {
   transition: all 200ms;
@@ -65,7 +72,7 @@ $link-color-hover: darken($dark-grey, 10%);
 }
 
 html {
-  font-family: $serif; line-height: 1.8; font-size: 15px; color: $grey; text-rendering: optimizeLegibility;
+  font-family: $serif; line-height: 1.8; font-size: 15px; color: $text-color; text-rendering: optimizeLegibility;
 }
 
 * { box-sizing: border-box; }
@@ -99,11 +106,11 @@ form {
 }
 
 a {
-  color: $link-color;
+  color: inherit;
   text-decoration: none;
+  border-bottom: 1px solid $link-underline-color;
   @extend %transition;
-  &:hover, &:active { color: $link-color-hover; }
-  &:hover { border-bottom: 1px solid $link-color; }
+  &:hover, &:active { color: $link-color-hover; border-bottom-color: $link-underline-color-hover; }
 }
 
 #header, main, body > footer, body > nav { max-width: 1300px; margin-left: auto; margin-right: auto; }
@@ -112,6 +119,7 @@ a {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
   h1 {
     text-align: center;
+    a, a:hover { border-bottom: none; }
     img { width: 400px; max-width: 400px; }
   }
 }
@@ -143,7 +151,7 @@ a {
     p + h3 { margin-top: 25px; }
   }
   h2 {
-    text-align: center; font-size: 21px; @extend %small-caps; margin-bottom: 50px; color: $grey;
+    text-align: center; font-size: 21px; @extend %small-caps; margin-bottom: 50px; color: $text-color;
     span {
       display: block;
     }
@@ -156,10 +164,10 @@ a {
 }
 
 .feature.contact {
-  p.address span { display: block; }
-  .icon {
+  a.icon {
     position: relative;
     background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+    border-bottom: none;
     @include high-dpi {
       background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
       background-size: 100% 100%;
@@ -167,6 +175,7 @@ a {
     img.pin { z-index: 2; position: relative; }
     img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; -webkit-filter: blur(1px); }
     &:hover {
+      border-bottom: none;
       img.pin    { @extend %bounce; }
       img.shadow { @extend %shadow-bounce; }
     }
@@ -183,11 +192,11 @@ main section.home {
   div.thumbnails {
     $size: 300px; line-height: 0; margin: 20px auto; text-align: center; max-width: 1200px;
     a {
-      @extend %transition; display: inline-block;
-      img { width: $size - 10px; height: $size - 10px; margin: 5px; border: 1px solid transparent; border: 1px solid rgba(0,0,0,.15); }
+      @extend %transition; display: inline-block; border-bottom: none; position: relative;
+      img { @extend %transition; width: $size - 10px; height: $size - 10px; margin: 5px; border: 1px solid transparent; border: 1px solid rgba(0,0,0,.15); }
       &:hover {
-        border: none; opacity: .9;
-        img { border-color: rgba(0,0,0,.3); }
+        border: none;
+        img { border-color: rgba(0,0,0,.3); opacity: .9; }
       }
     }
   }
@@ -207,20 +216,11 @@ section#project {
     @extend %sticky;
     top: 0;
     h2 {
-      font: 300 36px $serif;
-      line-height: 1;
-      margin: 0 0 .5em;
+      font: 300 36px/1.1 $display-font;
+      color: $display-heading-color;
+      margin: .25em 0 .5em;
       text-align: left;
       text-transform: none;
-      &:before {
-        content: 'Project';
-        display: block;
-        $grey: #aaa;
-        text-transform: lowercase;
-        font: 18px $serif-sc;
-        line-height: 1;
-        margin-bottom: .2em;
-      }
     }
     blockquote {
       margin: 0; padding: 0; font-style: italic; font-size: 14px; margin-top: 1.5em; width: 90%;
@@ -230,11 +230,11 @@ section#project {
     }
     .next-project {
       margin-top: 40px;
-      h2 { display: block; margin-bottom: 0; }
       a {
-        line-height: 1.5;
-        h3 { font-family: $serif-sc; font-weight: normal; text-transform: lowercase; font-size: 100%; margin: 0; color: $grey; }
-        span { font-size: 110%; }
+        border-bottom: none;
+        h3 { font: 100% normal $serif-sc; text-transform: lowercase; margin: 0; color: $text-color; margin-bottom: 5px; display: block; }
+        span { font: 300 24px $display-font; color: $display-heading-color; display: inline-block; border-bottom: 1px solid $link-underline-color; }
+        &:hover span { border-bottom-color: $link-underline-color-hover; }
       }
     }
   }
@@ -249,8 +249,13 @@ section#project {
 
 section.about-us {
   // width: 650px; margin: 0 auto; padding: 40px 0;
-  h1 { font: 300 36px $serif; }
-  h2 { font: 300 18px $serif; margin-top: 1.5em; }
+  h1, h2 {
+    font: 300 36px $display-font;
+    color: $display-heading-color;
+    line-height: 1;
+  }
+  h1 { font-size: 36px; }
+  h2 { font-size: 24px; margin-top: 1.5em; }
   > .photos, > .text {
     width: 50%;
     padding-left: 50px;
