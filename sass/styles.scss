@@ -2,7 +2,7 @@
 
 $serif: 'Archer SSm A', 'Archer SSm B', serif;
 $serif-sc: 'Archer SSm Smallcaps A', 'Archer SSm Smallcaps B', serif;
-$display-font: 'Whitney A', 'Whitney B', sans-serif;
+$display-font: 'Sentinel A', 'Sentinel B', sans-serif;
 
 $dark-grey: #222;
 $grey: #999;
@@ -214,7 +214,7 @@ section#project {
     padding-left: 0;
     vertical-align: top;
     @extend %sticky;
-    top: 0;
+    top: -20px;
     h2 {
       font: 300 36px/1.1 $display-font;
       color: $display-heading-color;
@@ -254,8 +254,8 @@ section.about-us {
     color: $display-heading-color;
     line-height: 1;
   }
-  h1 { font-size: 36px; }
-  h2 { font-size: 24px; margin-top: 1.5em; }
+  h1 { font-size: 48px; }
+  h2 { font-size: 28px; margin-top: 1.5em; }
   > .photos, > .text {
     width: 50%;
     padding-left: 50px;
