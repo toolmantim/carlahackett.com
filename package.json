@@ -4,7 +4,7 @@
   "private": true,
   "engines": {
     "node": "0.10.x",
-    "npm":  "1.2.x"
+    "npm": "1.2.x"
   },
   "scripts": {
     "start": "node node_modules/supervisor/lib/cli-wrapper.js app.js"
@@ -19,6 +19,7 @@
     "grunt": "0.4.x",
     "grunt-contrib-sass": "git://github.com/gruntjs/grunt-contrib-sass.git#e85ee70ccb8839867172b57ca1378293291f8037",
     "grunt-contrib-watch": "0.3.x",
-    "matchdep": "0.1.x"
+    "matchdep": "0.1.x",
+    "grunt-autoprefixer": "~0.2.20130806"
   }
 }

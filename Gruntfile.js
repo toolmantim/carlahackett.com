@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 
     watch: {
       files: ['sass/*.scss'],
-      tasks: 'sass'
+      tasks: 'css'
     },
 
     sass: {
@@ -12,18 +12,30 @@ module.exports = function(grunt) {
         options: {
           require: './sass/sass_css_importer',
           loadPath: 'components',
-          sourcemap: true,
-          style: 'compressed'
+          style: 'expanded'
         },
         files: {
           'public/styles.css': 'sass/styles.scss'
         }
       }
-    }
+    },
+
+    autoprefixer: {
+      styles: {
+        options: {
+          browsers: ['last 2 versions']
+        },
+        files: {
+          'public/styles.css': 'public/styles.css'
+        }
+      }
+    },
 
   });
 
-  grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('css', ['sass', 'autoprefixer']);
+
+  grunt.registerTask('default', ['css', 'watch']);
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };

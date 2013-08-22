@@ -51,25 +51,23 @@ $display-heading-color: $dark-grey;
   }
 }
 
-@-webkit-keyframes bounce {
-  0%, 100% {-webkit-transform: translateY(0);}
-  50% {-webkit-transform: translateY(-6px);}
+@keyframes bounce {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-6px);}
 }
-@-webkit-keyframes shadow-bounce {
-  0%, 100% {-webkit-transform: translateY(0);}
-  50% {-webkit-transform: translateY(-2px);}
+@keyframes shadow-bounce {
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-2px);}
 }
 
 %bounce {
-  -webkit-animation: .5s bounce both infinite;
+  animation: .5s bounce both infinite;
 }
 %shadow-bounce {
-  -webkit-animation: .5s shadow-bounce both infinite;
+  animation: .5s shadow-bounce both infinite;
 }
 %sticky {
   position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
   position: sticky;
 }
 
@@ -77,7 +75,7 @@ html {
   font-family: $serif; line-height: 1.8; font-size: 15px; color: $text-color; text-rendering: optimizeLegibility;
 }
 
-* { -webkit-box-sizing: border-box; -ie-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+* { box-sizing: border-box; }
 
 hr { border: none; border-top: 1px solid $light-grey; width: 100%; margin: 0; padding: 0; }
 
@@ -175,7 +173,7 @@ a {
       background-size: 100% 100%;
     }
     img.pin { z-index: 2; position: relative; }
-    img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; -webkit-filter: blur(1px); }
+    img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; filter: blur(1px); }
     &:hover {
       border-bottom: none;
       img.pin    { @extend %bounce; }
@@ -235,7 +233,7 @@ section#project {
       a {
         border-bottom: none;
         h3 { font: 100% normal $serif-sc; text-transform: lowercase; margin: 0; color: $text-color; margin-bottom: 5px; display: block; }
-        span { font: 300 24px $display-font; color: $display-heading-color; display: inline-block; border-bottom: 1px solid $link-underline-color; }
+        span { font: 300 24px $display-font; color: $display-heading-color; border-bottom: 1px solid $link-underline-color; }
         &:hover span { border-bottom-color: $link-underline-color-hover; }
       }
     }

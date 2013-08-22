@@ -1,2 +1,931 @@
-/*! normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:0.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace, serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:0.35em 0.625em 0.75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}form input,form button,a,main section.home div.thumbnails a,main section.home div.thumbnails a img{transition:all 200ms}form button,.feature>div.text h3,.feature h2,.feature.connect a{font-family:"Archer SSm Smallcaps A","Archer SSm Smallcaps B",serif;text-transform:lowercase;font-weight:500}form button i,.feature>div.text h3 i,.feature h2 i,.feature.connect a i{font-family:"Archer SSm A","Archer SSm B",serif;font-style:italic;font-size:80%;margin-left:.1em;margin-right:.1em}body>footer>div{display:table;border-collapse:collapse}body>footer>div>*{display:table-row}body>footer>div>*>*{display:table-cell;vertical-align:top;padding:50px;width:50%}body>footer>div>*>*+*{border-left:1px solid #ddd}@-webkit-keyframes bounce{0%,100%{-webkit-transform:translateY(0)}50%{-webkit-transform:translateY(-6px)}}@-webkit-keyframes shadow-bounce{0%,100%{-webkit-transform:translateY(0)}50%{-webkit-transform:translateY(-2px)}}.feature.contact a.icon:hover img.pin{-webkit-animation:.5s bounce both infinite}.feature.contact a.icon:hover img.shadow{-webkit-animation:.5s shadow-bounce both infinite}section#project .about,section.about-us>.text{position:-webkit-sticky;position:-moz-sticky;position:-ms-sticky;position:sticky}html{font-family:"Archer SSm A","Archer SSm B",serif;line-height:1.8;font-size:15px;color:#999;text-rendering:optimizeLegibility}*{-webkit-box-sizing:border-box;-ie-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}hr{border:none;border-top:1px solid #ddd;width:100%;margin:0;padding:0}form input,form button{padding:8px 10px;width:100%}form input:focus,form button:focus{outline:none}form input{font-size:14px;border:2px solid #ddd}form input:hover{border-color:#d0d0d0}form input:focus,form input:active{border-color:#bebebe}form button{border:none;background:#ddd;color:#999;text-align:center;padding:10px 0}form button:hover{background-color:#d0d0d0}form button:active,form button:focus{background-color:#bebebe}form>*+*{margin-top:10px}a{color:inherit;text-decoration:none;border-bottom:1px solid #ddd}a:hover,a:active{color:#090909;border-bottom-color:#999}#header,main,body>footer,body>nav{max-width:1300px;margin-left:auto;margin-right:auto}#header{margin-top:50px;margin-bottom:50px;line-height:1}#header h1{text-align:center}#header h1 a,#header h1 a:hover{border-bottom:none}#header h1 img{width:400px;max-width:400px}.feature>aside,.feature>aside+*{display:inline-block;width:50%;vertical-align:top;text-align:left}.feature>aside>:first-child,.feature>aside+*>:first-child{margin-top:0}.feature>aside{text-align:center;font-size:14px}.feature>aside p{margin:15px 0}.feature>aside p+p{margin-top:-10px}.feature>aside.image{width:100%;max-width:200px;margin-right:40px}.feature>aside.image>img,.feature>aside.image>.icon{width:100%;border-radius:50%}.feature>aside.image>.icon{background-color:#ddd;display:inline-block}.feature>div.text h3{font-size:100%;margin:0 0 10px}.feature>div.text h3+p{margin-top:0}.feature>div.text p+h3{margin-top:25px}.feature h2{text-align:center;font-size:21px;margin-bottom:50px;color:#999}.feature h2 span{display:block}.feature.about aside p{margin-bottom:12px}.feature.about aside p.title{font-family:"Archer SSm Smallcaps A","Archer SSm Smallcaps B",serif;text-transform:lowercase}.feature.contact a.icon{position:relative;background:url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;border-bottom:none}@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){.feature.contact a.icon{background:url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;background-size:100% 100%}}.feature.contact a.icon img.pin{z-index:2;position:relative}.feature.contact a.icon img.shadow{position:absolute;top:0;left:0;opacity:.2;z-index:1;-webkit-filter:blur(1px)}.feature.contact a.icon:hover{border-bottom:none}body>footer>div>div:first-child>*{border-top:none}body>footer>div>div>*{border-top:1px solid #ddd}main section.home div.thumbnails{line-height:0;margin:20px auto;text-align:center;max-width:1200px}main section.home div.thumbnails a{display:inline-block;border-bottom:none;position:relative}main section.home div.thumbnails a img{width:290px;height:290px;margin:5px;border:1px solid transparent;border:1px solid rgba(0,0,0,0.15)}main section.home div.thumbnails a:hover{border:none}main section.home div.thumbnails a:hover img{border-color:rgba(0,0,0,0.3);opacity:.9}section#project{width:100%}section#project .about,section#project .photos{padding:50px;display:block}section#project .about{width:30%;float:right;padding-left:0;vertical-align:top;top:-20px}section#project .about h2{font:300 36px/1.1 "Sentinel A","Sentinel B",sans-serif;color:#222;margin:.25em 0 .5em;text-align:left;text-transform:none}section#project .about blockquote{margin:0;padding:0;font-style:italic;font-size:14px;margin-top:1.5em;width:90%}section#project .about blockquote:first-letter{margin-left:-.3em}section#project .about .next-project{margin-top:40px}section#project .about .next-project a{border-bottom:none}section#project .about .next-project a h3{font:100% normal "Archer SSm Smallcaps A","Archer SSm Smallcaps B",serif;text-transform:lowercase;margin:0;color:#999;margin-bottom:5px;display:block}section#project .about .next-project a span{font:300 24px "Sentinel A","Sentinel B",sans-serif;color:#222;display:inline-block;border-bottom:1px solid #ddd}section#project .about .next-project a:hover span{border-bottom-color:#999}section#project .photos{width:70%}section#project .photos img{margin:0;padding:3px 5px}section#project .photos img.full{width:100%}section#project .photos img.half{width:50%}section#project .photos img.third{width:33.333333%}section.about-us h1,section.about-us h2{font:300 36px "Sentinel A","Sentinel B",sans-serif;color:#222;line-height:1}section.about-us h1{font-size:48px}section.about-us h2{font-size:28px;margin-top:1.5em}section.about-us>.photos,section.about-us>.text{width:50%;padding-left:50px;padding-right:50px;display:inline-block;vertical-align:top;margin:80px 0}section.about-us>.photos{padding-right:30px}section.about-us>.photos img{width:100%;margin-bottom:20px}section.about-us>.text{top:40px;font-size:15px;line-height:1.8}section.about-us>.text>*:first-child{margin-top:0}.feature.mailing-list,.feature.connect{padding-bottom:100px}.feature.connect{vertical-align:middle;text-align:center}.feature.connect a{margin-left:10px;margin-right:14px;line-height:50px}
-/*# sourceMappingURL=styles.css.map */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+[hidden] {
+  display: none;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b,
+strong {
+  font-weight: bold;
+}
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+  white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+
+figure {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+form input,
+form button,
+a,
+main section.home div.thumbnails a,
+main section.home div.thumbnails a img {
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+}
+
+form button,
+.feature > div.text h3,
+.feature h2,
+.feature.connect a {
+  font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
+  text-transform: lowercase;
+  font-weight: 500;
+}
+
+form button i,
+.feature > div.text h3 i,
+.feature h2 i,
+.feature.connect a i {
+  font-family: "Archer SSm A", "Archer SSm B", serif;
+  font-style: italic;
+  font-size: 80%;
+  margin-left: .1em;
+  margin-right: .1em;
+}
+
+body > footer > div {
+  display: table;
+  border-collapse: collapse;
+}
+
+body > footer > div > * {
+  display: table-row;
+}
+
+body > footer > div > * > * {
+  display: table-cell;
+  vertical-align: top;
+  padding: 50px;
+  width: 50%;
+}
+
+body > footer > div > * > * + * {
+  border-left: 1px solid #dddddd;
+}
+
+@-webkit-keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-6px);
+    -ms-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+}
+
+@-webkit-keyframes shadow-bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes shadow-bounce {
+  0%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+}
+
+.feature.contact a.icon:hover img.pin {
+  -webkit-animation: .5s bounce both infinite;
+  animation: .5s bounce both infinite;
+}
+
+.feature.contact a.icon:hover img.shadow {
+  -webkit-animation: .5s shadow-bounce both infinite;
+  animation: .5s shadow-bounce both infinite;
+}
+
+section#project .about,
+section.about-us > .text {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+html {
+  font-family: "Archer SSm A", "Archer SSm B", serif;
+  line-height: 1.8;
+  font-size: 15px;
+  color: #999999;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dddddd;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+form input,
+form button {
+  padding: 8px 10px;
+  width: 100%;
+}
+
+form input:focus,
+form button:focus {
+  outline: none;
+}
+
+form input {
+  font-size: 14px;
+  border: 2px solid #dddddd;
+}
+
+form input:hover {
+  border-color: #d0d0d0;
+}
+
+form input:focus,
+form input:active {
+  border-color: #bebebe;
+}
+
+form button {
+  border: none;
+  background: #dddddd;
+  color: #999;
+  text-align: center;
+  padding: 10px 0;
+}
+
+form button:hover {
+  background-color: #d0d0d0;
+}
+
+form button:active,
+form button:focus {
+  background-color: #bebebe;
+}
+
+form > * + * {
+  margin-top: 10px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #dddddd;
+}
+
+a:hover,
+a:active {
+  color: #090909;
+  border-bottom-color: #999999;
+}
+
+#header,
+main,
+body > footer,
+body > nav {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#header {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  line-height: 1;
+}
+
+#header h1 {
+  text-align: center;
+}
+
+#header h1 a,
+#header h1 a:hover {
+  border-bottom: none;
+}
+
+#header h1 img {
+  width: 400px;
+  max-width: 400px;
+}
+
+.feature > aside,
+.feature > aside + * {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  text-align: left;
+}
+
+.feature > aside > :first-child,
+.feature > aside + * > :first-child {
+  margin-top: 0;
+}
+
+.feature > aside {
+  text-align: center;
+  font-size: 14px;
+}
+
+.feature > aside p {
+  margin: 15px 0;
+}
+
+.feature > aside p + p {
+  margin-top: -10px;
+}
+
+.feature > aside.image {
+  width: 100%;
+  max-width: 200px;
+  margin-right: 40px;
+}
+
+.feature > aside.image > img,
+.feature > aside.image > .icon {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.feature > aside.image > .icon {
+  background-color: #dddddd;
+  display: inline-block;
+}
+
+.feature > div.text h3 {
+  font-size: 100%;
+  margin: 0 0 10px;
+}
+
+.feature > div.text h3 + p {
+  margin-top: 0;
+}
+
+.feature > div.text p + h3 {
+  margin-top: 25px;
+}
+
+.feature h2 {
+  text-align: center;
+  font-size: 21px;
+  margin-bottom: 50px;
+  color: #999999;
+}
+
+.feature h2 span {
+  display: block;
+}
+
+.feature.about aside p {
+  margin-bottom: 12px;
+}
+
+.feature.about aside p.title {
+  font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
+  text-transform: lowercase;
+}
+
+.feature.contact a.icon {
+  position: relative;
+  background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+  border-bottom: none;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .feature.contact a.icon {
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
+    background-size: 100% 100%;
+  }
+}
+
+.feature.contact a.icon img.pin {
+  z-index: 2;
+  position: relative;
+}
+
+.feature.contact a.icon img.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .2;
+  z-index: 1;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.feature.contact a.icon:hover {
+  border-bottom: none;
+}
+
+body > footer > div > div:first-child > * {
+  border-top: none;
+}
+
+body > footer > div > div > * {
+  border-top: 1px solid #dddddd;
+}
+
+main section.home div.thumbnails {
+  line-height: 0;
+  margin: 20px auto;
+  text-align: center;
+  max-width: 1200px;
+}
+
+main section.home div.thumbnails a {
+  display: inline-block;
+  border-bottom: none;
+  position: relative;
+}
+
+main section.home div.thumbnails a img {
+  width: 290px;
+  height: 290px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+main section.home div.thumbnails a:hover {
+  border: none;
+}
+
+main section.home div.thumbnails a:hover img {
+  border-color: rgba(0, 0, 0, 0.3);
+  opacity: .9;
+}
+
+section#project {
+  width: 100%;
+}
+
+section#project .about,
+section#project .photos {
+  padding: 50px;
+  display: block;
+}
+
+section#project .about {
+  width: 30%;
+  float: right;
+  padding-left: 0;
+  vertical-align: top;
+  top: -20px;
+}
+
+section#project .about h2 {
+  font: 300 36px/1.1 "Sentinel A", "Sentinel B", sans-serif;
+  color: #222222;
+  margin: .25em 0 .5em;
+  text-align: left;
+  text-transform: none;
+}
+
+section#project .about blockquote {
+  margin: 0;
+  padding: 0;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 1.5em;
+  width: 90%;
+}
+
+section#project .about blockquote:first-letter {
+  margin-left: -.3em;
+}
+
+section#project .about .next-project {
+  margin-top: 40px;
+}
+
+section#project .about .next-project a {
+  border-bottom: none;
+}
+
+section#project .about .next-project a h3 {
+  font: 100% normal "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
+  text-transform: lowercase;
+  margin: 0;
+  color: #999999;
+  margin-bottom: 5px;
+  display: block;
+}
+
+section#project .about .next-project a span {
+  font: 300 24px "Sentinel A", "Sentinel B", sans-serif;
+  color: #222222;
+  border-bottom: 1px solid #dddddd;
+}
+
+section#project .about .next-project a:hover span {
+  border-bottom-color: #999999;
+}
+
+section#project .photos {
+  width: 70%;
+}
+
+section#project .photos img {
+  margin: 0;
+  padding: 3px 5px;
+}
+
+section#project .photos img.full {
+  width: 100%;
+}
+
+section#project .photos img.half {
+  width: 50%;
+}
+
+section#project .photos img.third {
+  width: 33.333333%;
+}
+
+section.about-us h1,
+section.about-us h2 {
+  font: 300 36px "Sentinel A", "Sentinel B", sans-serif;
+  color: #222222;
+  line-height: 1;
+}
+
+section.about-us h1 {
+  font-size: 48px;
+}
+
+section.about-us h2 {
+  font-size: 28px;
+  margin-top: 1.5em;
+}
+
+section.about-us > .photos,
+section.about-us > .text {
+  width: 50%;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 80px 0;
+}
+
+section.about-us > .photos {
+  padding-right: 30px;
+}
+
+section.about-us > .photos img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+section.about-us > .text {
+  top: 40px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+section.about-us > .text > *:first-child {
+  margin-top: 0;
+}
+
+.feature.mailing-list,
+.feature.connect {
+  padding-bottom: 100px;
+}
+
+.feature.connect {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feature.connect a {
+  margin-left: 10px;
+  margin-right: 14px;
+  line-height: 50px;
+}
