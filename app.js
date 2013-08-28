@@ -103,7 +103,7 @@ app.get('/projects/:slug/cover.jpg', function(req, res) {
 });
 
 http.createServer(app).listen(app.get('port'), function(){
-  var url = "http://foxglove.127.0.0.1.xip.io:" + app.get('port') + "/";
+  var url = "http://localhost:" + app.get('port') + "/";
   console.log("Foxglove site running at " + url);
   if (process.env["OPEN_BROWSER"])
     require('child_process').spawn('open', [url]);

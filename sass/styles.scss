@@ -2,7 +2,7 @@
 
 $serif: 'Archer SSm A', 'Archer SSm B', serif;
 $serif-sc: 'Archer SSm Smallcaps A', 'Archer SSm Smallcaps B', serif;
-$display-font: 'Sentinel A', 'Sentinel B', sans-serif;
+$display-font: 'Sentinel A', 'Sentinel B', 'Helvetica Nueue', sans-serif;
 
 $dark-grey: #222;
 $grey: #999;
@@ -99,7 +99,7 @@ form {
     @extend %small-caps;
     text-align: center;
     padding: 10px 0;
-    &:hover { background-color: $input-border-color-hover; }
+    &:hover { background-color: $input-border-color-hover; color: $link-color-hover; }
     &:active, &:focus { background-color: $input-border-color-focus; }
   }
   > * + * { margin-top: 10px; }
@@ -113,6 +113,12 @@ a {
   &:hover, &:active { color: $link-color-hover; border-bottom-color: $link-underline-color-hover; }
 }
 
+%image-link {
+  &, &:hover { border-bottom: none; }
+  img { border: 1px solid rgba(0,0,0,.15); @extend %transition; }
+  &:hover img { border-color: rgba(0,0,0,.3); opacity: .9; }
+}
+
 #header, main, body > footer, body > nav { max-width: 1300px; margin-left: auto; margin-right: auto; }
 
 #header {
@@ -120,7 +126,7 @@ a {
   h1 {
     text-align: center;
     a, a:hover { border-bottom: none; }
-    img { width: 400px; max-width: 400px; }
+    img { width: 300px; max-width: 300px; }
   }
 }
 
@@ -193,11 +199,8 @@ main section.home {
     $size: 300px; line-height: 0; margin: 20px auto; text-align: center; max-width: 1200px;
     a {
       @extend %transition; display: inline-block; border-bottom: none; position: relative;
-      img { @extend %transition; width: $size - 10px; height: $size - 10px; margin: 5px; border: 1px solid transparent; border: 1px solid rgba(0,0,0,.15); }
-      &:hover {
-        border: none;
-        img { border-color: rgba(0,0,0,.3); opacity: .9; }
-      }
+      @extend %image-link;
+      img { width: $size - 10px; height: $size - 10px; margin: 5px; }
     }
   }
 }
@@ -276,7 +279,6 @@ section.about-us {
   }
 }
 
-
 .feature.mailing-list, .feature.connect {
   padding-bottom: 100px;
 }
@@ -284,10 +286,18 @@ section.about-us {
 .feature.mailing-list {
 }
 
-
 .feature.connect {
   vertical-align: middle; text-align: center;
-  a {
-    @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px;
+  .links {
+    a {
+      @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px;
+    }
+  }
+  .instagrams {
+    margin-top: 25px;
+    a {
+      @extend %image-link;
+      img { width: 75px; height: 75px; }
+    }
   }
 }

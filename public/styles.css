@@ -414,8 +414,9 @@ table {
 form input,
 form button,
 a,
-main section.home div.thumbnails a,
-main section.home div.thumbnails a img {
+main section.home div.thumbnails a img,
+.feature.connect .instagrams a img,
+main section.home div.thumbnails a {
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
@@ -423,7 +424,7 @@ main section.home div.thumbnails a img {
 form button,
 .feature > div.text h3,
 .feature h2,
-.feature.connect a {
+.feature.connect .links a {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   font-weight: 500;
@@ -432,7 +433,7 @@ form button,
 form button i,
 .feature > div.text h3 i,
 .feature h2 i,
-.feature.connect a i {
+.feature.connect .links a i {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   font-style: italic;
   font-size: 80%;
@@ -584,6 +585,7 @@ form button {
 
 form button:hover {
   background-color: #d0d0d0;
+  color: #090909;
 }
 
 form button:active,
@@ -605,6 +607,24 @@ a:hover,
 a:active {
   color: #090909;
   border-bottom-color: #999999;
+}
+
+main section.home div.thumbnails a,
+.feature.connect .instagrams a,
+main section.home div.thumbnails a:hover,
+.feature.connect .instagrams a:hover {
+  border-bottom: none;
+}
+
+main section.home div.thumbnails a img,
+.feature.connect .instagrams a img {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+main section.home div.thumbnails a:hover img,
+.feature.connect .instagrams a:hover img {
+  border-color: rgba(0, 0, 0, 0.3);
+  opacity: .9;
 }
 
 #header,
@@ -632,8 +652,8 @@ body > nav {
 }
 
 #header h1 img {
-  width: 400px;
-  max-width: 400px;
+  width: 300px;
+  max-width: 300px;
 }
 
 .feature > aside,
@@ -769,17 +789,6 @@ main section.home div.thumbnails a img {
   width: 290px;
   height: 290px;
   margin: 5px;
-  border: 1px solid transparent;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-}
-
-main section.home div.thumbnails a:hover {
-  border: none;
-}
-
-main section.home div.thumbnails a:hover img {
-  border-color: rgba(0, 0, 0, 0.3);
-  opacity: .9;
 }
 
 section#project {
@@ -801,7 +810,7 @@ section#project .about {
 }
 
 section#project .about h2 {
-  font: 300 36px/1.1 "Sentinel A", "Sentinel B", sans-serif;
+  font: 300 36px/1.1 "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
   color: #222222;
   margin: .25em 0 .5em;
   text-align: left;
@@ -839,7 +848,7 @@ section#project .about .next-project a h3 {
 }
 
 section#project .about .next-project a span {
-  font: 300 24px "Sentinel A", "Sentinel B", sans-serif;
+  font: 300 24px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
   color: #222222;
   border-bottom: 1px solid #dddddd;
 }
@@ -871,7 +880,7 @@ section#project .photos img.third {
 
 section.about-us h1,
 section.about-us h2 {
-  font: 300 36px "Sentinel A", "Sentinel B", sans-serif;
+  font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
   color: #222222;
   line-height: 1;
 }
@@ -924,8 +933,17 @@ section.about-us > .text > *:first-child {
   text-align: center;
 }
 
-.feature.connect a {
+.feature.connect .links a {
   margin-left: 10px;
   margin-right: 14px;
   line-height: 50px;
+}
+
+.feature.connect .instagrams {
+  margin-top: 25px;
+}
+
+.feature.connect .instagrams a img {
+  width: 75px;
+  height: 75px;
 }

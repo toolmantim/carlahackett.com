@@ -1,5 +1,5 @@
 # Ruby Conf
 
-The [Ruby Conf](http://www.rubyconf.org.au/) crew asked us to design a Tshirt for the 200 delegates attending the inaugural conference in Melbourne.
+[Ruby Conf](http://www.rubyconf.org.au/) asked us to design a type-based tee to be given to each conference delegate. The idea was to make it something conference attendees would recognise and nod their head at, but at the same time being a cool tee outside of the context of the conference.
 
-The word 'Yield' is a Ruby term only the nerd wearing it would know, unless he is walking past a fellow nerd on the street, in which case there might be a knowing look exchanged. The 'Yield' was lettered in the Americana Baseball script style.
+The word ‘yield’ was chosen as it’s unique to the Ruby programming language.
