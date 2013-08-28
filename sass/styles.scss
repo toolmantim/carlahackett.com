@@ -40,6 +40,10 @@ $display-heading-color: $dark-grey;
       padding: 50px;
       width: 50%;
       + * { border-left: 1px solid $light-grey; }
+      @media (max-width: 650px) {
+        display: block; width: 100%;
+        + * { border-left: none; border-top: 1px solid $light-grey; }
+      }
     }
   }
 }
@@ -73,6 +77,10 @@ $display-heading-color: $dark-grey;
 
 html {
   font-family: $serif; line-height: 1.8; font-size: 15px; color: $text-color; text-rendering: optimizeLegibility;
+}
+
+body {
+  padding: 20px 40px;
 }
 
 * { box-sizing: border-box; }
@@ -126,7 +134,7 @@ a {
   h1 {
     text-align: center;
     a, a:hover { border-bottom: none; }
-    img { width: 300px; max-width: 300px; }
+    img { width: 60%; max-width: 300px; }
   }
 }
 
@@ -136,6 +144,11 @@ a {
     width: 50%;
     vertical-align: top;
     text-align: left;
+    @media (max-width: 500px) {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
     > :first-child { margin-top: 0; }
   }
   > aside {
@@ -146,6 +159,9 @@ a {
 
   > aside.image {
     width: 100%; max-width: 200px; margin-right: 40px;
+    @media (max-width: 1200px) { max-width: 150px; }
+    @media (max-width: 650px) { max-width: 200px; }
+    @media (max-width: 500px) { margin: 0 auto 20px auto; }
     > img, > .icon { width: 100%; border-radius: 50%; }
     > .icon {
       background-color: $light-grey; display: inline-block;
@@ -170,6 +186,7 @@ a {
 }
 
 .feature.contact {
+  @media (max-width: 500px) { border-top: 1px solid $light-grey; }
   a.icon {
     position: relative;
     background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
@@ -177,6 +194,20 @@ a {
     @include high-dpi {
       background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
       background-size: 100% 100%;
+    }
+    @media (max-width: 1200px) {
+      max-width: 150px; max-height: 150px;
+      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150.png) center center;
+      @include high-dpi {
+        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150@2x.png) center center;
+      }
+    }
+    @media (max-width: 650px) {
+      max-width: 200px; max-height: 200px;
+      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+      @include high-dpi {
+        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
+      }
     }
     img.pin { z-index: 2; position: relative; }
     img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; filter: blur(1px); }
@@ -190,7 +221,9 @@ a {
 
 body > footer > div {
   @extend %display-table;
-  > div:first-child > * { border-top: none; }
+  > div:first-child > * {
+    border-top: none;
+  }
   > div > * { border-top: 1px solid $light-grey; }
 }
 
@@ -248,6 +281,20 @@ section#project {
     img.half { width: 50%; }
     img.third { width: 33.333333%; }
   }
+  @media (max-width: 500px) {
+    .about, .photos { width: 100%; padding: 0; }
+    .about {
+      position: relative; float: none;
+      h2 { text-align: center; }
+    }
+    .photos {
+      margin: 20px 0;
+      img { width: 100%; }
+      img.full { width: 100%; }
+      img.half { width: 100%; }
+      img.third { width: 100%; }
+    }
+  }
 }
 
 section.about-us {
@@ -266,10 +313,14 @@ section.about-us {
     display: inline-block;
     vertical-align: top;
     margin: 80px 0;
+    @media (max-width: 500px) { display: block; width: 100%; margin: 40px 0; padding: 0; }
   }
   > .photos {
     padding-right: 30px;
-    img { width: 100%; margin-bottom: 20px; }
+    img {
+      width: 100%; margin-top: 20px;
+      &:first-child { margin-top: 0; }
+    }
   }
   > .text {
     @extend %sticky;
@@ -291,6 +342,11 @@ section.about-us {
   .links {
     a {
       @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px;
+    }
+    @media (max-width: 500px) {
+      span { display: block; margin-bottom: 20px;
+        a { line-height: 1; }
+      }
     }
   }
   .instagrams {

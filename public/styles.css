@@ -461,6 +461,18 @@ body > footer > div > * > * + * {
   border-left: 1px solid #dddddd;
 }
 
+@media (max-width: 650px) {
+  body > footer > div > * > * {
+    display: block;
+    width: 100%;
+  }
+
+  body > footer > div > * > * + * {
+    border-left: none;
+    border-top: 1px solid #dddddd;
+  }
+}
+
 @-webkit-keyframes bounce {
   0%, 100% {
     -webkit-transform: translateY(0);
@@ -535,6 +547,10 @@ html {
   font-size: 15px;
   color: #999999;
   text-rendering: optimizeLegibility;
+}
+
+body {
+  padding: 20px 40px;
 }
 
 * {
@@ -652,7 +668,7 @@ body > nav {
 }
 
 #header h1 img {
-  width: 300px;
+  width: 60%;
   max-width: 300px;
 }
 
@@ -662,6 +678,15 @@ body > nav {
   width: 50%;
   vertical-align: top;
   text-align: left;
+}
+
+@media (max-width: 500px) {
+  .feature > aside,
+  .feature > aside + * {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .feature > aside > :first-child,
@@ -686,6 +711,24 @@ body > nav {
   width: 100%;
   max-width: 200px;
   margin-right: 40px;
+}
+
+@media (max-width: 1200px) {
+  .feature > aside.image {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  .feature > aside.image {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .feature > aside.image {
+    margin: 0 auto 20px auto;
+  }
 }
 
 .feature > aside.image > img,
@@ -732,6 +775,12 @@ body > nav {
   text-transform: lowercase;
 }
 
+@media (max-width: 500px) {
+  .feature.contact {
+    border-top: 1px solid #dddddd;
+  }
+}
+
 .feature.contact a.icon {
   position: relative;
   background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
@@ -742,6 +791,34 @@ body > nav {
   .feature.contact a.icon {
     background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
     background-size: 100% 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .feature.contact a.icon {
+    max-width: 150px;
+    max-height: 150px;
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150.png) center center;
+  }
+}
+
+@media (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1200px) and (min-resolution: 192dpi) {
+  .feature.contact a.icon {
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150@2x.png) center center;
+  }
+}
+
+@media (max-width: 650px) {
+  .feature.contact a.icon {
+    max-width: 200px;
+    max-height: 200px;
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+  }
+}
+
+@media (max-width: 650px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 650px) and (min-resolution: 192dpi) {
+  .feature.contact a.icon {
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
   }
 }
 
@@ -878,6 +955,43 @@ section#project .photos img.third {
   width: 33.333333%;
 }
 
+@media (max-width: 500px) {
+  section#project .about,
+  section#project .photos {
+    width: 100%;
+    padding: 0;
+  }
+
+  section#project .about {
+    position: relative;
+    float: none;
+  }
+
+  section#project .about h2 {
+    text-align: center;
+  }
+
+  section#project .photos {
+    margin: 20px 0;
+  }
+
+  section#project .photos img {
+    width: 100%;
+  }
+
+  section#project .photos img.full {
+    width: 100%;
+  }
+
+  section#project .photos img.half {
+    width: 100%;
+  }
+
+  section#project .photos img.third {
+    width: 100%;
+  }
+}
+
 section.about-us h1,
 section.about-us h2 {
   font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
@@ -904,13 +1018,27 @@ section.about-us > .text {
   margin: 80px 0;
 }
 
+@media (max-width: 500px) {
+  section.about-us > .photos,
+  section.about-us > .text {
+    display: block;
+    width: 100%;
+    margin: 40px 0;
+    padding: 0;
+  }
+}
+
 section.about-us > .photos {
   padding-right: 30px;
 }
 
 section.about-us > .photos img {
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+section.about-us > .photos img:first-child {
+  margin-top: 0;
 }
 
 section.about-us > .text {
@@ -937,6 +1065,17 @@ section.about-us > .text > *:first-child {
   margin-left: 10px;
   margin-right: 14px;
   line-height: 50px;
+}
+
+@media (max-width: 500px) {
+  .feature.connect .links span {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .feature.connect .links span a {
+    line-height: 1;
+  }
 }
 
 .feature.connect .instagrams {
