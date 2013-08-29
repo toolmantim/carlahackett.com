@@ -167,7 +167,7 @@ a {
 
   > aside.image {
     width: 100%; max-width: 200px; margin-right: 40px;
-    @media (max-width: 1200px) { max-width: 150px; }
+    @media (max-width: 1100px) { max-width: 135px; }
     @media (max-width: 650px) { max-width: 200px; }
     @media (max-width: 500px) { margin: 0 auto 20px auto; }
     > img, > .icon { width: 100%; border-radius: 50%; }
@@ -203,11 +203,11 @@ a {
       background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
       background-size: 100% 100%;
     }
-    @media (max-width: 1200px) {
-      max-width: 150px; max-height: 150px;
-      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150.png) center center;
+    @media (max-width: 1100px) {
+      max-width: 135px; max-height: 135px;
+      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135.png) center center;
       @include high-dpi {
-        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/150x150@2x.png) center center;
+        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135@2x.png) center center;
       }
     }
     @media (max-width: 650px) {
@@ -217,6 +217,7 @@ a {
         background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
       }
     }
+    img.pin, img.shadow { width: 100%; height: 100%; }
     img.pin { z-index: 2; position: relative; }
     img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; filter: blur(1px); }
     &:hover {
