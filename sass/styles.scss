@@ -41,7 +41,7 @@ $display-heading-color: $dark-grey;
       width: 50%;
       + * { border-left: 1px solid $light-grey; }
       @media (max-width: 650px) {
-        display: block; width: 100%;
+        display: block; width: 100%; padding-left: 0; padding-right: 0;
         + * { border-left: none; border-top: 1px solid $light-grey; }
       }
     }
@@ -131,10 +131,14 @@ a {
 
 #header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
+  @media (max-width: 500px) { margin-top: 40px; }
   h1 {
     text-align: center;
     a, a:hover { border-bottom: none; }
-    img { width: 60%; max-width: 300px; }
+    img {
+      width: 60%; max-width: 300px;
+      @media (max-width: 500px) { width: 80%; }
+    }
   }
 }
 
@@ -148,6 +152,7 @@ a {
       display: block;
       width: 100%;
       text-align: center;
+      p.text { text-align: left; }
     }
     > :first-child { margin-top: 0; }
   }
@@ -284,8 +289,10 @@ section#project {
   @media (max-width: 500px) {
     .about, .photos { width: 100%; padding: 0; }
     .about {
-      position: relative; float: none;
-      h2 { text-align: center; }
+      position: relative; float: none; top: 0;
+      h2 { margin-top: 1em; }
+      h2, .next-project { text-align: center; }
+      .next-project { margin-bottom: 40px; }
     }
     .photos {
       margin: 20px 0;
@@ -317,6 +324,7 @@ section.about-us {
   }
   > .photos {
     padding-right: 30px;
+    @media (max-width: 500px) { padding-right: 0; }
     img {
       width: 100%; margin-top: 20px;
       &:first-child { margin-top: 0; }

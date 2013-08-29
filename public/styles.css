@@ -465,6 +465,8 @@ body > footer > div > * > * + * {
   body > footer > div > * > * {
     display: block;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   body > footer > div > * > * + * {
@@ -658,6 +660,12 @@ body > nav {
   line-height: 1;
 }
 
+@media (max-width: 500px) {
+  #header {
+    margin-top: 40px;
+  }
+}
+
 #header h1 {
   text-align: center;
 }
@@ -670,6 +678,12 @@ body > nav {
 #header h1 img {
   width: 60%;
   max-width: 300px;
+}
+
+@media (max-width: 500px) {
+  #header h1 img {
+    width: 80%;
+  }
 }
 
 .feature > aside,
@@ -686,6 +700,11 @@ body > nav {
     display: block;
     width: 100%;
     text-align: center;
+  }
+
+  .feature > aside p.text,
+  .feature > aside + * p.text {
+    text-align: left;
   }
 }
 
@@ -965,10 +984,20 @@ section#project .photos img.third {
   section#project .about {
     position: relative;
     float: none;
+    top: 0;
   }
 
   section#project .about h2 {
+    margin-top: 1em;
+  }
+
+  section#project .about h2,
+  section#project .about .next-project {
     text-align: center;
+  }
+
+  section#project .about .next-project {
+    margin-bottom: 40px;
   }
 
   section#project .photos {
@@ -1030,6 +1059,12 @@ section.about-us > .text {
 
 section.about-us > .photos {
   padding-right: 30px;
+}
+
+@media (max-width: 500px) {
+  section.about-us > .photos {
+    padding-right: 0;
+  }
 }
 
 section.about-us > .photos img {
