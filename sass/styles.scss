@@ -81,6 +81,7 @@ html {
 
 body {
   padding: 20px 40px;
+  @media (max-width: 500px) { padding: 10px 20px; }
 }
 
 * { box-sizing: border-box; }
@@ -97,6 +98,8 @@ form {
   input {
     font-size: 14px;
     border: 2px solid $input-border-color;
+    box-shadow: none;
+    -webkit-appearance: none;
     &:hover { border-color: $input-border-color-hover; }
     &:focus, &:active { border-color: $input-border-color-focus; }
   }
@@ -238,7 +241,10 @@ main section.home {
     a {
       @extend %transition; display: inline-block; border-bottom: none; position: relative;
       @extend %image-link;
-      img { width: $size - 10px; height: $size - 10px; margin: 5px; }
+      img {
+        width: $size - 10px; height: $size - 10px; margin: 5px;
+        @media (max-width: 500px) { width: 100%; height: auto; margin: 5px 0; }
+      }
     }
   }
 }
@@ -281,7 +287,10 @@ section#project {
   }
   .photos {
     width: 70%;
-    img { margin: 0; padding: 3px 5px; }
+    img {
+      margin: 0; padding: 3px 5px;
+      @media (max-width: 500px) { padding: 0; }
+    }
     img.full { width: 100%; }
     img.half { width: 50%; }
     img.third { width: 33.333333%; }
@@ -290,7 +299,7 @@ section#project {
     .about, .photos { width: 100%; padding: 0; }
     .about {
       position: relative; float: none; top: 0;
-      h2 { margin-top: 1em; }
+      h2 { padding-top: 1em; }
       h2, .next-project { text-align: center; }
       .next-project { margin-bottom: 40px; }
     }
@@ -340,6 +349,7 @@ section.about-us {
 
 .feature.mailing-list, .feature.connect {
   padding-bottom: 100px;
+  @media (max-width: 500px) { padding-bottom: 50px; }
 }
 
 .feature.mailing-list {

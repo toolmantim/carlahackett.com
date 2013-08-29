@@ -555,6 +555,12 @@ body {
   padding: 20px 40px;
 }
 
+@media (max-width: 500px) {
+  body {
+    padding: 10px 20px;
+  }
+}
+
 * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -582,6 +588,8 @@ form button:focus {
 form input {
   font-size: 14px;
   border: 2px solid #dddddd;
+  box-shadow: none;
+  -webkit-appearance: none;
 }
 
 form input:hover {
@@ -887,6 +895,14 @@ main section.home div.thumbnails a img {
   margin: 5px;
 }
 
+@media (max-width: 500px) {
+  main section.home div.thumbnails a img {
+    width: 100%;
+    height: auto;
+    margin: 5px 0;
+  }
+}
+
 section#project {
   width: 100%;
 }
@@ -962,6 +978,12 @@ section#project .photos img {
   padding: 3px 5px;
 }
 
+@media (max-width: 500px) {
+  section#project .photos img {
+    padding: 0;
+  }
+}
+
 section#project .photos img.full {
   width: 100%;
 }
@@ -988,7 +1010,7 @@ section#project .photos img.third {
   }
 
   section#project .about h2 {
-    margin-top: 1em;
+    padding-top: 1em;
   }
 
   section#project .about h2,
@@ -1089,6 +1111,13 @@ section.about-us > .text > *:first-child {
 .feature.mailing-list,
 .feature.connect {
   padding-bottom: 100px;
+}
+
+@media (max-width: 500px) {
+  .feature.mailing-list,
+  .feature.connect {
+    padding-bottom: 50px;
+  }
 }
 
 .feature.connect {
