@@ -37,10 +37,10 @@ $display-heading-color: $dark-grey;
     > * {
       display: table-cell;
       vertical-align: top;
-      padding: 50px;
+      padding: 50px 5%;
       width: 50%;
       + * { border-left: 1px solid $light-grey; }
-      @media (max-width: 650px) {
+      @media (max-width: 950px) {
         display: block; width: 100%; padding-left: 0; padding-right: 0;
         + * { border-left: none; border-top: 1px solid $light-grey; }
       }
@@ -81,7 +81,8 @@ html {
 
 body {
   padding: 20px 40px;
-  @media (max-width: 500px) { padding: 10px 20px; }
+  @media (max-width: 950px) { padding: 10px 20%; }
+  @media (max-width: 500px) { padding: 10px 6%; }
 }
 
 * { box-sizing: border-box; }
@@ -130,17 +131,17 @@ a {
   &:hover img { border-color: rgba(0,0,0,.3); opacity: .9; }
 }
 
-#header, main, body > footer, body > nav { max-width: 1300px; margin-left: auto; margin-right: auto; }
+#header, main, body > footer, body > nav { max-width: 1400px; margin-left: auto; margin-right: auto; }
 
 #header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
-  @media (max-width: 500px) { margin-top: 40px; }
+  @media (max-width: 950px) { margin-top: 40px; }
   h1 {
     text-align: center;
     a, a:hover { border-bottom: none; }
     img {
       width: 60%; max-width: 300px;
-      @media (max-width: 500px) { width: 80%; }
+      @media (max-width: 950px) { width: 80%; }
     }
   }
 }
@@ -151,7 +152,7 @@ a {
     width: 50%;
     vertical-align: top;
     text-align: left;
-    @media (max-width: 500px) {
+    @media (max-width: 950px) {
       display: block;
       width: 100%;
       text-align: center;
@@ -167,9 +168,8 @@ a {
 
   > aside.image {
     width: 100%; max-width: 200px; margin-right: 40px;
-    @media (max-width: 1100px) { max-width: 135px; }
-    @media (max-width: 650px) { max-width: 200px; }
-    @media (max-width: 500px) { margin: 0 auto 20px auto; }
+    @media (max-width: 1300px) { max-width: 135px; }
+    @media (max-width: 950px) { max-width: 175px; margin: 0 auto 20px auto; }
     > img, > .icon { width: 100%; border-radius: 50%; }
     > .icon {
       background-color: $light-grey; display: inline-block;
@@ -190,11 +190,11 @@ a {
 
 .feature.about aside {
   p { margin-bottom: 12px; }
-  p.title { font-family: $serif-sc; text-transform: lowercase; }
+  p.title { font-family: $serif-sc; text-transform: lowercase; line-height: 1.2; }
 }
 
 .feature.contact {
-  @media (max-width: 500px) { border-top: 1px solid $light-grey; }
+  @media (max-width: 950px) { border-top: 1px solid $light-grey; }
   a.icon {
     position: relative;
     background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
@@ -203,22 +203,26 @@ a {
       background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
       background-size: 100% 100%;
     }
-    @media (max-width: 1100px) {
+    @media (max-width: 1300px) {
       max-width: 135px; max-height: 135px;
       background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135.png) center center;
       @include high-dpi {
         background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135@2x.png) center center;
       }
     }
-    @media (max-width: 650px) {
-      max-width: 200px; max-height: 200px;
-      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+    @media (max-width: 950px) {
+      max-width: 175px; max-height: 175px;
+      background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175.png) center center;
       @include high-dpi {
-        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
+        background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175@2x.png) center center;
       }
     }
     img.pin, img.shadow { width: 100%; height: 100%; }
-    img.pin { z-index: 2; position: relative; }
+    img.pin {
+      z-index: 2; position: relative;
+      @media (max-width: 1300px) { max-width: 135px; max-height: 135px; }
+      @media (max-width: 950px) { max-width: 175px; max-height: 175px; }
+    }
     img.shadow { position: absolute; top: 0; left: 0; opacity: .2; z-index: 1; filter: blur(1px); }
     &:hover {
       border-bottom: none;
@@ -238,13 +242,13 @@ body > footer > div {
 
 main section.home {
   div.thumbnails {
-    $size: 300px; line-height: 0; margin: 20px auto; text-align: center; max-width: 1200px;
+    $size: 350px; line-height: 0; margin: 20px auto; text-align: center;
     a {
       @extend %transition; display: inline-block; border-bottom: none; position: relative;
       @extend %image-link;
       img {
         width: $size - 10px; height: $size - 10px; margin: 5px;
-        @media (max-width: 500px) { width: 100%; height: auto; margin: 5px 0; }
+        @media (max-width: 950px) { width: 100%; height: auto; margin: 5px 0; }
       }
     }
   }
@@ -257,7 +261,7 @@ section#project {
     display: block;
   }
   .about {
-    width: 30%;
+    width: 28%;
     float: right;
     padding-left: 0;
     vertical-align: top;
@@ -287,16 +291,16 @@ section#project {
     }
   }
   .photos {
-    width: 70%;
+    width: 72%;
     img {
       margin: 0; padding: 3px 5px;
-      @media (max-width: 500px) { padding: 0; }
+      @media (max-width: 950px) { padding: 0; }
     }
     img.full { width: 100%; }
     img.half { width: 50%; }
     img.third { width: 33.333333%; }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 950px) {
     .about, .photos { width: 100%; padding: 0; }
     .about {
       position: relative; float: none; top: 0;
@@ -330,11 +334,11 @@ section.about-us {
     display: inline-block;
     vertical-align: top;
     margin: 80px 0;
-    @media (max-width: 500px) { display: block; width: 100%; margin: 40px 0; padding: 0; }
+    @media (max-width: 950px) { display: block; width: 100%; margin: 40px 0; padding: 0; }
   }
   > .photos {
     padding-right: 30px;
-    @media (max-width: 500px) { padding-right: 0; }
+    @media (max-width: 950px) { padding-right: 0; }
     img {
       width: 100%; margin-top: 20px;
       &:first-child { margin-top: 0; }
@@ -350,7 +354,7 @@ section.about-us {
 
 .feature.mailing-list, .feature.connect {
   padding-bottom: 100px;
-  @media (max-width: 500px) { padding-bottom: 50px; }
+  @media (max-width: 950px) { padding-bottom: 50px; }
 }
 
 .feature.mailing-list {
@@ -359,12 +363,10 @@ section.about-us {
 .feature.connect {
   vertical-align: middle; text-align: center;
   .links {
-    a {
-      @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px;
-    }
-    @media (max-width: 500px) {
-      span { display: block; margin-bottom: 20px;
-        a { line-height: 1; }
+    span {
+      display: block; margin-bottom: 20px;
+      a {
+        @extend %small-caps; margin-left: 10px; margin-right: 14px; line-height: 50px; line-height: 1;
       }
     }
   }

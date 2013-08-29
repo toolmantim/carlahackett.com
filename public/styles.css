@@ -424,7 +424,7 @@ main section.home div.thumbnails a {
 form button,
 .feature > div.text h3,
 .feature h2,
-.feature.connect .links a {
+.feature.connect .links span a {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   font-weight: 500;
@@ -433,7 +433,7 @@ form button,
 form button i,
 .feature > div.text h3 i,
 .feature h2 i,
-.feature.connect .links a i {
+.feature.connect .links span a i {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   font-style: italic;
   font-size: 80%;
@@ -453,7 +453,7 @@ body > footer > div > * {
 body > footer > div > * > * {
   display: table-cell;
   vertical-align: top;
-  padding: 50px;
+  padding: 50px 5%;
   width: 50%;
 }
 
@@ -461,7 +461,7 @@ body > footer > div > * > * + * {
   border-left: 1px solid #dddddd;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 950px) {
   body > footer > div > * > * {
     display: block;
     width: 100%;
@@ -555,9 +555,15 @@ body {
   padding: 20px 40px;
 }
 
+@media (max-width: 950px) {
+  body {
+    padding: 10px 20%;
+  }
+}
+
 @media (max-width: 500px) {
   body {
-    padding: 10px 20px;
+    padding: 10px 6%;
   }
 }
 
@@ -657,7 +663,7 @@ main section.home div.thumbnails a:hover img,
 main,
 body > footer,
 body > nav {
-  max-width: 1300px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -668,7 +674,7 @@ body > nav {
   line-height: 1;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   #header {
     margin-top: 40px;
   }
@@ -688,7 +694,7 @@ body > nav {
   max-width: 300px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   #header h1 img {
     width: 80%;
   }
@@ -702,7 +708,7 @@ body > nav {
   text-align: left;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   .feature > aside,
   .feature > aside + * {
     display: block;
@@ -740,20 +746,15 @@ body > nav {
   margin-right: 40px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .feature > aside.image {
     max-width: 135px;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 950px) {
   .feature > aside.image {
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 500px) {
-  .feature > aside.image {
+    max-width: 175px;
     margin: 0 auto 20px auto;
   }
 }
@@ -800,9 +801,10 @@ body > nav {
 .feature.about aside p.title {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
+  line-height: 1.2;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   .feature.contact {
     border-top: 1px solid #dddddd;
   }
@@ -821,7 +823,7 @@ body > nav {
   }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1300px) {
   .feature.contact a.icon {
     max-width: 135px;
     max-height: 135px;
@@ -829,23 +831,23 @@ body > nav {
   }
 }
 
-@media (max-width: 1100px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1100px) and (min-resolution: 192dpi) {
+@media (max-width: 1300px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1300px) and (min-resolution: 192dpi) {
   .feature.contact a.icon {
     background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135@2x.png) center center;
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 950px) {
   .feature.contact a.icon {
-    max-width: 200px;
-    max-height: 200px;
-    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+    max-width: 175px;
+    max-height: 175px;
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175.png) center center;
   }
 }
 
-@media (max-width: 650px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 650px) and (min-resolution: 192dpi) {
+@media (max-width: 950px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 950px) and (min-resolution: 192dpi) {
   .feature.contact a.icon {
-    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
+    background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175@2x.png) center center;
   }
 }
 
@@ -858,6 +860,20 @@ body > nav {
 .feature.contact a.icon img.pin {
   z-index: 2;
   position: relative;
+}
+
+@media (max-width: 1300px) {
+  .feature.contact a.icon img.pin {
+    max-width: 135px;
+    max-height: 135px;
+  }
+}
+
+@media (max-width: 950px) {
+  .feature.contact a.icon img.pin {
+    max-width: 175px;
+    max-height: 175px;
+  }
 }
 
 .feature.contact a.icon img.shadow {
@@ -886,7 +902,6 @@ main section.home div.thumbnails {
   line-height: 0;
   margin: 20px auto;
   text-align: center;
-  max-width: 1200px;
 }
 
 main section.home div.thumbnails a {
@@ -896,12 +911,12 @@ main section.home div.thumbnails a {
 }
 
 main section.home div.thumbnails a img {
-  width: 290px;
-  height: 290px;
+  width: 340px;
+  height: 340px;
   margin: 5px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   main section.home div.thumbnails a img {
     width: 100%;
     height: auto;
@@ -920,7 +935,7 @@ section#project .photos {
 }
 
 section#project .about {
-  width: 30%;
+  width: 28%;
   float: right;
   padding-left: 0;
   vertical-align: top;
@@ -976,7 +991,7 @@ section#project .about .next-project a:hover span {
 }
 
 section#project .photos {
-  width: 70%;
+  width: 72%;
 }
 
 section#project .photos img {
@@ -984,7 +999,7 @@ section#project .photos img {
   padding: 3px 5px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   section#project .photos img {
     padding: 0;
   }
@@ -1002,7 +1017,7 @@ section#project .photos img.third {
   width: 33.333333%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   section#project .about,
   section#project .photos {
     width: 100%;
@@ -1075,7 +1090,7 @@ section.about-us > .text {
   margin: 80px 0;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   section.about-us > .photos,
   section.about-us > .text {
     display: block;
@@ -1089,7 +1104,7 @@ section.about-us > .photos {
   padding-right: 30px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   section.about-us > .photos {
     padding-right: 0;
   }
@@ -1119,7 +1134,7 @@ section.about-us > .text > *:first-child {
   padding-bottom: 100px;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 950px) {
   .feature.mailing-list,
   .feature.connect {
     padding-bottom: 50px;
@@ -1131,21 +1146,16 @@ section.about-us > .text > *:first-child {
   text-align: center;
 }
 
-.feature.connect .links a {
+.feature.connect .links span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.feature.connect .links span a {
   margin-left: 10px;
   margin-right: 14px;
   line-height: 50px;
-}
-
-@media (max-width: 500px) {
-  .feature.connect .links span {
-    display: block;
-    margin-bottom: 20px;
-  }
-
-  .feature.connect .links span a {
-    line-height: 1;
-  }
+  line-height: 1;
 }
 
 .feature.connect .instagrams {
