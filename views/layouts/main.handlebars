@@ -9,10 +9,10 @@
     <link href="//cloud.typography.com/7602852/668822/css/fonts.css" rel="stylesheet">
     <link href="/styles.css" rel="stylesheet">
     <meta property="og:title" content="{{{title}}}">
-    <meta property="og:description" content="Fine, hand-crafted lettering for creative companies and interesting individuals">
+    <meta property="og:description" content="{{#if description}}{{description}}{{else}}Fine, hand-crafted lettering for creative companies and interesting individuals{{/if}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{currentUrl}}">
-    <meta property="og:image" content="http://foxglovelettering.com/logo.jpg">
+    <meta property="og:image" content="{{#if image}}{{image}}{{else}}http://foxglovelettering.com{{/if}}">
     <meta property="og:site_name" content="Foxglove Lettering">
     {{#if preRender}}
       <link href="{{preRender}}" rel="prerender">

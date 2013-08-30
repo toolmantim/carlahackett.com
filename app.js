@@ -8,8 +8,8 @@ var express = require('express'),
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
-
-app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000")
+app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000");
+app.set('appHost', process.env["APP_HOST"] || "localhost:3000");
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
@@ -28,6 +28,10 @@ app.set('view engine', 'handlebars');
 app.use(express.compress());
 app.use(express.favicon());
 app.use(express.logger('dev'));
+app.use(function(req, res, next) {
+  res.locals.currentUrl = 'http://' + app.get('appHost') + req.originalUrl;
+  next();
+});
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -73,7 +77,7 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/projects', function(req, res) {
-  res.redirect(301, '/');
+  res.redirect(302, '/');
 });
 
 app.get('/projects/:slug', function(req, res) {
@@ -84,6 +88,8 @@ app.get('/projects/:slug', function(req, res) {
     title: project.about.name + ' | Foxglove Lettering',
     project: project,
     nextProject: next,
+    description: project.about.textWithoutLinks,
+    image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/photos/" + project.photos[0].filename,
     preRender: '/projects/' + next.slug
   });
 });
