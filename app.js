@@ -89,7 +89,7 @@ app.get('/projects/:slug', function(req, res) {
     project: project,
     nextProject: next,
     description: project.about.textWithoutLinks,
-    image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/photos/" + project.photos[0].filename,
+    image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/cover.jpg",
     preRender: '/projects/' + next.slug
   });
 });
