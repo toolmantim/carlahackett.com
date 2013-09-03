@@ -1,4 +1,4 @@
-cd `dirname $0`
+cd `dirname $0`/..
 
 echo "Deploying Foxglove site (Ctrl-C to abort)..."
 echo
