@@ -3,8 +3,7 @@ cd `dirname $0`
 echo "Deploying Foxglove site (Ctrl-C to abort)..."
 echo
 
-test -n "$(git status --porcelain)"
-if [ $? ] ; then
+if [ -n "$(git status --porcelain)" ]; then
   echo "Files changed:"
   git status --porcelain
 
@@ -12,7 +11,7 @@ if [ $? ] ; then
   echo "Describe the changes (e.g. 'Added a red button'): "
   read message
 
-  ga . -u && \
+  git add . -u && \
   git commit -m "$message"
 fi
 
