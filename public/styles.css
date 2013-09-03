@@ -904,6 +904,10 @@ main section.home div.thumbnails {
   text-align: center;
 }
 
+main section.home div.thumbnails.thumbnail-count-9 {
+  max-width: 1050px;
+}
+
 main section.home div.thumbnails a {
   display: inline-block;
   border-bottom: none;
