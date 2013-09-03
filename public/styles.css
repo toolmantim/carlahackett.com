@@ -910,6 +910,13 @@ main section.home div.thumbnails a {
   position: relative;
 }
 
+@media (max-width: 500px) {
+  main section.home div.thumbnails a {
+    display: block;
+    width: 100%;
+  }
+}
+
 main section.home div.thumbnails a img {
   width: 340px;
   height: 340px;

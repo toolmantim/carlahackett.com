@@ -246,6 +246,7 @@ main section.home {
     a {
       @extend %transition; display: inline-block; border-bottom: none; position: relative;
       @extend %image-link;
+      @media (max-width: 500px) { display: block; width: 100%; }
       img {
         width: $size - 10px; height: $size - 10px; margin: 5px;
         @media (max-width: 950px) { width: 100%; height: auto; margin: 5px 0; }
