@@ -12,7 +12,8 @@ if [ $? ] ; then
   echo "Describe the changes (e.g. 'Added a red button'): "
   read message
 
-  git commit -au -m "$message"
+  ga . -u && \
+  git commit -m "$message"
 fi
 
 git push && \
