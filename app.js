@@ -117,6 +117,13 @@ app.get('/projects/:slug/cover.jpg', function(req, res) {
   res.sendfile("cover.jpg", {root:project.dir, maxAge:app.get('staticMaxAge')});
 });
 
+app.get('/desktops', function(req, res) {
+  res.render('desktops', {
+    title: 'Desktops from Foxglove Lettering',
+    description: 'A selection of damn fine desktops, made just for you, with love.'
+  });
+});
+
 http.createServer(app).listen(app.get('port'), function(){
   var url = "http://localhost:" + app.get('port') + "/";
   console.log("Foxglove site running at " + url);

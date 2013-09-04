@@ -414,9 +414,10 @@ table {
 form input,
 form button,
 a,
-main section.home div.thumbnails a img,
 .feature.connect .instagrams a img,
-main section.home div.thumbnails a {
+section#home div.thumbnails a img,
+section#desktops .desktop a img,
+section#home div.thumbnails a {
   -webkit-transition: all 200ms;
   transition: all 200ms;
 }
@@ -541,7 +542,7 @@ body > footer > div > * > * + * {
 }
 
 section#project .about,
-section.about-us > .text {
+section#about-us > .text {
   position: -webkit-sticky;
   position: sticky;
 }
@@ -644,20 +645,24 @@ a:active {
   border-bottom-color: #999999;
 }
 
-main section.home div.thumbnails a,
 .feature.connect .instagrams a,
-main section.home div.thumbnails a:hover,
-.feature.connect .instagrams a:hover {
+section#home div.thumbnails a,
+section#desktops .desktop a,
+.feature.connect .instagrams a:hover,
+section#home div.thumbnails a:hover,
+section#desktops .desktop a:hover {
   border-bottom: none;
 }
 
-main section.home div.thumbnails a img,
-.feature.connect .instagrams a img {
+.feature.connect .instagrams a img,
+section#home div.thumbnails a img,
+section#desktops .desktop a img {
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-main section.home div.thumbnails a:hover img,
-.feature.connect .instagrams a:hover img {
+.feature.connect .instagrams a:hover img,
+section#home div.thumbnails a:hover img,
+section#desktops .desktop a:hover img {
   border-color: rgba(0, 0, 0, 0.3);
   opacity: .9;
 }
@@ -897,6 +902,44 @@ body > nav {
   border-bottom: none;
 }
 
+.feature.mailing-list,
+.feature.connect {
+  padding-bottom: 100px;
+}
+
+@media (max-width: 950px) {
+  .feature.mailing-list,
+  .feature.connect {
+    padding-bottom: 50px;
+  }
+}
+
+.feature.connect {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.feature.connect .links span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.feature.connect .links span a {
+  margin-left: 10px;
+  margin-right: 14px;
+  line-height: 50px;
+  line-height: 1;
+}
+
+.feature.connect .instagrams {
+  margin-top: 25px;
+}
+
+.feature.connect .instagrams a img {
+  width: 75px;
+  height: 75px;
+}
+
 body > footer > div > div:first-child > * {
   border-top: none;
 }
@@ -905,37 +948,37 @@ body > footer > div > div > * {
   border-top: 1px solid #dddddd;
 }
 
-main section.home div.thumbnails {
+section#home div.thumbnails {
   line-height: 0;
   margin: 20px auto;
   text-align: center;
 }
 
-main section.home div.thumbnails.thumbnail-count-9 {
+section#home div.thumbnails.thumbnail-count-9 {
   max-width: 1050px;
 }
 
-main section.home div.thumbnails a {
+section#home div.thumbnails a {
   display: inline-block;
   border-bottom: none;
   position: relative;
 }
 
 @media (max-width: 500px) {
-  main section.home div.thumbnails a {
+  section#home div.thumbnails a {
     display: block;
     width: 100%;
   }
 }
 
-main section.home div.thumbnails a img {
+section#home div.thumbnails a img {
   width: 340px;
   height: 340px;
   margin: 5px;
 }
 
 @media (max-width: 950px) {
-  main section.home div.thumbnails a img {
+  section#home div.thumbnails a img {
     width: 100%;
     height: auto;
     margin: 5px 0;
@@ -1082,24 +1125,24 @@ section#project .photos img.third {
   }
 }
 
-section.about-us h1,
-section.about-us h2 {
+section#about-us h1,
+section#about-us h2 {
   font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
   color: #222222;
   line-height: 1;
 }
 
-section.about-us h1 {
+section#about-us h1 {
   font-size: 48px;
 }
 
-section.about-us h2 {
+section#about-us h2 {
   font-size: 28px;
   margin-top: 1.5em;
 }
 
-section.about-us > .photos,
-section.about-us > .text {
+section#about-us > .photos,
+section#about-us > .text {
   width: 50%;
   padding-left: 50px;
   padding-right: 50px;
@@ -1109,8 +1152,8 @@ section.about-us > .text {
 }
 
 @media (max-width: 950px) {
-  section.about-us > .photos,
-  section.about-us > .text {
+  section#about-us > .photos,
+  section#about-us > .text {
     display: block;
     width: 100%;
     margin: 40px 0;
@@ -1118,69 +1161,87 @@ section.about-us > .text {
   }
 }
 
-section.about-us > .photos {
+section#about-us > .photos {
   padding-right: 30px;
 }
 
 @media (max-width: 950px) {
-  section.about-us > .photos {
+  section#about-us > .photos {
     padding-right: 0;
   }
 }
 
-section.about-us > .photos img {
+section#about-us > .photos img {
   width: 100%;
   margin-top: 20px;
 }
 
-section.about-us > .photos img:first-child {
+section#about-us > .photos img:first-child {
   margin-top: 0;
 }
 
-section.about-us > .text {
+section#about-us > .text {
   top: 40px;
   font-size: 15px;
   line-height: 1.8;
 }
 
-section.about-us > .text > *:first-child {
+section#about-us > .text > *:first-child {
   margin-top: 0;
 }
 
-.feature.mailing-list,
-.feature.connect {
-  padding-bottom: 100px;
+section#desktops {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-@media (max-width: 950px) {
-  .feature.mailing-list,
-  .feature.connect {
-    padding-bottom: 50px;
-  }
-}
-
-.feature.connect {
-  vertical-align: middle;
+section#desktops h1 {
+  margin: 2em 0 0 0;
+  font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
+  color: #222222;
+  line-height: 1.3;
   text-align: center;
 }
 
-.feature.connect .links span {
+@media (max-width: 500px) {
+  section#desktops h1 {
+    font-size: 28px;
+    margin-top: 1.5em;
+  }
+}
+
+section#desktops .desktops,
+section#desktops .desktop {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+section#desktops .desktop {
+  margin: 3em 0;
+}
+
+@media (max-width: 500px) {
+  section#desktops .desktop {
+    margin: 2em 0;
+  }
+}
+
+section#desktops .desktop h2 {
+  font-size: 24px;
+}
+
+@media (max-width: 500px) {
+  section#desktops .desktop h2 {
+    font-size: 21px;
+  }
+}
+
+section#desktops .desktop a {
   display: block;
-  margin-bottom: 20px;
 }
 
-.feature.connect .links span a {
-  margin-left: 10px;
-  margin-right: 14px;
-  line-height: 50px;
-  line-height: 1;
-}
-
-.feature.connect .instagrams {
-  margin-top: 25px;
-}
-
-.feature.connect .instagrams a img {
-  width: 75px;
-  height: 75px;
+section#desktops .desktop a img {
+  width: 100%;
 }
