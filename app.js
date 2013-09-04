@@ -36,6 +36,11 @@ app.use(function(req, res, next) {
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), {maxAge:app.get('staticMaxAge')}));
 
+express.static.mime.define({
+  // Use application/font-woff rather than application/x-font-woff
+  'application/font-woff': ['woff']
+});
+
 function findProject(slug) {
   return projects.all()
     .filter(function(project) {
