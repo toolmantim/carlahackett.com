@@ -70,6 +70,7 @@ $display-heading-color: $dark-grey;
 }
 %shadow-bounce {
   animation: .5s shadow-bounce both infinite;
+  /* Fix flicker on animation start in Chrome */
   -webkit-backface-visibility: hidden;
 }
 %sticky {

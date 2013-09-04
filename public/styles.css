@@ -536,6 +536,7 @@ body > footer > div > * > * + * {
 .feature.contact a.icon:hover img.shadow {
   -webkit-animation: .5s shadow-bounce both infinite;
   animation: .5s shadow-bounce both infinite;
+  /* Fix flicker on animation start in Chrome */
   -webkit-backface-visibility: hidden;
 }
 
