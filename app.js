@@ -10,6 +10,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000");
 app.set('appHost', process.env["APP_HOST"] || "localhost:3000");
+app.set('staticMaxAge', 3600 * 1000); // one hour
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
@@ -33,7 +34,7 @@ app.use(function(req, res, next) {
   next();
 });
 app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {maxAge:app.get('staticMaxAge')}));
 
 function findProject(slug) {
   return projects.all()
@@ -63,6 +64,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res) {
+  res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('home', {
     title: 'Foxglove Lettering',
     projects: projects.all(),
@@ -71,6 +73,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function(req, res) {
+  res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('about', {
     title: 'About Foxglove Lettering'
   });
@@ -81,6 +84,7 @@ app.get('/projects', function(req, res) {
 });
 
 app.get('/projects/:slug', function(req, res) {
+  res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   var project = findProject(req.params.slug);
   if (!project) return res.send(404);
   var next = nextProject(project);
@@ -99,13 +103,13 @@ app.get('/projects/:slug/photos/:filename', function(req, res) {
   if (!project) return res.send(404);
   var photo = findProjectPhoto(project, req.params.filename);
   if (!photo) return res.send(404);
-  res.sendfile(photo.filename, {root:project.dir});
+  res.sendfile(photo.filename, {root:project.dir, maxAge:app.get('staticMaxAge')});
 });
 
 app.get('/projects/:slug/cover.jpg', function(req, res) {
   var project = findProject(req.params.slug);
   if (!project) return res.send(404);
-  res.sendfile("cover.jpg", {root:project.dir});
+  res.sendfile("cover.jpg", {root:project.dir, maxAge:app.get('staticMaxAge')});
 });
 
 http.createServer(app).listen(app.get('port'), function(){
