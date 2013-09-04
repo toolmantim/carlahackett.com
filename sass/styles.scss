@@ -66,9 +66,11 @@ $display-heading-color: $dark-grey;
 
 %bounce {
   animation: .5s bounce both infinite;
+  -webkit-backface-visibility: hidden;
 }
 %shadow-bounce {
   animation: .5s shadow-bounce both infinite;
+  -webkit-backface-visibility: hidden;
 }
 %sticky {
   position: -webkit-sticky;
