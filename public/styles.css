@@ -813,6 +813,10 @@ body > nav {
   }
 }
 
+.feature.contact > aside.image {
+  max-height: 200px;
+}
+
 .feature.contact a.icon {
   position: relative;
   background: url(http://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
