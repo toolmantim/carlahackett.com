@@ -4,4 +4,4 @@ Janni is a specialty paper consultant in love with all things vintage. After see
 
 The concept for the boards was to add a friendly and nostalgic touch, whilst helping guests know when and where to grab a prop and a glass of bubbly.
 
-Photography by [Brook Holm](http://www.brookeholm.com.au/).
+Photography by [Brooke Holm](http://www.brookeholm.com.au/).
