@@ -54,7 +54,7 @@ function nextProject(project) {
     var prev = allProjects[i-1];
     if (prev && prev.slug == project.slug) return allProjects[i];
   }
-  return allProjects[0];
+  return null;
 }
 
 function findProjectPhoto(project, filename) {
@@ -99,7 +99,7 @@ app.get('/projects/:slug', function(req, res) {
     nextProject: next,
     description: project.about.textWithoutLinks,
     image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/cover.jpg",
-    preRender: '/projects/' + next.slug
+    preRender: next && ('/projects/' + next.slug)
   });
 });
 
