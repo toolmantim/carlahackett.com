@@ -13,7 +13,7 @@
     <meta property="og:description" content="{{#if description}}{{description}}{{else}}Foxglove is a boutique lettering and design studio from Melbourne Australia. We specialise in hand-crafted lettering for a range of creative clients including fashion, music, food, branding, retail, hospitality, magazines, books, conferences and weddings. If you’re a lover of beautiful type, we should chat{{/if}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{currentUrl}}">
-    <meta property="og:image" content="{{#if image}}{{image}}{{else}}{{imageUrl "/images/Logo@2x.png"}}{{/if}}">
+    <meta property="og:image" content="{{#if image}}{{image}}{{else}}{{imageUrl "/images/logo.png"}}{{/if}}">
     <meta property="og:site_name" content="Foxglove Lettering">
     {{#if preRender}}
       <link href="{{preRender}}" rel="prerender">
@@ -21,7 +21,7 @@
   </head>
   <body>
     <header id="header">
-      <h1>{{#unless noHeaderLink}}<a href="/">{{/unless}}<img src="{{imageUrl "/images/Logo@2x.png"}}" alt="Foxglove">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
+      <h1>{{#unless noHeaderLink}}<a href="/">{{/unless}}<img src="{{imageUrl "/images/logo.png"}}" alt="Foxglove">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
     </header>
     <hr>
     <main>{{{body}}}</main>

@@ -699,7 +699,7 @@ body > nav {
 
 #header h1 img {
   width: 60%;
-  max-width: 300px;
+  max-width: 400px;
 }
 
 @media (max-width: 950px) {
