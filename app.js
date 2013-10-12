@@ -71,7 +71,7 @@ if ('development' == app.get('env')) {
 app.get('/', function(req, res) {
   res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('home', {
-    title: 'Foxglove Lettering',
+    title: 'Carla Hackett',
     projects: projects.all(),
     noHeaderLink: true
   });
@@ -80,7 +80,7 @@ app.get('/', function(req, res) {
 app.get('/about', function(req, res) {
   res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('about', {
-    title: 'About Foxglove Lettering'
+    title: 'About Carla Hackett'
   });
 });
 
@@ -94,7 +94,7 @@ app.get('/projects/:slug', function(req, res) {
   if (!project) return res.send(404);
   var next = nextProject(project);
   res.render('project', {
-    title: project.about.name + ' | Foxglove Lettering',
+    title: project.about.name + ' | Carla Hackett Lettering',
     project: project,
     nextProject: next,
     description: project.about.textWithoutLinks,
@@ -119,14 +119,14 @@ app.get('/projects/:slug/cover.jpg', function(req, res) {
 
 app.get('/desktops', function(req, res) {
   res.render('desktops', {
-    title: 'Desktops from Foxglove Lettering',
+    title: 'Desktops from Carla Hackett Lettering',
     description: 'A selection of damn fine desktops, made just for you, with love.'
   });
 });
 
 http.createServer(app).listen(app.get('port'), function(){
   var url = "http://localhost:" + app.get('port') + "/";
-  console.log("Foxglove site running at " + url);
+  console.log("Carla Hackett site running at " + url);
   if (process.env["OPEN_BROWSER"])
     require('child_process').spawn('open', [url]);
 });
