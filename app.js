@@ -124,8 +124,19 @@ app.get('/desktops', function(req, res) {
   });
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  var url = "http://localhost:" + app.get('port') + "/";
+var server = http.createServer(app);
+
+server.on('error', function(err) {
+  if (err.errno === 'EADDRINUSE')
+    console.log("Website is already running at http://" + app.get('appHost') + '/');
+  else
+    console.log(err);
+
+  process.exit(1);
+});
+
+server.listen(app.get('port'), function(){
+  var url = 'http://' + app.get('appHost') + "/";
   console.log("Carla Hackett site running at " + url);
   if (process.env["OPEN_BROWSER"])
     require('child_process').spawn('open', [url]);
