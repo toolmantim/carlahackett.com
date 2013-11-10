@@ -16,6 +16,6 @@ if [ -n "$(git status --porcelain)" ]; then
 fi
 
 git push && \
-git push heroku HEAD:master && \
+git push heroku master && \
 echo && \
 echo "All done!"
