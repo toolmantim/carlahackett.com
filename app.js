@@ -124,6 +124,17 @@ app.get('/desktops', function(req, res) {
   });
 });
 
+app.get('/products', function(req, res) {
+  res.redirect(302, '/products/jingle-bells-card');
+});
+
+app.get('/products/jingle-bells-card', function(req, res) {
+  res.render('products/jingle-bells-card', {
+    title: 'Jingle Bells Batman Smells by Carla Hackett',
+    description: 'A hand-lettered, letterpressed Christmas card by Carla Hackett'
+  });
+});
+
 var server = http.createServer(app);
 
 server.on('error', function(err) {

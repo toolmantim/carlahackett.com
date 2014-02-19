@@ -1,6 +1,7 @@
+.DS_Store
 node_modules
 public/.allow-devtools-edit
 .dropbox
 npm-debug.log
 *.psd
-
+.sass-cache
