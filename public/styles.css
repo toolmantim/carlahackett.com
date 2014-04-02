@@ -699,7 +699,7 @@ body > nav {
 
 #header h1 img {
   width: 60%;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 @media (max-width: 950px) {
@@ -1188,6 +1188,10 @@ section#about-us > .text {
 
 section#about-us > .text > *:first-child {
   margin-top: 0;
+}
+
+section#about-us > .text ul {
+  padding-left: 1.3em;
 }
 
 section#desktops {
