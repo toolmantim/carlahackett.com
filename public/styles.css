@@ -531,7 +531,10 @@ body > footer > div > * > * + * {
 .feature.contact a.icon:hover img.pin {
   -webkit-animation: .5s bounce both infinite;
   animation: .5s bounce both infinite;
+  /* Fix flicker on animation start in Chrome */
   -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .feature.contact a.icon:hover img.shadow {
@@ -539,12 +542,8 @@ body > footer > div > * > * + * {
   animation: .5s shadow-bounce both infinite;
   /* Fix flicker on animation start in Chrome */
   -webkit-backface-visibility: hidden;
-}
-
-section#project .about,
-section#about-us > .text {
-  position: -webkit-sticky;
-  position: sticky;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 html {
@@ -954,7 +953,7 @@ section#home div.thumbnails {
   text-align: center;
 }
 
-section#home div.thumbnails.thumbnail-count-9 {
+section#home div.thumbnails.thumbnail-count-15 {
   max-width: 1050px;
 }
 
@@ -989,6 +988,10 @@ section#project {
   width: 100%;
 }
 
+section#project > div {
+  position: relative;
+}
+
 section#project .about,
 section#project .photos {
   padding: 50px;
@@ -1001,6 +1004,14 @@ section#project .about {
   padding-left: 0;
   vertical-align: top;
   top: -20px;
+}
+
+section#project .about.sticky {
+  left: 72%;
+}
+
+section#project .about.sticky_bottom {
+  top: inherit;
 }
 
 section#project .about h2 {

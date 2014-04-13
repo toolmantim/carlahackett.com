@@ -66,16 +66,28 @@ $display-heading-color: $dark-grey;
 
 %bounce {
   animation: .5s bounce both infinite;
-  -webkit-backface-visibility: hidden;
+  /* Fix flicker on animation start in Chrome */
+  backface-visibility: hidden;
 }
 %shadow-bounce {
   animation: .5s shadow-bounce both infinite;
   /* Fix flicker on animation start in Chrome */
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-%sticky {
-  position: -webkit-sticky;
-  position: sticky;
+
+.sticky_decoy.invisible {
+  display: none !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0px;
+}
+
+.sticky_bottom {
+  position: absolute;
+  bottom: 0px;
+  top: auto;
 }
 
 html {
@@ -289,6 +301,7 @@ section#home {
 
 section#project {
   width: 100%;
+  > div { position: relative; }
   .about, .photos {
     padding: 50px;
     display: block;
@@ -298,8 +311,9 @@ section#project {
     float: right;
     padding-left: 0;
     vertical-align: top;
-    @extend %sticky;
     top: -20px;
+    &.sticky { left: 72%; }
+    &.sticky_bottom { top: inherit; }
     h2 {
       font: 300 36px/1.1 $display-font;
       color: $display-heading-color;
@@ -377,7 +391,6 @@ section#about-us {
     }
   }
   > .text {
-    @extend %sticky;
     top: 40px;
     font-size: 15px; line-height: 1.8;
     > *:first-child { margin-top: 0; }
