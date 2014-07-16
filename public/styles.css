@@ -427,8 +427,7 @@ form button,
 .feature h2,
 .feature.connect .links span a,
 section.workshop .details h3,
-section.workshop .details .book button,
-section.workshop .details .book .left {
+section.workshop .details .book a.pin-payment-button {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   font-weight: 500;
@@ -439,8 +438,7 @@ form button i,
 .feature h2 i,
 .feature.connect .links span a i,
 section.workshop .details h3 i,
-section.workshop .details .book button i,
-section.workshop .details .book .left i {
+section.workshop .details .book a.pin-payment-button i {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   font-style: italic;
   font-size: 80%;
@@ -1282,8 +1280,9 @@ section#desktops .desktop a img {
   width: 100%;
 }
 
-section.workshop img {
-  max-width: 100%;
+section.workshop img,
+section.workshop video {
+  width: 100%;
 }
 
 section.workshop hr {
@@ -1294,8 +1293,14 @@ section.workshop h1 {
   margin-top: 20px;
 }
 
+section.workshop ul,
+section.workshop ol {
+  padding-left: 1.5em;
+}
+
 section.workshop .tagline h2 {
   font-size: 48px;
+  font-weight: normal;
   margin: 2em auto;
   line-height: 1.5;
   text-align: center;
@@ -1338,11 +1343,16 @@ section.workshop .details {
 
 section.workshop .details h3 {
   color: black;
-  margin-top: 2em;
+  margin-top: 30px;
 }
 
 section.workshop .details a.image {
   border: none;
+}
+
+section.workshop .details i.cost {
+  font-size: 150%;
+  font-style: normal;
 }
 
 section.workshop .details .sell {
@@ -1354,36 +1364,120 @@ section.workshop .details .teacher img.barbara-headshot {
   max-width: 170px;
   float: left;
   margin-right: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding: 5px;
   border: 1px solid #dddddd;
 }
 
 section.workshop .details .book {
+  margin: 20px 0 40px 0;
+  text-align: center;
+}
+
+section.workshop .details .book p {
   margin: 20px 0;
 }
 
-section.workshop .details .book button {
-  background: #ebebeb;
+section.workshop .details .book a.pin-payment-button {
+  display: block;
+  background: #e6e6e6;
   outline: none;
   border: none;
   border-radius: 5px;
   font-size: 125%;
+  font-weight: bold;
   padding: 15px 20px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  color: #333;
 }
 
-section.workshop .details .book button:hover {
-  background-color: #e6e6e6;
+section.workshop .details .book a.pin-payment-button:after {
+  float: right;
+  content: '>';
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-size: 200%;
+  line-height: 1;
 }
 
-section.workshop .details .book button:active {
-  background-color: #e0e0e0;
+section.workshop .details .book a.pin-payment-button i,
+section.workshop .details .book a.pin-payment-button span {
+  color: #333333;
+  font-weight: normal;
 }
 
-section.workshop .details .book .left {
-  margin-left: 15px;
+section.workshop .details .book a.pin-payment-button:hover {
+  background-color: #dbdbdb;
+}
+
+section.workshop .details .book a.pin-payment-button:active {
+  background-color: #cccccc;
+}
+
+@media (max-width: 600px) {
+  section.workshop .details .book a.pin-payment-button {
+    font-size: 100%;
+  }
 }
 
 section.workshop .details img.craft-cubed {
   max-width: 150px;
+}
+
+section#workshop-booking-complete {
+  text-align: center;
+  padding: 2em 0;
+}
+
+section#workshop-booking-complete h1 {
+  width: 60%;
+  margin: 75px auto;
+}
+
+@media (max-width: 900px) {
+  section#workshop-booking-complete h1 {
+    width: 70%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  section#workshop-booking-complete h1 {
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  section#workshop-booking-complete h1 {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+section#workshop-booking-complete h1 img {
+  max-width: 100%;
+}
+
+section#workshop-booking-complete p {
+  font-size: 125%;
+  margin: 1em auto;
+  max-width: 30em;
+}
+
+section#workshop-booking-complete p.woot {
+  font-size: 200%;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  section#workshop-booking-complete p {
+    font-size: 110%;
+  }
 }

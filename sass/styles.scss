@@ -424,12 +424,13 @@ section#desktops {
 }
 
 section.workshop {
-  img { max-width: 100%; }
+  img, video { width: 100%; }
   hr { margin: 20px 0; }
   h1 { margin-top: 20px; }
+  ul, ol { padding-left: 1.5em; }
   .tagline {
     h2 {
-      font-size: 48px; margin: 2em auto; line-height: 1.5; text-align: center; max-width: 21em;
+      font-size: 48px; font-weight: normal; margin: 2em auto; line-height: 1.5; text-align: center; max-width: 21em;
       @media (max-width: 600px) { font-size: 32px; margin-top: 1.5em; margin-bottom: 1.5em; }
     }
   }
@@ -449,31 +450,58 @@ section.workshop {
   .details {
     padding-left: 25px;
 
-    h3 { @extend %small-caps; color: black; margin-top: 2em; }
+    h3 { @extend %small-caps; color: black; margin-top: 30px; }
     a.image { border: none; }
+    i.cost { font-size: 150%; font-style: normal; }
 
     .sell { font-size: 140%; margin-top: 0; }
 
     .teacher {
-      img.barbara-headshot { max-width: 170px; float: left; margin-right: 20px; margin-bottom: 20px; padding: 5px; border: 1px solid $light-grey; }
+      img.barbara-headshot { max-width: 170px; float: left; margin-right: 20px; margin-bottom: 15px; padding: 5px; border: 1px solid $light-grey; }
     }
 
     .book {
-      margin: 20px 0;
-      button {
-        background: hsl(0,0,92%);
+      margin: 20px 0 40px 0;
+      text-align: center;
+      p { margin: 20px 0; }
+      a.pin-payment-button {
+        display: block;
+        background: hsl(0,0,90%);
         outline: none;
         border: none;
         border-radius: 5px;
         @extend %small-caps;
         font-size: 125%;
+        font-weight: bold;
         padding: 15px 20px;
-        &:hover { background-color: hsl(0,0,90%); }
-        &:active { background-color: hsl(0,0,88%); }
+        width: 100%;
+        text-align: left;
+        position: relative;
+        color: #333;
+        &:after { float: right; content: '>'; color: rgba(0,0,0,.2); font-weight: bold; font-size: 200%; line-height: 1; }
+        i, span { color: hsl(0,0,20%); font-weight: normal; }
+        &:hover { background-color: hsl(0,0,86%); }
+        &:active { background-color: hsl(0,0,80%); }
+        @media (max-width: 600px) { font-size: 100%; }
       }
-      .left { margin-left: 15px; @extend %small-caps; }
     }
 
     img.craft-cubed { max-width: 150px; }
+  }
+}
+
+section#workshop-booking-complete {
+  text-align: center; padding: 2em 0;
+  h1 {
+    width: 60%; margin: 75px auto;
+    @media (max-width: 900px) { width: 70%; margin-top: 60px; margin-bottom: 60px; }
+    @media (max-width: 700px) { width: 80%; margin-top: 50px; margin-bottom: 50px; }
+    @media (max-width: 600px) { width: 90%; margin-top: 20px; margin-bottom: 20px; }
+    img { max-width: 100%; }
+  }
+  p {
+    font-size: 125%; margin: 1em auto; max-width: 30em;
+    &.woot { font-size: 200%; font-style: italic; line-height: 1.4; }
+    @media (max-width: 600px) { font-size: 110%; }
   }
 }

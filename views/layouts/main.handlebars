@@ -18,6 +18,9 @@
     {{#if preRender}}
       <link href="{{preRender}}" rel="prerender">
     {{/if}}
+    {{#if pinJs}}
+      <script src="https://cdn.pin.net.au/pin.v2.js"></script>
+    {{/if}}
   </head>
   <body>
     {{#unless noHeader}}
@@ -65,6 +68,12 @@
           </section>
           <section class="feature connect">
             <div class="links">
+              {{#unless noProjectsLink}}
+              <span><a href="/">Projects</a></span>
+              {{/unless}}
+              {{#unless noWorkshopsLink}}
+              <span><a href="/workshops">Workshops</a></span>
+              {{/unless}}
               <span><a href="http://twitter.com/canarycarla">Twitter</a></span>
               <span><a href="http://instagram.com/carlahackett">Instagram</a></span>
               <span><a href="https://www.facebook.com/carla.hackett.lettering">Facebook</a></span>

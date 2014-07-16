@@ -73,7 +73,8 @@ app.get('/', function(req, res) {
   res.render('home', {
     title: 'Carla Hackett',
     projects: projects.all(),
-    noHeaderLink: true
+    noHeaderLink: true,
+    noProjectsLink: true
   });
 });
 
@@ -146,8 +147,19 @@ app.get('/workshops', function(req, res) {
 
 app.get('/workshops/brush-lettering', function(req, res) {
   res.render('workshops/brush-lettering', {
-    title: 'Brush Lettering Workshop',
-    description: 'A brush lettering workshop presented by Carla Hackett',
+    title: 'Brush Lettering Workshop with Barbara Enright',
+    description: 'Learn your brush strokes from one of Australia’s most experienced letterers',
+    image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
+    pinJs: true,
+    noHeader: true,
+    noWorkshopsLink: true
+  });
+});
+
+app.get('/workshops/booking-complete', function(req, res) {
+  res.render('workshops/booking-complete', {
+    title: 'Booking Complete',
+    description: 'Your booking for a Carla Hackett brush lettering workshop is complete',
     noHeader: true
   });
 });
