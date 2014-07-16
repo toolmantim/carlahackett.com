@@ -976,6 +976,10 @@ section#home div.thumbnails.thumbnail-count-9 {
   max-width: 1050px;
 }
 
+section#home div.thumbnails.thumbnail-count-15 {
+  max-width: 1050px;
+}
+
 section#home div.thumbnails a {
   display: inline-block;
   border-bottom: none;

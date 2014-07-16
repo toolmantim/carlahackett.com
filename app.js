@@ -69,10 +69,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', function(req, res) {
+  var allProjects = projects.all();
+
   res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('home', {
     title: 'Carla Hackett',
-    projects: projects.all(),
+    projects: allProjects,
+    projectCount: allProjects.length + 1,
     noHeaderLink: true,
     noProjectsLink: true
   });
