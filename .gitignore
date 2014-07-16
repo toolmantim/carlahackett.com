@@ -5,3 +5,4 @@ public/.allow-devtools-edit
 npm-debug.log
 *.psd
 .sass-cache
+to publish

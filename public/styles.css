@@ -1296,9 +1296,18 @@ section.workshop h1 {
 
 section.workshop .tagline h2 {
   font-size: 48px;
-  margin: 2em 0;
+  margin: 2em auto;
   line-height: 1.5;
   text-align: center;
+  max-width: 21em;
+}
+
+@media (max-width: 600px) {
+  section.workshop .tagline h2 {
+    font-size: 32px;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+  }
 }
 
 section.workshop .outer .photos,
@@ -1337,7 +1346,7 @@ section.workshop .details a.image {
 }
 
 section.workshop .details .sell {
-  font-size: 150%;
+  font-size: 140%;
   margin-top: 0;
 }
 

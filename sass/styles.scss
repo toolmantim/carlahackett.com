@@ -428,7 +428,10 @@ section.workshop {
   hr { margin: 20px 0; }
   h1 { margin-top: 20px; }
   .tagline {
-    h2 { font-size: 48px; margin: 2em 0; line-height: 1.5; text-align: center; }
+    h2 {
+      font-size: 48px; margin: 2em auto; line-height: 1.5; text-align: center; max-width: 21em;
+      @media (max-width: 600px) { font-size: 32px; margin-top: 1.5em; margin-bottom: 1.5em; }
+    }
   }
   .outer {
     .photos, .details {
@@ -449,7 +452,7 @@ section.workshop {
     h3 { @extend %small-caps; color: black; margin-top: 2em; }
     a.image { border: none; }
 
-    .sell { font-size: 150%; margin-top: 0; }
+    .sell { font-size: 140%; margin-top: 0; }
 
     .teacher {
       img.barbara-headshot { max-width: 170px; float: left; margin-right: 20px; margin-bottom: 20px; padding: 5px; border: 1px solid $light-grey; }
