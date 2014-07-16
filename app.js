@@ -151,7 +151,7 @@ app.get('/workshops', function(req, res) {
 app.get('/workshops/brush-lettering', function(req, res) {
   res.render('workshops/brush-lettering', {
     title: 'Brush Lettering Workshop with Barbara Enright',
-    description: 'Learn your brush strokes from one of Australia’s most experienced letterers',
+    description: 'Learn your brush strokes from one of Australia’s most experienced letterers in this 2 day workshop in Melbourne in August. Presented by Carla Hackett.',
     image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
     pinJs: true,
     noHeader: true,
