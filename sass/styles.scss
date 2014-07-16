@@ -422,3 +422,55 @@ section#desktops {
     }
   }
 }
+
+section.workshop {
+  img { max-width: 100%; }
+  hr { margin: 20px 0; }
+  h1 { margin-top: 20px; }
+  .tagline {
+    h2 { font-size: 48px; margin: 2em 0; line-height: 1.5; text-align: center; }
+  }
+  .outer {
+    .photos, .details {
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      @media (max-width: 950px) { display: block; width: 100%; padding: 0; }
+    }
+  }
+  .photos {
+    padding-right: 25px;
+  }
+  .details {
+    padding-left: 25px;
+
+    h3 { @extend %small-caps; color: black; margin-top: 2em; }
+    a.image { border: none; }
+
+    .sell { font-size: 150%; margin-top: 0; }
+
+    .teacher {
+      img.barbara-headshot { max-width: 170px; float: left; margin-right: 20px; margin-bottom: 20px; padding: 5px; border: 1px solid $light-grey; }
+    }
+
+    .book {
+      margin: 20px 0;
+      button {
+        background: hsl(0,0,92%);
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        @extend %small-caps;
+        font-size: 125%;
+        padding: 15px 20px;
+        &:hover { background-color: hsl(0,0,90%); }
+        &:active { background-color: hsl(0,0,88%); }
+      }
+      .left { margin-left: 15px; @extend %small-caps; }
+    }
+
+    img.craft-cubed { max-width: 150px; }
+  }
+}

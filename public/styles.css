@@ -425,7 +425,10 @@ section#home div.thumbnails a {
 form button,
 .feature > div.text h3,
 .feature h2,
-.feature.connect .links span a {
+.feature.connect .links span a,
+section.workshop .details h3,
+section.workshop .details .book button,
+section.workshop .details .book .left {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   font-weight: 500;
@@ -434,7 +437,10 @@ form button,
 form button i,
 .feature > div.text h3 i,
 .feature h2 i,
-.feature.connect .links span a i {
+.feature.connect .links span a i,
+section.workshop .details h3 i,
+section.workshop .details .book button i,
+section.workshop .details .book .left i {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   font-style: italic;
   font-size: 80%;
@@ -544,6 +550,21 @@ body > footer > div > * > * + * {
   -webkit-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.sticky_decoy.invisible {
+  display: none !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0px;
+}
+
+.sticky_bottom {
+  position: absolute;
+  bottom: 0px;
+  top: auto;
 }
 
 html {
@@ -953,7 +974,7 @@ section#home div.thumbnails {
   text-align: center;
 }
 
-section#home div.thumbnails.thumbnail-count-15 {
+section#home div.thumbnails.thumbnail-count-9 {
   max-width: 1050px;
 }
 
@@ -1259,4 +1280,101 @@ section#desktops .desktop a {
 
 section#desktops .desktop a img {
   width: 100%;
+}
+
+section.workshop img {
+  max-width: 100%;
+}
+
+section.workshop hr {
+  margin: 20px 0;
+}
+
+section.workshop h1 {
+  margin-top: 20px;
+}
+
+section.workshop .tagline h2 {
+  font-size: 48px;
+  margin: 2em 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+section.workshop .outer .photos,
+section.workshop .outer .details {
+  width: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 950px) {
+  section.workshop .outer .photos,
+  section.workshop .outer .details {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+}
+
+section.workshop .photos {
+  padding-right: 25px;
+}
+
+section.workshop .details {
+  padding-left: 25px;
+}
+
+section.workshop .details h3 {
+  color: black;
+  margin-top: 2em;
+}
+
+section.workshop .details a.image {
+  border: none;
+}
+
+section.workshop .details .sell {
+  font-size: 150%;
+  margin-top: 0;
+}
+
+section.workshop .details .teacher img.barbara-headshot {
+  max-width: 170px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border: 1px solid #dddddd;
+}
+
+section.workshop .details .book {
+  margin: 20px 0;
+}
+
+section.workshop .details .book button {
+  background: #ebebeb;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 125%;
+  padding: 15px 20px;
+}
+
+section.workshop .details .book button:hover {
+  background-color: #e6e6e6;
+}
+
+section.workshop .details .book button:active {
+  background-color: #e0e0e0;
+}
+
+section.workshop .details .book .left {
+  margin-left: 15px;
+}
+
+section.workshop .details img.craft-cubed {
+  max-width: 150px;
 }

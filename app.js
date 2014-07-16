@@ -135,6 +135,23 @@ app.get('/products/jingle-bells-card', function(req, res) {
   });
 });
 
+// Misspell
+app.get('/workshop', function(req, res) {
+  res.redirect(302, '/workshops');
+});
+
+app.get('/workshops', function(req, res) {
+  res.redirect(302, '/workshops/brush-lettering');
+});
+
+app.get('/workshops/brush-lettering', function(req, res) {
+  res.render('workshops/brush-lettering', {
+    title: 'Brush Lettering Workshop',
+    description: 'A brush lettering workshop presented by Carla Hackett',
+    noHeader: true
+  });
+});
+
 var server = http.createServer(app);
 
 server.on('error', function(err) {
