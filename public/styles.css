@@ -427,7 +427,7 @@ form button,
 .feature h2,
 .feature.connect .links span a,
 section.workshop .details h3,
-section.workshop .details .book a.pin-payment-button {
+section.workshop .details .book a.button {
   font-family: "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   font-weight: 500;
@@ -438,7 +438,7 @@ form button i,
 .feature h2 i,
 .feature.connect .links span a i,
 section.workshop .details h3 i,
-section.workshop .details .book a.pin-payment-button i {
+section.workshop .details .book a.button i {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   font-style: italic;
   font-size: 80%;
@@ -1343,6 +1343,7 @@ section.workshop .photos {
 
 section.workshop .details {
   padding-left: 25px;
+  line-height: 1.65;
 }
 
 section.workshop .details h3 {
@@ -1355,8 +1356,14 @@ section.workshop .details a.image {
 }
 
 section.workshop .details i.cost {
-  font-size: 150%;
+  font-size: 125%;
   font-style: normal;
+  color: #222222;
+}
+
+section.workshop .details li {
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 section.workshop .details .sell {
@@ -1365,12 +1372,20 @@ section.workshop .details .sell {
 }
 
 section.workshop .details .teacher img.barbara-headshot {
-  max-width: 170px;
+  max-width: 168px;
   float: left;
   margin-right: 20px;
   margin-bottom: 15px;
   padding: 5px;
   border: 1px solid #dddddd;
+}
+
+@media (max-width: 600px) {
+  section.workshop .details .teacher img.barbara-headshot {
+    float: none;
+    margin-left: auto;
+    margin-bottom: 0;
+  }
 }
 
 section.workshop .details .book {
@@ -1382,7 +1397,7 @@ section.workshop .details .book p {
   margin: 20px 0;
 }
 
-section.workshop .details .book a.pin-payment-button {
+section.workshop .details .book a.button {
   display: block;
   background: #e6e6e6;
   outline: none;
@@ -1397,7 +1412,7 @@ section.workshop .details .book a.pin-payment-button {
   color: #333;
 }
 
-section.workshop .details .book a.pin-payment-button:after {
+section.workshop .details .book a.button:after {
   float: right;
   content: '>';
   color: rgba(0, 0, 0, 0.2);
@@ -1406,22 +1421,44 @@ section.workshop .details .book a.pin-payment-button:after {
   line-height: 1;
 }
 
-section.workshop .details .book a.pin-payment-button i,
-section.workshop .details .book a.pin-payment-button span {
+section.workshop .details .book a.button i,
+section.workshop .details .book a.button .date {
   color: #333333;
   font-weight: normal;
 }
 
-section.workshop .details .book a.pin-payment-button:hover {
+section.workshop .details .book a.button:hover {
   background-color: #dbdbdb;
 }
 
-section.workshop .details .book a.pin-payment-button:active {
+section.workshop .details .book a.button:active {
   background-color: #cccccc;
 }
 
+section.workshop .details .book a.button.sold-out {
+  background: #ffd2c8;
+}
+
+section.workshop .details .book a.button.sold-out,
+section.workshop .details .book a.button.sold-out * {
+  color: #c85a50;
+}
+
+section.workshop .details .book a.button.sold-out .sold-out {
+  float: right;
+}
+
+section.workshop .details .book a.button.sold-out:after {
+  display: none;
+}
+
+section.workshop .details .book a.button.sold-out:hover,
+section.workshop .details .book a.button.sold-out:active {
+  background-color: #ffd2c8;
+}
+
 @media (max-width: 600px) {
-  section.workshop .details .book a.pin-payment-button {
+  section.workshop .details .book a.button {
     font-size: 100%;
   }
 }
