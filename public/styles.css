@@ -463,7 +463,7 @@ body > footer > div > * > * {
 }
 
 body > footer > div > * > * + * {
-  border-left: 1px solid #dddddd;
+  border-left: 1px solid #ddd;
 }
 
 @media (max-width: 950px) {
@@ -476,7 +476,7 @@ body > footer > div > * > * + * {
 
   body > footer > div > * > * + * {
     border-left: none;
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #ddd;
   }
 }
 
@@ -569,7 +569,7 @@ html {
   font-family: "Archer SSm A", "Archer SSm B", serif;
   line-height: 1.8;
   font-size: 15px;
-  color: #999999;
+  color: #999;
   text-rendering: optimizeLegibility;
 }
 
@@ -596,7 +596,7 @@ body {
 
 hr {
   border: none;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -615,7 +615,7 @@ form button:focus {
 
 form input {
   font-size: 14px;
-  border: 2px solid #dddddd;
+  border: 2px solid #ddd;
   box-shadow: none;
   -webkit-appearance: none;
 }
@@ -631,7 +631,7 @@ form input:active {
 
 form button {
   border: none;
-  background: #dddddd;
+  background: #ddd;
   color: #999;
   text-align: center;
   padding: 10px 0;
@@ -654,13 +654,13 @@ form > * + * {
 a {
   color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #ddd;
 }
 
 a:hover,
 a:active {
   color: #090909;
-  border-bottom-color: #999999;
+  border-bottom-color: #999;
 }
 
 .feature.connect .instagrams a,
@@ -792,7 +792,7 @@ body > nav {
 }
 
 .feature > aside.image > .icon {
-  background-color: #dddddd;
+  background-color: #ddd;
   display: inline-block;
 }
 
@@ -813,7 +813,7 @@ body > nav {
   text-align: center;
   font-size: 21px;
   margin-bottom: 50px;
-  color: #999999;
+  color: #999;
 }
 
 .feature h2 span {
@@ -832,7 +832,7 @@ body > nav {
 
 @media (max-width: 950px) {
   .feature.contact {
-    border-top: 1px solid #dddddd;
+    border-top: 1px solid #ddd;
   }
 }
 
@@ -963,7 +963,7 @@ body > footer > div > div:first-child > * {
 }
 
 body > footer > div > div > * {
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ddd;
 }
 
 section#home div.thumbnails {
@@ -1039,7 +1039,7 @@ section#project .about.sticky_bottom {
 
 section#project .about h2 {
   font: 300 36px/1.1 "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
-  color: #222222;
+  color: #222;
   margin: .25em 0 .5em;
   text-align: left;
   text-transform: none;
@@ -1070,19 +1070,19 @@ section#project .about .next-project a h3 {
   font: 100% normal "Archer SSm Smallcaps A", "Archer SSm Smallcaps B", serif;
   text-transform: lowercase;
   margin: 0;
-  color: #999999;
+  color: #999;
   margin-bottom: 5px;
   display: block;
 }
 
 section#project .about .next-project a span {
   font: 300 24px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
-  color: #222222;
-  border-bottom: 1px solid #dddddd;
+  color: #222;
+  border-bottom: 1px solid #ddd;
 }
 
 section#project .about .next-project a:hover span {
-  border-bottom-color: #999999;
+  border-bottom-color: #999;
 }
 
 section#project .photos {
@@ -1162,7 +1162,7 @@ section#project .photos img.third {
 section#about-us h1,
 section#about-us h2 {
   font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
-  color: #222222;
+  color: #222;
   line-height: 1;
 }
 
@@ -1237,7 +1237,7 @@ section#desktops {
 section#desktops h1 {
   margin: 2em 0 0 0;
   font: 300 36px "Sentinel A", "Sentinel B", "Helvetica Nueue", sans-serif;
-  color: #222222;
+  color: #222;
   line-height: 1.3;
   text-align: center;
 }
@@ -1358,7 +1358,7 @@ section.workshop .details a.image {
 section.workshop .details i.cost {
   font-size: 125%;
   font-style: normal;
-  color: #222222;
+  color: #222;
 }
 
 section.workshop .details li {
@@ -1377,7 +1377,7 @@ section.workshop .details .teacher img.barbara-headshot {
   margin-right: 20px;
   margin-bottom: 15px;
   padding: 5px;
-  border: 1px solid #dddddd;
+  border: 1px solid #ddd;
 }
 
 @media (max-width: 600px) {
@@ -1386,6 +1386,12 @@ section.workshop .details .teacher img.barbara-headshot {
     margin-left: auto;
     margin-bottom: 0;
   }
+}
+
+section.workshop .details .testimonials p {
+  font-style: italic;
+  border-left: 10px solid #f8f8f8;
+  padding-left: 20px;
 }
 
 section.workshop .details .book {
@@ -1522,3 +1528,5 @@ section#workshop-booking-complete p.woot {
     font-size: 110%;
   }
 }
+
+/*# sourceMappingURL=styles.css.map */

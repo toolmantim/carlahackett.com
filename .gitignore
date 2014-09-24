@@ -6,3 +6,4 @@ npm-debug.log
 *.psd
 .sass-cache
 to publish
+tmp/
