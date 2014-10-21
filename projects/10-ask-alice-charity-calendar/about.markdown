@@ -1,3 +1,0 @@
-# Ask Alice Charity Calendar
-
- This is the third Annual Charity Calendar Project from super cute and eco friendly stationery brand [Ask Alice](http://www.askalicestationery.au/). 100% of the profits for the 2014 calendar went to Melbourne's [Asylum Seeker Resource Centre](http://www.asrc.org.au/). Ask Alice hand picked a selection of incredible artists from all over the world and many different backgrounds to generously contribute to "Wish You Were Here" with a mind to illustrating their favourite city. Sass, the founder of Ask Alice and I, collaborated on the front cover of the calendar with Sass taking my lettering and adding her unique illustrations and colour palette.  
