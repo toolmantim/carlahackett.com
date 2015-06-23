@@ -10,7 +10,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000");
 app.set('appHost', process.env["APP_HOST"] || "localhost:3000");
-app.set('staticMaxAge', 3600 * 1000); // one hour
+app.set('staticMaxAge', 3600); // one hour
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
