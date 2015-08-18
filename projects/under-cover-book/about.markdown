@@ -1,2 +1,0 @@
-# Undercover Book Cover
-

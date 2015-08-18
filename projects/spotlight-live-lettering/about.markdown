@@ -1,1 +1,0 @@
-# Spotlight Live Lettering
