@@ -5,9 +5,9 @@ typograph-journal-vol-3
 summer-of-code
 tiffany-and-co
 i-heart-letterpress
-chalk-mural
 wired-magazine-japan
 ladies-of-letters-alphabet-city
+chalk-mural
 frankie-magazine-poster
 GQ-magazine-japan
 seduce-lettering
@@ -23,6 +23,7 @@ sample-coffee
 westfield-christmas
 wilson-&-frenchy-poster-art
 ask-alice-charity-calendar
+lisa-kate-logo
 the-sensory-lab
 offscreen-magazine
 good-on-ya-mum
