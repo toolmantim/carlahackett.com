@@ -372,7 +372,11 @@ section#about-us {
     color: $display-heading-color;
     line-height: 1;
   }
-  h1 { font-size: 48px; }
+  h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    img { width: 45%; }
+  }
   h2 { font-size: 28px; margin-top: 1.5em; }
   > .photos, > .text {
     width: 50%;
