@@ -480,7 +480,9 @@ section.workshop {
     .book {
       margin: 20px 0 40px 0;
       text-align: center;
-      p { margin: 20px 0; }
+      p { margin-top: 30px; margin-bottom: 10px; }
+      p.info { margin-top: 10px; text-align: left; }
+      p + p.info { margin-bottom: 30px; }
       a.button {
         display: block;
         background: hsl(0,0,90%);
