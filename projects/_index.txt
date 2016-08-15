@@ -1,3 +1,6 @@
+misc-lettering
+disney-toy-fair
+bijou-balmain
 bank-of-melbourne
 letterpress-the-shit-out-of-that-exhibition
 frankie-demotivational-poster
@@ -12,7 +15,6 @@ summer-of-code
 tiffany-and-co
 i-heart-letterpress
 wired-magazine-japan
-rest-and-vest
 ladies-of-letters-alphabet-city
 chalk-mural
 frankie-magazine-poster
@@ -20,17 +22,13 @@ GQ-magazine-japan
 seduce-lettering
 campaign-monitor
 css-conf-2015
-amazing-years
 eat-drink-paleo
 signpainters-christmas
-frankie-craft-book
 css-conf-2014
 vogue-girl-magazine-japan
 sample-coffee
 westfield-christmas
 wilson-&-frenchy-poster-art
-ask-alice-charity-calendar
 lisa-kate-logo
 the-sensory-lab
 offscreen-magazine
-good-on-ya-mum
