@@ -3,23 +3,33 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "0.10.x",
-    "npm": "1.2.x"
+    "node": "7.x",
+    "yarn": "0.23.x"
   },
   "scripts": {
-    "start": "node node_modules/supervisor/lib/cli-wrapper.js app.js"
+    "start": "supervisor app.js",
+    "build": "grunt",
+    "watch": "grunt watch"
   },
   "dependencies": {
-    "express": "3.x",
-    "express3-handlebars": "0.4.x",
-    "marked": "0.2.x"
+    "compression": "^x",
+    "errorhandler": "x",
+    "express": "x",
+    "express-handlebars": "x",
+    "marked": "x",
+    "morgan": "x"
   },
   "devDependencies": {
-    "supervisor": "0.5.x",
-    "grunt": "0.4.x",
-    "grunt-contrib-sass": "git://github.com/gruntjs/grunt-contrib-sass.git#e85ee70ccb8839867172b57ca1378293291f8037",
-    "grunt-contrib-watch": "0.3.x",
-    "matchdep": "0.1.x",
-    "grunt-autoprefixer": "~0.2.20130806"
+    "autoprefixer": "x",
+    "cssnano": "^3.10.0",
+    "grunt": "x",
+    "grunt-cli": "x",
+    "grunt-contrib-watch": "x",
+    "grunt-postcss": "x",
+    "grunt-sass": "x",
+    "load-grunt-tasks": "x",
+    "matchdep": "x",
+    "node-normalize-scss": "x",
+    "supervisor": "x"
   }
 }

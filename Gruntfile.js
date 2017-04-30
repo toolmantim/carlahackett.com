@@ -1,41 +1,48 @@
 module.exports = function(grunt) {
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
 
-    watch: {
-      files: ['sass/*.scss'],
-      tasks: 'css'
-    },
+  require('load-grunt-tasks')(grunt);
+
+  grunt.initConfig({
 
     sass: {
-      styles: {
+      dist: {
         options: {
-          require: './sass/sass_css_importer',
-          loadPath: 'components',
-          style: 'expanded'
+          includePaths: [require('node-normalize-scss').includePaths],
+          outputStyle: 'expanded'
         },
         files: {
-          'public/styles.css': 'sass/styles.scss'
+          'public/styles.css': 'sass/*.scss'
         }
       }
     },
 
-    autoprefixer: {
-      styles: {
-        options: {
-          browsers: ['last 2 versions']
-        },
-        files: {
-          'public/styles.css': 'public/styles.css'
-        }
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer'),
+          require('cssnano')
+        ]
+      },
+      dist: {
+        src: 'public/*.css'
       }
+    },
+
+    watch: {
+      scripts: {
+        files: ['sass/*'],
+        tasks: ['css'],
+        options: {
+          spawn: false
+        },
+      },
     },
 
   });
 
-  grunt.registerTask('css', ['sass', 'autoprefixer']);
+  grunt.registerTask('css', ['sass', 'postcss']);
 
-  grunt.registerTask('default', ['css', 'watch']);
+  grunt.registerTask('default', ['css']);
 
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 };
