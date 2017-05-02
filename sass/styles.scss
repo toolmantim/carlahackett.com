@@ -146,19 +146,28 @@ a {
   &:hover img { border-color: rgba(0,0,0,.3); opacity: .9; }
 }
 
-#header, main, body > footer, body > nav { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.top-header, main, body > footer, body > nav { max-width: 1400px; margin-left: auto; margin-right: auto; }
 
-#header {
+.top-header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
   @media (max-width: 950px) { margin-top: 40px; }
-  h1 {
-    text-align: center;
-    a, a:hover { border-bottom: none; }
-    img {
-      width: 60%; max-width: 300px;
-      @media (max-width: 950px) { width: 80%; }
-    }
+}
+
+.top-header--logo {
+  text-align: center;
+  a, a:hover { border-bottom: none; }
+  img {
+    width: 60%; max-width: 300px;
+    @media (max-width: 950px) { width: 80%; }
   }
+}
+
+.top-header--nav {
+  ol, li { list-style: none; padding: 0; margin: 0; }
+  ol { display: flex; justify-content: center; }
+  li { margin: 0 10px; }
+  a { border-bottom: none; }
+  img { height: 25px; }
 }
 
 .feature {
