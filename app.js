@@ -1,7 +1,10 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    exphbs = require('express3-handlebars'),
+    exphbs = require('express-handlebars'),
+    compression = require('compression'),
+    morgan = require('morgan'),
+    errorHandler = require('errorhandler'),
     marked = require('marked'),
     projects = require('./lib/projects');
 
@@ -26,14 +29,12 @@ app.engine('handlebars', exphbs({
 
 app.set('view engine', 'handlebars');
 
-app.use(express.compress());
-app.use(express.favicon());
-app.use(express.logger('dev'));
+app.use(morgan('combined'));
+app.use(compression());
 app.use(function(req, res, next) {
   res.locals.currentUrl = 'http://' + app.get('appHost') + req.originalUrl;
   next();
 });
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), {maxAge:app.get('staticMaxAge')}));
 
 express.static.mime.define({
@@ -65,7 +66,7 @@ function findProjectPhoto(project, filename) {
 }
 
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorHandler());
 }
 
 app.get('/', function(req, res) {
