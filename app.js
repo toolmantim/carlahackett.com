@@ -6,6 +6,7 @@ var express = require('express'),
     morgan = require('morgan'),
     errorHandler = require('errorhandler'),
     marked = require('marked'),
+    dedent = require('dentist').dedent,
     projects = require('./lib/projects');
 
 var app = express();
@@ -22,7 +23,7 @@ app.engine('handlebars', exphbs({
       return "http://" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
     },
     markdown: function(options) {
-      return marked(options.fn(this));
+      return marked(dedent(options.fn(this)));
     }
   }
 }));
@@ -146,7 +147,9 @@ app.get('/workshop', function(req, res) {
 });
 
 app.get('/workshops', function(req, res) {
-  res.redirect(302, '/workshops/brush-lettering');
+  res.render('workshops', {
+    title: 'Brush Lettering Workshops'
+  });
 });
 
 app.get('/workshops/brush-lettering', function(req, res) {
@@ -163,6 +166,12 @@ app.get('/workshops/booking-complete', function(req, res) {
     title: 'Booking Complete',
     description: 'Your booking for a Carla Hackett brush lettering workshop is complete',
     noHeader: true
+  });
+});
+
+app.get('/online-course', function(req, res) {
+  res.render('online-course', {
+    title: 'Online Brush Lettering Course'
   });
 });
 

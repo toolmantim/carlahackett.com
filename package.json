@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "compression": "^x",
+    "dentist": "^1.0.3",
     "errorhandler": "x",
     "express": "x",
     "express-handlebars": "x",
