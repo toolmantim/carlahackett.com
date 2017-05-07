@@ -155,9 +155,12 @@ a {
 
 .top-header--logo {
   text-align: center;
-  a, a:hover { border-bottom: none; }
+  a {
+    padding: 10px;
+    &, &:hover { border-bottom: none; }
+  }
   img {
-    width: 60%; max-width: 300px;
+    width: 60%; max-width: 250px;
     @media (max-width: 950px) { width: 80%; }
   }
 }
@@ -166,8 +169,12 @@ a {
   ol, li { list-style: none; padding: 0; margin: 0; }
   ol { display: flex; justify-content: center; }
   li { margin: 0 10px; }
-  a { border-bottom: none; }
-  img { height: 25px; }
+  a {
+    border-bottom: none;
+    &.active svg             { fill: #FF5E79; }
+    &:hover:not(.active) svg { fill: #19a7a9; }
+  }
+  svg { height: 25px; fill: black; }
 }
 
 .feature {
@@ -292,7 +299,7 @@ body > footer > div {
   > div > * { border-top: 1px solid $light-grey; }
 }
 
-section#home {
+section#home, section#workshops {
   div.thumbnails {
     $size: 350px; line-height: 0; margin: 20px auto; text-align: center;
     &.thumbnail-count-9 { max-width: $size * 3; }
@@ -305,6 +312,16 @@ section#home {
         width: $size - 10px; height: $size - 10px; margin: 5px;
         @media (max-width: 950px) { width: 100%; height: auto; margin: 5px 0; }
       }
+    }
+  }
+}
+
+section#workshops {
+  div.thumbnails {
+    a {
+      border-radius: 50%;
+      background-color: black;
+      &:hover { background-color: #19a7a9; }
     }
   }
 }
@@ -552,7 +569,6 @@ section.workshop {
         &.sold-out {
           background: rgb(255,210,200);
           &, * { color: rgb(200,90,80); }
-          .sold-out { float: right; }
           &:after { display: none; }
           &:hover, &:active { background-color: rgb(255,210,200); }
         }

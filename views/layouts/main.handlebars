@@ -25,13 +25,13 @@
   <body>
     {{#unless noHeader}}
     <header class="top-header">
-      <h1 class="top-header--logo">{{#unless noHeaderLink}}<a href="/">{{/unless}}<img src="{{imageUrl "/images/logo.svg"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
+      <h1 class="top-header--logo"><a href="/"><img src="{{imageUrl "/images/logo.svg"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
       <nav class="top-header--nav">
         <ol>
-          <li><a href="/"><img src="{{imageUrl "/images/header/portfolio.svg"}}" alt="Brush Lettering Work"></a></li>
-          <li><a href="/workshops"><img src="{{imageUrl "/images/header/workshops.svg"}}" alt="Brush Lettering Workshops"></a></li>
-          <li><a href="/online-course"><img src="{{imageUrl "/images/header/online-course.svg"}}" alt="Brush Lettering Online Course"></a></li>
-          <li><a href="/about"><img src="{{imageUrl "/images/header/about.svg"}}" alt="About"></a></li>
+          <li><a class="{{#if navPortfolio}}active{{/if}}" href="/">{{svg "../../public/images/header/portfolio.svg" role='img' aria-label='Portfolio'}}</a></li>
+          <li><a class="{{#if navWorkshops}}active{{/if}}" href="/workshops">{{svg "../../public/images/header/workshops.svg" role='img' aria-label='Workshops'}}</a></li>
+          <li><a class="{{#if navOnlineCourse}}active{{/if}}" href="/online-course">{{svg "../../public/images/header/online-course.svg" role='img' aria-label='Online Course'}}</a></li>
+          <li><a class="{{#if navAbout}}active{{/if}}" href="/about">{{svg "../../public/images/header/about.svg" role='img' aria-label='About'}}</a></li>
         </ol>
       </nav>
     </header>

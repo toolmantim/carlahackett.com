@@ -13,10 +13,12 @@
   },
   "dependencies": {
     "compression": "^x",
+    "currency-formatter": "^1.2.1",
     "dentist": "^1.0.3",
     "errorhandler": "x",
     "express": "x",
     "express-handlebars": "x",
+    "handlebars-helper-svg": "^2.0.1",
     "marked": "x",
     "morgan": "x"
   },

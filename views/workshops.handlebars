@@ -1,10 +1,6 @@
 <section id="workshops">
-  <div>
-    <p><a href="/workshops/brush-lettering">Melbourne May 2017</a></p>
-  </div>
-  <hr>
-  <div>
-    <p>(grid of workshops)</p>
+  <div class="thumbnails">
+    {{#workshops}}<a href="workshops/{{url}}"><img src="/images/workshops/cities/{{city}}.svg"></a>{{/workshops}}
   </div>
   <hr>
   <div class="more-info">
@@ -14,8 +10,8 @@
     <div class="text">
       {{#markdown}}
         ## Gift Vouchers
-        
-        Give the gift of lettering! We can create a customised PDF Gift Voucher for you to give to your recipient. Check our upcoming workshops for dates and send an email with your recipients name and which workshop they would like to attend to carla@carlahackett.com. 
+
+        Give the gift of lettering! We can create a customised PDF Gift Voucher for you to give to your recipient. Check our upcoming workshops for dates and send an email with your recipients name and which workshop they would like to attend to carla@carlahackett.com.
       {{/markdown}}
     </div>
   </div>
@@ -26,11 +22,9 @@
     <div class="text">
       {{#markdown}}
         ## New Workshop Announcements
-        
-        We’re running new workshops all the time!
 
         Sign up to my mailing list, follow me on  <a href="https://www.facebook.com/carla.hackett.lettering">Facebook</a>, or on <a href="https://instagram.com/carlahackett">Instagram</a>, to know when upcoming workhops are announced.
-        
+
         If you have more than 10 people, we might be able to visit your city! Send an email to carla@carlahackett.com.
       {{/markdown}}
     </div>
@@ -42,7 +36,7 @@
     <div class="text">
       {{#markdown}}
         ## In-house Lettering Workshops
-        
+
         Whether it's giving your design team some inspiring time away from their screens, or some new skills to use in their day to day work, we can provide fun, tailored half or full day workshops that can leave your team inspired. Send an email to carla@carlahackett.com to request an in-house group workshop anywhere in Australia.
       {{/markdown}}
     </div>
