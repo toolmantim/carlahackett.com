@@ -1,7 +1,5 @@
 <section id="workshops">
-  <div class="workshops__cities">
-    {{#workshops}}<a href="workshops/{{url}}" class="workshops__cities__city"><span class="workshops__cities__city__circle"><img src="/images/workshops/cities/{{city}}.svg" alt="{{city}}"><span class="workshops__cities__city__circle__words"><strong>{{date}}</strong><br>{{type}}</span></span></a>{{/workshops}}
-  </div>
+  {{> workshops/circles }}
   <hr>
   <div class="more-info">
     <div class="photos">

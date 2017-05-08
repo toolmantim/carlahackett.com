@@ -169,8 +169,13 @@ a {
 
 .top-header--nav {
   ol, li { list-style: none; padding: 0; margin: 0; }
-  ol { display: flex; justify-content: center; }
-  li { margin: 0 10px; }
+  ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  li { margin: 10px; }
   a {
     border-bottom: none;
     &.active svg             { fill: #FF5E79; }
@@ -318,24 +323,22 @@ section#home {
   }
 }
 
-section#workshops {
-  .workshops__cities {
-    display: flex;
-    flex-wrap: wrap;
-    align-self: center;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 0;
-  }
-  .workshops__cities__city {
-    border: none;
-    text-align: center;
-    margin: 20px 10px;
-    @extend %transition;
-    color: rgba(255,255,255,.75);
-    &:hover .workshops__cities__city__circle {
-      background-color: #19a7a9;
-    }
+.workshops__cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+a.workshops__cities__city {
+  border: none;
+  text-align: center;
+  margin: 20px 10px;
+  @extend %transition;
+  color: rgba(255,255,255,.75);
+  &:hover .workshops__cities__city__circle {
+    background-color: #19a7a9;
   }
   .workshops__cities__city__circle {
     $size: 350px;
@@ -350,10 +353,10 @@ section#workshops {
     justify-content: center;
     @extend %transition;
     img {
-      $size: 350px;
       border: none;
       margin: 0 50px;
       margin-bottom: 10px;
+      width: auto;
     }
     .workshops__cities__city__circle__words {
       font-size: 14px;
@@ -600,7 +603,8 @@ section.workshop {
       p + p.info { margin-bottom: 30px; }
       a.button {
         display: block;
-        background: hsl(0,0,90%);
+        background: #19a7a9;
+        color: #D9FFFF;
         outline: none;
         border: none;
         border-radius: 5px;
@@ -611,11 +615,9 @@ section.workshop {
         width: 100%;
         text-align: left;
         position: relative;
-        color: #333;
-        &:after { float: right; content: '>'; color: rgba(0,0,0,.2); font-weight: bold; font-size: 200%; line-height: 1; }
+        &:after { float: right; content: '>'; color: #D9FFFF; font-weight: bold; font-size: 200%; line-height: 1; }
         i, .date { color: hsl(0,0,20%); font-weight: normal; }
-        &:hover { background-color: hsl(0,0,86%); }
-        &:active { background-color: hsl(0,0,80%); }
+        &:hover, &:active { background-color: #0A8486; }
 
         &.sold-out {
           background: rgb(255,210,200);
@@ -628,6 +630,16 @@ section.workshop {
     }
 
     img.craft-cubed { max-width: 150px; }
+  }
+  .other-workshops {
+    border-top: 1px solid $light-grey;
+    padding-top: 40px;
+  }
+  .other-workshops h2 {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    margin-bottom: -20px;
   }
 }
 

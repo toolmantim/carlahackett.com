@@ -249,7 +249,8 @@ for (var i in workshops) {
         image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
         pinJs: true,
         navWorkshops: true,
-        workshop: workshop
+        workshop: workshop,
+        workshops: workshops.filter(function(w) { return w !== workshop })
       });
     });
   })(workshops[i]);

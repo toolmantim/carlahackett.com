@@ -19,7 +19,6 @@
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0709.jpg'}}" alt="Workbench" />
     </div><div class="details">
 
-      <h3></h3>
       <p class="sell">
         {{workshop.city}}, {{workshop.date}}<br>
         {{workshop.type}}<br>
@@ -38,7 +37,7 @@
           <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
         {{/if}}
       </div>
-     
+
       {{> workshops/details/two-day-workshop }}
 
       {{> workshops/teachers }}
@@ -55,6 +54,11 @@
         <li>These workshops require equipment and many hours of preparation. If you cancel up to 14 days before the course date, we can only refund you 50% of the fee to cover our costs, sorry! We’re absolutely happy to transfer it to someone else though, just let us know their contact details and we’ll switch the booking (but you’ll have to organise payment between yourselves). Email carla@carlahackett.com for refunds, cancellations or to confirm the transfer details of the new&nbsp;attendees.</li>
         <li>We hope it doesn’t happen, but if the workshop is unfortunately cancelled, you will be fully refunded for the cost of the workshop. The workshops must have a minimum of 4 participants before they can commence. Students will be notified via email of any cancellations.</li>
       </ol>
+    </div>
+
+    <div class="other-workshops">
+      <h2>Other Workshops</h2>
+      {{> workshops/circles }}
     </div>
   </div>
 </section>
