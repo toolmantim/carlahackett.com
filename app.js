@@ -13,6 +13,33 @@ var express = require('express'),
 
 var workshops = [
   {
+    url: 'newyork-august-2017',
+    city: 'New York',
+    type: 'Two Day Beginner Workshop',
+    date: '5th-6th August 2017',
+    price: 400,
+    currency: 'USD',
+    soldOut: false
+  },
+  {
+    url: 'london-august-2017',
+    city: 'London',
+    type: 'Two Day Beginner Workshop',
+    date: '12th-13th August 2017',
+    price: 360,
+    currency: 'GBP',
+    soldOut: false
+  },
+  {
+    url: 'london-showcard-august-2017',
+    city: 'London',
+    type: 'Two Day Showcard Workshop',
+    date: '19th-20th August 2017',
+    price: 360,
+    currency: 'GBP',
+    soldOut: false
+  },
+  {
     url: 'melbourne-may-2017',
     city: 'Melbourne',
     type: 'Two Day Beginner Workshop',
@@ -46,33 +73,6 @@ var workshops = [
     date: '8th-9th July 2017',
     price: 430,
     currency: 'AUD',
-    soldOut: false
-  },
-  {
-    url: 'newyork-august-2017',
-    city: 'New York',
-    type: 'Two Day Beginner Workshop',
-    date: '5th-6th August 2017',
-    price: 400,
-    currency: 'USD',
-    soldOut: false
-  },
-  {
-    url: 'london-august-2017',
-    city: 'London',
-    type: 'Two Day Beginner Workshop',
-    date: '12th-13th August 2017',
-    price: 360,
-    currency: 'GBP',
-    soldOut: false
-  },
-  {
-    url: 'london-showcard-august-2017',
-    city: 'London',
-    type: 'Two Day Showcard Workshop',
-    date: '19th-20th August 2017',
-    price: 360,
-    currency: 'GBP',
     soldOut: false
   }
 ];

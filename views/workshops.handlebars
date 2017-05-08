@@ -1,23 +1,27 @@
 <section id="workshops">
-  <div class="thumbnails">
-    {{#workshops}}<a href="workshops/{{url}}"><img src="/images/workshops/cities/{{city}}.svg"></a>{{/workshops}}
+  <div class="workshops__cities">
+    {{#workshops}}<a href="workshops/{{url}}" class="workshops__cities__city"><span class="workshops__cities__city__circle"><img src="/images/workshops/cities/{{city}}.svg" alt="{{city}}"><span class="workshops__cities__city__circle__words"><strong>{{date}}</strong><br>{{type}}</span></span></a>{{/workshops}}
   </div>
   <hr>
   <div class="more-info">
     <div class="photos">
-      Photo
+      <img src="{{imageUrl '/images/workshops/brush-lettering/gift-vouchers.jpg'}}">
     </div>
     <div class="text">
       {{#markdown}}
         ## Gift Vouchers
 
-        Give the gift of lettering! We can create a customised PDF Gift Voucher for you to give to your recipient. Check our upcoming workshops for dates and send an email with your recipients name and which workshop they would like to attend to carla@carlahackett.com.
+        We can create a customised PDF Gift Voucher for you to give to your recipient.
+
+        Check our upcoming workshops for dates and send an email with your recipients name and which workshop they would like to attend to carla@carlahackett.com.
+
+        Give the gift of lettering!
       {{/markdown}}
     </div>
   </div>
   <div class="more-info">
     <div class="photos">
-      Photo
+      <img src="{{imageUrl '/images/workshops/brush-lettering/new-workshops.JPG'}}">
     </div>
     <div class="text">
       {{#markdown}}
@@ -25,19 +29,23 @@
 
         Sign up to my mailing list, follow me on  <a href="https://www.facebook.com/carla.hackett.lettering">Facebook</a>, or on <a href="https://instagram.com/carlahackett">Instagram</a>, to know when upcoming workhops are announced.
 
-        If you have more than 10 people, we might be able to visit your city! Send an email to carla@carlahackett.com.
+        If you have more than 10 people, we might be able to visit your city!
+
+        Send an email to carla@carlahackett.com.
       {{/markdown}}
     </div>
   </div>
   <div class="more-info">
     <div class="photos">
-      Photo
+      <img src="{{imageUrl '/images/workshops/brush-lettering/in-house-lettering.jpg'}}">
     </div>
     <div class="text">
       {{#markdown}}
         ## In-house Lettering Workshops
 
-        Whether it's giving your design team some inspiring time away from their screens, or some new skills to use in their day to day work, we can provide fun, tailored half or full day workshops that can leave your team inspired. Send an email to carla@carlahackett.com to request an in-house group workshop anywhere in Australia.
+        Whether it's giving your design team some inspiring time away from their screens, or some new skills to use in their day to day work, we can provide fun, tailored half or full day workshops that can leave your team inspired.
+
+        Send an email to carla@carlahackett.com to request an in-house group workshop.
       {{/markdown}}
     </div>
   </div>

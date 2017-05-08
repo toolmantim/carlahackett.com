@@ -156,12 +156,14 @@ a {
 .top-header--logo {
   text-align: center;
   a {
+    display: inline-block;
     padding: 10px;
+    width: 60%; max-width: 250px;
+    @media (max-width: 950px) { width: 80%; }
     &, &:hover { border-bottom: none; }
   }
   img {
-    width: 60%; max-width: 250px;
-    @media (max-width: 950px) { width: 80%; }
+    width: 100%;
   }
 }
 
@@ -299,7 +301,7 @@ body > footer > div {
   > div > * { border-top: 1px solid $light-grey; }
 }
 
-section#home, section#workshops {
+section#home {
   div.thumbnails {
     $size: 350px; line-height: 0; margin: 20px auto; text-align: center;
     &.thumbnail-count-9 { max-width: $size * 3; }
@@ -317,11 +319,49 @@ section#home, section#workshops {
 }
 
 section#workshops {
-  div.thumbnails {
-    a {
-      border-radius: 50%;
-      background-color: black;
-      &:hover { background-color: #19a7a9; }
+  .workshops__cities {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  .workshops__cities__city {
+    border: none;
+    text-align: center;
+    margin: 20px 10px;
+    @extend %transition;
+    color: rgba(255,255,255,.75);
+    &:hover .workshops__cities__city__circle {
+      background-color: #19a7a9;
+    }
+  }
+  .workshops__cities__city__circle {
+    $size: 350px;
+    width: $size - 10px;
+    height: $size - 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @extend %transition;
+    img {
+      $size: 350px;
+      border: none;
+      margin: 0 50px;
+      margin-bottom: 10px;
+    }
+    .workshops__cities__city__circle__words {
+      font-size: 14px;
+      strong {
+        font-weight: normal;
+        color: white;
+        font-size: 18px;
+      }
     }
   }
 }
@@ -426,6 +466,17 @@ section#about-us, section#online-course {
     font-size: 15px; line-height: 1.8;
     > *:first-child { margin-top: 0; }
     ul { padding-left: 1.3em; }
+  }
+}
+
+section#online-course {
+  h1 a {
+    border: none;
+    img { width: 85%; }
+  }
+  .photos {
+    a { border: none; }
+    img { border: 1px solid $light-grey; padding: 10px; }
   }
 }
 
