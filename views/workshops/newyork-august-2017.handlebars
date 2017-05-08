@@ -1,0 +1,66 @@
+<section class="workshop" id="brush-lettering-workshop">
+  <h1><img src="{{imageUrl '/images/workshops/brush-lettering/title.jpg'}}" alt="Brush Lettering Workshop, {{workshop.city}} {{workshop.date}}" /></h1>
+  <hr>
+  <div class="tagline">
+    <h2>{{workshop.city}}, {{workshop.date}}</h2>
+  </div>
+  <hr>
+  <div class="outer"><div class="photos">
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4763.jpg'}}" alt="Group Shot" />
+      <video autoplay loop alt="Barbara doing brush lettering" poster="{{imageUrl '/videos/workshops/brush-lettering-barbara.png'}}">
+        <source src="{{imageUrl '/videos/workshops/brush-lettering-barbara-2.mp4'}}" type="video/mp4">
+        <source src="{{imageUrl '/videos/workshops/brush-lettering-barbara-2.ogv'}}" type="video/ogg">
+      </video>
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4961.jpg'}}" alt="Close up of lettering" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4695.jpg'}}" alt="Birds eye view" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4699.jpg'}}" alt="Carla teaching" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_8710.jpg'}}" alt="Learning the brush strokes" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_9103.jpg'}}" alt="Thankyou" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0709.jpg'}}" alt="Workbench" />
+    </div><div class="details">
+
+      <p class="sell">
+        {{workshop.city}}, {{workshop.date}}<br>
+        {{workshop.type}}<br>
+        Price: {{formatPrice workshop.price workshop.currency}}
+      </p>
+      <p>
+        <strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days<br>
+        <strong>Time:</strong> 10-4pm both days<br>
+        <strong>Location:</strong> 13 Little Gold St, Brunswick<br>
+        <strong>Strictly limted to 20 students</strong>
+
+       </p>
+
+      <div class="book">
+        {{#if workshop.soldOut}}
+          <p><a class="button sold-out"><span>&nbsp;</span><span class="sold-out">Sold Out</span></a></p>
+        {{else}}
+          <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
+        {{/if}}
+      </div>
+
+      {{> workshops/details/two-day-workshop }}
+
+      {{> workshops/teachers }}
+
+      <h3>Love from previous workshops</h3>
+      <div class="testimonials">
+        <p>"Thank you so much for the wonderful weekend of learning! I was thoroughly challenged, but pleased with my progress and really thankful to have the opportunity to learn from an experienced master like Barbara." – Ruby</p>
+        <p>"I have been doing a myriad of workshops this year all focusing on learning hand made type and last weekend was by far the most informative, inspiring and relaxed of these workshops. Limiting the class to a handful of people and having the workshop take place over two days were contributing factors as this allowed real one on one time with Barbara and gave us more time to focus on each style. The workshop didn't feel rushed which so many do. This created a real enthusiastic and excited energy around the table, a real positive learning space. Barbara's enthusiasm and skill were infectious which made you want to dive in and explore fully the new techniques being shared. I would highly recommend this workshop to anyone interested in broadening their skills and knowledge of brush type." – Tricia</p>
+        <p>"It gave me the inspiration to pick up a brush for the first time to build some lettering skills. The process in the class was one of little break throughs and then plateaus and even back slides! But through the roller coaster Barbara gave us calm assistance and an unfailing belief that we could attain the skills. Watching Barbara brush her letters was an absolute treat." – Mary</p>
+      </div>
+
+      <h3>Terms of Bookings</h3>
+      <ol>
+        <li>These workshops require equipment and many hours of preparation. If you cancel up to 14 days before the course date, we can only refund you 50% of the fee to cover our costs, sorry! We’re absolutely happy to transfer it to someone else though, just let us know their contact details and we’ll switch the booking (but you’ll have to organise payment between yourselves). Email carla@carlahackett.com for refunds, cancellations or to confirm the transfer details of the new&nbsp;attendees.</li>
+        <li>We hope it doesn’t happen, but if the workshop is unfortunately cancelled, you will be fully refunded for the cost of the workshop. The workshops must have a minimum of 4 participants before they can commence. Students will be notified via email of any cancellations.</li>
+      </ol>
+    </div>
+
+    <div class="other-workshops">
+      <h2>Other Workshops</h2>
+      {{> workshops/circles }}
+    </div>
+  </div>
+</section>

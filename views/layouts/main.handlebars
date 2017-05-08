@@ -24,8 +24,16 @@
   </head>
   <body>
     {{#unless noHeader}}
-    <header id="header">
-      <h1>{{#unless noHeaderLink}}<a href="/">{{/unless}}<img src="{{imageUrl "/images/logo.svg"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
+    <header class="top-header">
+      <h1 class="top-header--logo"><a href="/"><img src="{{imageUrl "/images/logo.svg"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
+      <nav class="top-header--nav">
+        <ol>
+          <li><a class="{{#if navPortfolio}}active{{/if}}" href="/">{{svg "../../public/images/header/portfolio.svg" role='img' aria-label='Portfolio'}}</a></li>
+          <li><a class="{{#if navWorkshops}}active{{/if}}" href="/workshops">{{svg "../../public/images/header/workshops.svg" role='img' aria-label='Workshops'}}</a></li>
+          <li><a class="{{#if navOnlineCourse}}active{{/if}}" href="/online-course">{{svg "../../public/images/header/online-course.svg" role='img' aria-label='Online Course'}}</a></li>
+          <li><a class="{{#if navAbout}}active{{/if}}" href="/about">{{svg "../../public/images/header/about.svg" role='img' aria-label='About'}}</a></li>
+        </ol>
+      </nav>
     </header>
     <hr>
     {{/unless}}
@@ -68,12 +76,7 @@
           </section>
           <section class="feature connect">
             <div class="links">
-              {{#unless noProjectsLink}}
-              <span><a href="/">Projects</a></span>
-              {{/unless}}
-              {{#unless noWorkshopsLink}}
-              <span><a href="/workshops">Workshops</a></span>
-              {{/unless}}
+              <span><a href="/">Home</a></span>
               <span><a href="http://twitter.com/canarycarla">Twitter</a></span>
               <span><a href="http://instagram.com/carlahackett">Instagram</a></span>
               <span><a href="https://www.facebook.com/carla.hackett.lettering">Facebook</a></span>

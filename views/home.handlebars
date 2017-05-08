@@ -1,5 +1,5 @@
 <section id="home">
   <div class="thumbnails thumbnail-count-{{projectCount}}">
-    <a href="https://learnbrushlettering.com/"><img src="{{imageUrl '/images/workshops/brush-lettering/cover.jpg?3'}}" alt="Learn Brush Lettering"></a><a href="/workshops/brush-lettering"><img src="{{imageUrl '/images/workshops/brush-lettering/brush-lettering-workshop.jpg?3'}}" alt="Brush Lettering Workshops"></a>{{#projects}}<a href="projects/{{slug}}#project"><img src="{{imageUrl '/projects/' slug '/cover.jpg'}}"></a>{{/projects}}
+    {{#projects}}<a href="projects/{{slug}}#project"><img src="{{imageUrl '/projects/' slug '/cover.jpg'}}"></a>{{/projects}}
   </div>
 </section>

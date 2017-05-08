@@ -4,9 +4,78 @@ var express = require('express'),
     exphbs = require('express-handlebars'),
     compression = require('compression'),
     morgan = require('morgan'),
+    currencyFormatter = require('currency-formatter'),
     errorHandler = require('errorhandler'),
     marked = require('marked'),
+    dedent = require('dentist').dedent,
+    handlebarsSvg = require('handlebars-helper-svg'),
     projects = require('./lib/projects');
+
+var workshops = [
+  {
+    url: 'newyork-august-2017',
+    city: 'New York',
+    type: 'Two Day Beginner Workshop',
+    date: '5th-6th August 2017',
+    price: 400,
+    currency: 'USD',
+    soldOut: false
+  },
+  {
+    url: 'london-august-2017',
+    city: 'London',
+    type: 'Two Day Beginner Workshop',
+    date: '12th-13th August 2017',
+    price: 360,
+    currency: 'GBP',
+    soldOut: false
+  },
+  {
+    url: 'london-showcard-august-2017',
+    city: 'London',
+    type: 'Two Day Showcard Workshop',
+    date: '19th-20th August 2017',
+    price: 360,
+    currency: 'GBP',
+    soldOut: false
+  },
+  {
+    url: 'melbourne-may-2017',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '20th-21st May 2017',
+    price: 430,
+    currency: 'AUD',
+    soldOut: true
+  },
+  {
+    url: 'brisbane-june-2017',
+    city: 'Brisbane',
+    type: 'Two Day Beginner Workshop',
+    date: '3rd-4th June 2017',
+    price: 430,
+    currency: 'AUD',
+    soldOut: false
+  },
+  {
+    url: 'melbourne-july-2017',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '1st July 2017',
+    price: 250,
+    currency: 'AUD',
+    soldOut: false
+  },
+  {
+    url: 'melbourne-showcard-july-2017',
+    city: 'Melbourne',
+    type: 'Two Day Showcard Workshop',
+    date: '8th-9th July 2017',
+    price: 430,
+    currency: 'AUD',
+    soldOut: false
+  }
+];
 
 var app = express();
 
@@ -22,7 +91,19 @@ app.engine('handlebars', exphbs({
       return "http://" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
     },
     markdown: function(options) {
-      return marked(options.fn(this));
+      return marked(dedent(options.fn(this)));
+    },
+    svg: handlebarsSvg,
+    encodeURIComponent: encodeURIComponent,
+    fullWorkshopDescription: function(workshop) {
+      return workshop.city + ' ' + workshop.type + ', ' + workshop.date;
+    },
+    formatPrice: function(amount, currency) {
+      var note = currency == 'USD' ? ' USD' : '';
+      return currencyFormatter.format(amount, {
+        code: currency,
+        precision: 0
+      }) + note;
     }
   }
 }));
@@ -77,15 +158,16 @@ app.get('/', function(req, res) {
     title: 'Carla Hackett',
     projects: allProjects,
     projectCount: allProjects.length + 1,
-    noHeaderLink: true,
-    noProjectsLink: true
+    noProjectsLink: true,
+    navPortfolio: true
   });
 });
 
 app.get('/about', function(req, res) {
   res.header('Cache-Control', 'public, max-age=300'); // 5 minutes
   res.render('about', {
-    title: 'About Carla Hackett'
+    title: 'About Carla Hackett',
+    navAbout: true
   });
 });
 
@@ -104,7 +186,8 @@ app.get('/projects/:slug', function(req, res) {
     nextProject: next,
     description: project.about.textWithoutLinks,
     image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/cover.jpg",
-    preRender: next && ('/projects/' + next.slug)
+    preRender: next && ('/projects/' + next.slug),
+    navPortfolio: true
   });
 });
 
@@ -146,25 +229,46 @@ app.get('/workshop', function(req, res) {
 });
 
 app.get('/workshops', function(req, res) {
-  res.redirect(302, '/workshops/brush-lettering');
+  res.render('workshops', {
+    title: 'Brush Lettering Workshops',
+    navWorkshops: true,
+    workshops: workshops
+  });
 });
 
 app.get('/workshops/brush-lettering', function(req, res) {
-  res.render('workshops/brush-lettering', {
-    title: 'Brush Lettering Workshop with Barbara Enright',
-    description: 'Learn your brush strokes from one of Australia’s most experienced letterers in this 2 day workshop in Melbourne in August. Presented by Carla Hackett.',
-    image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
-    pinJs: true,
-    noHeader: true,
-    noWorkshopsLink: true
-  });
+  res.redirect(302, '/workshops');
 });
+
+for (var i in workshops) {
+  (function(workshop) {
+    app.get('/workshops/' + workshop.url, function(req, res) {
+      res.render('workshops/' + workshop.url, {
+        title: 'Brush Lettering Workshop, ' + workshop.city + ' ' + workshop.date,
+        description: 'Learn your brush strokes from one of Australia’s most experienced letterers',
+        image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
+        pinJs: true,
+        navWorkshops: true,
+        workshop: workshop,
+        workshops: workshops.filter(function(w) { return w !== workshop })
+      });
+    });
+  })(workshops[i]);
+}
 
 app.get('/workshops/booking-complete', function(req, res) {
   res.render('workshops/booking-complete', {
     title: 'Booking Complete',
     description: 'Your booking for a Carla Hackett brush lettering workshop is complete',
-    noHeader: true
+    noHeader: true,
+    navWorkshops: true
+  });
+});
+
+app.get('/online-course', function(req, res) {
+  res.render('online-course', {
+    title: 'Online Brush Lettering Course',
+    navOnlineCourse: true
   });
 });
 

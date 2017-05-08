@@ -146,19 +146,42 @@ a {
   &:hover img { border-color: rgba(0,0,0,.3); opacity: .9; }
 }
 
-#header, main, body > footer, body > nav { max-width: 1400px; margin-left: auto; margin-right: auto; }
+.top-header, main, body > footer, body > nav { max-width: 1400px; margin-left: auto; margin-right: auto; }
 
-#header {
+.top-header {
   margin-top: 50px; margin-bottom: 50px; line-height: 1;
   @media (max-width: 950px) { margin-top: 40px; }
-  h1 {
-    text-align: center;
-    a, a:hover { border-bottom: none; }
-    img {
-      width: 60%; max-width: 300px;
-      @media (max-width: 950px) { width: 80%; }
-    }
+}
+
+.top-header--logo {
+  text-align: center;
+  a {
+    display: inline-block;
+    padding: 10px;
+    width: 60%; max-width: 250px;
+    @media (max-width: 950px) { width: 80%; }
+    &, &:hover { border-bottom: none; }
   }
+  img {
+    width: 100%;
+  }
+}
+
+.top-header--nav {
+  ol, li { list-style: none; padding: 0; margin: 0; }
+  ol {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  li { margin: 10px; }
+  a {
+    border-bottom: none;
+    &.active svg             { fill: #FF5E79; }
+    &:hover:not(.active) svg { fill: #19a7a9; }
+  }
+  svg { height: 25px; fill: black; }
 }
 
 .feature {
@@ -300,6 +323,52 @@ section#home {
   }
 }
 
+.workshops__cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+a.workshops__cities__city {
+  border: none;
+  text-align: center;
+  margin: 20px 10px;
+  @extend %transition;
+  color: rgba(255,255,255,.75);
+  &:hover .workshops__cities__city__circle {
+    background-color: #19a7a9;
+  }
+  .workshops__cities__city__circle {
+    $size: 350px;
+    width: $size - 10px;
+    height: $size - 10px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @extend %transition;
+    img {
+      border: none;
+      margin: 0 50px;
+      margin-bottom: 10px;
+      width: auto;
+    }
+    .workshops__cities__city__circle__words {
+      font-size: 14px;
+      strong {
+        font-weight: normal;
+        color: white;
+        font-size: 18px;
+      }
+    }
+  }
+}
+
 section#project {
   width: 100%;
   > div { position: relative; }
@@ -366,7 +435,7 @@ section#project {
   }
 }
 
-section#about-us {
+section#about-us, section#online-course {
   h1, h2 {
     font: 300 36px $display-font;
     color: $display-heading-color;
@@ -400,6 +469,55 @@ section#about-us {
     font-size: 15px; line-height: 1.8;
     > *:first-child { margin-top: 0; }
     ul { padding-left: 1.3em; }
+  }
+}
+
+section#online-course {
+  h1 a {
+    border: none;
+    img { width: 85%; }
+  }
+  .photos {
+    a { border: none; }
+    img { border: 1px solid $light-grey; padding: 10px; }
+  }
+}
+
+section#workshops {
+  h1, h2 {
+    font: 300 36px $display-font;
+    color: $display-heading-color;
+    line-height: 1;
+  }
+  h2 { font-size: 28px; margin-top: 1.5em; }
+  .more-info {
+    display: flex;
+    @media (max-width: 950px) { display: block; }
+    &:nth-child(odd) {
+      > .photos { order: 1; }
+      > .text { order: 0; }
+    }
+    > .photos, > .text {
+      flex: 1;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin: 80px 0;
+      @media (max-width: 950px) { margin: 40px 0; padding: 0; }
+    }
+    > .photos {
+      padding-right: 30px;
+      @media (max-width: 950px) { padding-right: 0; }
+      img {
+        width: 100%; margin-top: 20px;
+        &:first-child { margin-top: 0; }
+      }
+    }
+    > .text {
+      top: 40px;
+      font-size: 15px; line-height: 1.8;
+      > *:first-child { margin-top: 0; }
+      ul { padding-left: 1.3em; }
+    }
   }
 }
 
@@ -485,7 +603,8 @@ section.workshop {
       p + p.info { margin-bottom: 30px; }
       a.button {
         display: block;
-        background: hsl(0,0,90%);
+        background: #19a7a9;
+        color: #D9FFFF;
         outline: none;
         border: none;
         border-radius: 5px;
@@ -496,16 +615,13 @@ section.workshop {
         width: 100%;
         text-align: left;
         position: relative;
-        color: #333;
-        &:after { float: right; content: '>'; color: rgba(0,0,0,.2); font-weight: bold; font-size: 200%; line-height: 1; }
+        &:after { float: right; content: '>'; color: #D9FFFF; font-weight: bold; font-size: 200%; line-height: 1; }
         i, .date { color: hsl(0,0,20%); font-weight: normal; }
-        &:hover { background-color: hsl(0,0,86%); }
-        &:active { background-color: hsl(0,0,80%); }
+        &:hover, &:active { background-color: #0A8486; }
 
         &.sold-out {
           background: rgb(255,210,200);
           &, * { color: rgb(200,90,80); }
-          .sold-out { float: right; }
           &:after { display: none; }
           &:hover, &:active { background-color: rgb(255,210,200); }
         }
@@ -514,6 +630,16 @@ section.workshop {
     }
 
     img.craft-cubed { max-width: 150px; }
+  }
+  .other-workshops {
+    border-top: 1px solid $light-grey;
+    padding-top: 40px;
+  }
+  .other-workshops h2 {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+    margin-bottom: -20px;
   }
 }
 
