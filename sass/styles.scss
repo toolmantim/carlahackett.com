@@ -360,10 +360,18 @@ a.workshops__cities__city {
     }
     .workshops__cities__city__circle__words {
       font-size: 14px;
+      line-height: 1.5;
       strong {
         font-weight: normal;
         color: white;
         font-size: 18px;
+      }
+      .sold-out {
+        @extend %small-caps;
+        display: inline-block;
+        font-size: 18px;
+        margin-top: 10px;
+        border-top: 1px solid rgba(255,255,255,.5);
       }
     }
   }
