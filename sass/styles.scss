@@ -561,9 +561,31 @@ section.workshop {
   h1 { margin-top: 20px; }
   ul, ol { padding-left: 1.5em; }
   .tagline {
-    h2 {
-      font-size: 48px; font-weight: normal; margin: 2em auto; line-height: 1.5; text-align: center; max-width: 21em;
-      @media (max-width: 600px) { font-size: 32px; margin-top: 1.5em; margin-bottom: 1.5em; }
+    margin: 100px auto; line-height: 1.2; text-align: center; max-width: 21em;
+    @media (max-width: 600px) { margin: 50px auto; }
+    .city {
+      font-size: 48px;
+      font-weight: normal;
+      color: black;
+      margin: 0;
+      @media (max-width: 600px) { font-size: 32px; }
+    }
+    .date {
+      font-size: 18px;
+      margin: 25px 0 0 0;
+      color: $grey;
+      font-style: italic;
+      font-weight: normal;
+      display: inline-block;
+      border-top: 1px solid $light-grey;
+      padding-top: 15px;
+    }
+    .type {
+      font-size: 21px;
+      margin: 5px 0 0 0;
+      color: black;
+      font-style: italic;
+      font-weight: normal;
     }
   }
   .outer {
@@ -588,7 +610,21 @@ section.workshop {
     i.cost { font-size: 125%; font-style: normal; color: $dark-grey; }
     li { margin-top: 10px; margin-bottom: 5px; }
 
-    .sell { font-size: 140%; margin-top: 0; }
+    .sell {
+      color: black;
+      font-size: 21px;
+      line-height: 1.4;
+      margin-top: 0;
+      .minor { font-size: 16px; }
+      .price { font-size: 38px; }
+      .currency-note { font-size: 16px; font-style: italic; }
+    }
+
+    .top-details {
+      color: black;
+      strong { display: block; margin-top: 10px; }
+      p { margin: 5px 0; }
+    }
 
     .teacher {
       img.barbara-headshot {
@@ -629,6 +665,7 @@ section.workshop {
 
         &.sold-out {
           background: rgb(255,210,200);
+          text-align: center;
           &, * { color: rgb(200,90,80); }
           &:after { display: none; }
           &:hover, &:active { background-color: rgb(255,210,200); }

@@ -99,11 +99,21 @@ app.engine('handlebars', exphbs({
       return workshop.city + ' ' + workshop.type + ', ' + workshop.date;
     },
     formatPrice: function(amount, currency) {
-      var note = currency == 'USD' ? ' USD' : '';
       return currencyFormatter.format(amount, {
         code: currency,
         precision: 0
-      }) + note;
+      });
+    },
+    currencyNote: function(currency) {
+      return currency == 'USD' ? ' USD' : '';
+    },
+    concat: function() {
+      var args = [];
+      for (var index in arguments) {
+        var element = arguments[index];
+        typeof element === 'string' ? args.push(element) : null;
+      }
+      return args.join('');
     }
   }
 }));

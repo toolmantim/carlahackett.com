@@ -1,10 +1,8 @@
 <section class="workshop" id="brush-lettering-workshop">
-  <h1><img src="{{imageUrl '/images/workshops/brush-lettering/title.jpg'}}" alt="Brush Lettering Workshop, {{workshop.city}} {{workshop.date}}" /></h1>
+  {{> workshops/heading }}
+
   <hr>
-  <div class="tagline">
-    <h2>{{workshop.city}}, {{workshop.date}}</h2>
-  </div>
-  <hr>
+
   <div class="outer"><div class="photos">
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4763.jpg'}}" alt="Group Shot" />
       <video autoplay loop alt="Barbara doing brush lettering" poster="{{imageUrl '/videos/workshops/brush-lettering-barbara.png'}}">
@@ -19,23 +17,18 @@
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0709.jpg'}}" alt="Workbench" />
     </div><div class="details">
 
-      <h3></h3>
-      <p class="sell">
-        {{workshop.city}}, {{workshop.date}}<br>
-        {{workshop.type}}<br>
-        Price: {{formatPrice workshop.price workshop.currency}}
-      </p>
-      <p>
-        <strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days<br>
-        <strong>Time:</strong> 10-4pm both days<br>
-        <strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/3+Parkland+Blvd,+Brisbane+City+QLD+4000/@-27.4641357,153.0161593,17z/data=!3m1!4b1!4m5!3m4!1s0x6b915a003da805e7:0x2f99225f8df05e92!8m2!3d-27.4641357!4d153.018348">The Recreation Room, Level 1, Building 3, 3 Parkland Boulevard, Brisbane</a><br>
-        <strong>Strictly limted to 12 students</strong>
+      {{> workshops/price }}
 
-       </p>
+      <div class="top-details">
+        <p><strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days</p>
+        <p><strong>Time:</strong> 10-4pm both days</p>
+        <p><strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/3+Parkland+Blvd,+Brisbane+City+QLD+4000/@-27.4641357,153.0161593,17z/data=!3m1!4b1!4m5!3m4!1s0x6b915a003da805e7:0x2f99225f8df05e92!8m2!3d-27.4641357!4d153.018348">The Recreation Room, Level 1, Building 3, 3 Parkland Boulevard, Brisbane</a></p>
+        <p><strong>Availability:</strong> Strictly limited to 12 students</p>
+      </div>
 
       <div class="book">
         {{#if workshop.soldOut}}
-          <p><a class="button sold-out"><span>&nbsp;</span><span class="sold-out">Sold Out</span></a></p>
+          {{> workshops/sold-out }}
         {{else}}
           <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
         {{/if}}
