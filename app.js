@@ -60,7 +60,7 @@ var workshops = [
   {
     url: 'melbourne-july-2017',
     city: 'Melbourne',
-    type: 'Two Day Beginner Workshop',
+    type: 'One Day Beginner Workshop',
     date: '1st July 2017',
     price: 250,
     currency: 'AUD',
