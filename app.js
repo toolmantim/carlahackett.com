@@ -49,15 +49,6 @@ var workshops = [
     soldOut: true
   },
   {
-    url: 'brisbane-june-2017',
-    city: 'Brisbane',
-    type: 'Two Day Beginner Workshop',
-    date: '3rd-4th June 2017',
-    price: 430,
-    currency: 'AUD',
-    soldOut: false
-  },
-  {
     url: 'melbourne-july-2017',
     city: 'Melbourne',
     type: 'One Day Beginner Workshop',
