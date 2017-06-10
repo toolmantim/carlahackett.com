@@ -1,10 +1,8 @@
 <section class="workshop" id="brush-lettering-workshop">
-  <h1><img src="{{imageUrl '/images/workshops/brush-lettering/title.jpg'}}" alt="Brush Lettering Workshop, {{workshop.city}} {{workshop.date}}" /></h1>
+  {{> workshops/heading }}
+
   <hr>
-  <div class="tagline">
-    <h2>{{workshop.city}}, {{workshop.date}}</h2>
-  </div>
-  <hr>
+
   <div class="outer"><div class="photos">
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4927.jpg'}}" alt="Melbourne Showcard" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4801.jpg'}}" alt="Learning the brush strokes" />
@@ -14,22 +12,18 @@
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0893.jpg'}}" alt="Chicken Fillets" />
     </div><div class="details">
 
-      <p class="sell">
-        {{workshop.city}}, {{workshop.date}}<br>
-        {{workshop.type}}<br>
-        Price: {{formatPrice workshop.price workshop.currency}}
-      </p>
-      <p>
-        <strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days<br>
-        <strong>Time:</strong> 10-4pm both days<br>
-        <strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/13+Little+Gold+St,+Brunswick+VIC+3056/@-37.774713,144.9575443,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad65cca97ea50d3:0x207502ddbe1553f8!8m2!3d-37.774713!4d144.959733">13 Little Gold St, Brunswick</a><br>
-        <strong>Strictly limted to 10 students</strong>
+      {{> workshops/price }}
 
-       </p>
+      <div class="top-details">
+        <p><strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days</p>
+        <p><strong>Time:</strong> 10-4pm both days</p>
+        <p><strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/13+Little+Gold+St,+Brunswick+VIC+3056/@-37.774713,144.9575443,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad65cca97ea50d3:0x207502ddbe1553f8!8m2!3d-37.774713!4d144.959733">13 Little Gold St, Brunswick</a></p>
+        <p><strong>Availability:</strong> Strictly limited to 10 students</p>
+      </div>
 
       <div class="book">
         {{#if workshop.soldOut}}
-          <p><a class="button sold-out"><span>&nbsp;</span><span class="sold-out">Sold Out</span></a></p>
+          {{> workshops/sold-out }}
         {{else}}
           <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
         {{/if}}

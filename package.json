@@ -7,7 +7,7 @@
     "yarn": "0.23.x"
   },
   "scripts": {
-    "start": "supervisor app.js",
+    "start": "supervisor -i node_modules app.js",
     "build": "grunt",
     "watch": "grunt watch"
   },

@@ -19,7 +19,8 @@ var workshops = [
     date: '5th-6th August 2017',
     price: 400,
     currency: 'USD',
-    soldOut: false
+    soldOut: false,
+    includesFreeLearnBrushLettering: true
   },
   {
     url: 'london-august-2017',
@@ -28,7 +29,8 @@ var workshops = [
     date: '12th-13th August 2017',
     price: 360,
     currency: 'GBP',
-    soldOut: false
+    soldOut: false,
+    includesFreeLearnBrushLettering: true
   },
   {
     url: 'london-showcard-august-2017',
@@ -37,7 +39,8 @@ var workshops = [
     date: '19th-20th August 2017',
     price: 360,
     currency: 'GBP',
-    soldOut: false
+    soldOut: false,
+    includesFreeLearnBrushLettering: true
   },
   {
     url: 'melbourne-may-2017',
@@ -50,18 +53,9 @@ var workshops = [
     hidden: true
   },
   {
-    url: 'brisbane-june-2017',
-    city: 'Brisbane',
-    type: 'Two Day Beginner Workshop',
-    date: '3rd-4th June 2017',
-    price: 430,
-    currency: 'AUD',
-    soldOut: false
-  },
-  {
     url: 'melbourne-july-2017',
     city: 'Melbourne',
-    type: 'Two Day Beginner Workshop',
+    type: 'One Day Beginner Workshop',
     date: '1st July 2017',
     price: 250,
     currency: 'AUD',
@@ -100,11 +94,21 @@ app.engine('handlebars', exphbs({
       return workshop.city + ' ' + workshop.type + ', ' + workshop.date;
     },
     formatPrice: function(amount, currency) {
-      var note = currency == 'USD' ? ' USD' : '';
       return currencyFormatter.format(amount, {
         code: currency,
         precision: 0
-      }) + note;
+      });
+    },
+    currencyNote: function(currency) {
+      return currency == 'USD' ? ' USD' : '';
+    },
+    concat: function() {
+      var args = [];
+      for (var index in arguments) {
+        var element = arguments[index];
+        typeof element === 'string' ? args.push(element) : null;
+      }
+      return args.join('');
     }
   }
 }));
