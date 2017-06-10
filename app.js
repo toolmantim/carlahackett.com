@@ -72,6 +72,8 @@ var workshops = [
   }
 ];
 
+const nonHiddenWorkshops = workshops.filter(function(w) { return !w['hidden']; });
+
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -237,7 +239,7 @@ app.get('/workshops', function(req, res) {
   res.render('workshops', {
     title: 'Brush Lettering Workshops',
     navWorkshops: true,
-    workshops: workshops.filter(function(w) { return !w['hidden']; })
+    workshops: nonHiddenWorkshops
   });
 });
 
@@ -255,7 +257,7 @@ for (var i in workshops) {
         pinJs: true,
         navWorkshops: true,
         workshop: workshop,
-        workshops: workshops.filter(function(w) { return w !== workshop })
+        workshops: nonHiddenWorkshops.filter(function(w) { return w !== workshop })
       });
     });
   })(workshops[i]);
