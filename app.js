@@ -46,7 +46,8 @@ var workshops = [
     date: '20th-21st May 2017',
     price: 430,
     currency: 'AUD',
-    soldOut: true
+    soldOut: true,
+    hidden: true
   },
   {
     url: 'brisbane-june-2017',
@@ -232,7 +233,7 @@ app.get('/workshops', function(req, res) {
   res.render('workshops', {
     title: 'Brush Lettering Workshops',
     navWorkshops: true,
-    workshops: workshops
+    workshops: workshops.filter(function(w) { return !w['hidden']; })
   });
 });
 
