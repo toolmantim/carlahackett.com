@@ -235,16 +235,27 @@ app.get('/workshop', function(req, res) {
   res.redirect(302, '/workshops');
 });
 
+// Original page (with lots of SEO)
+app.get('/workshops/brush-lettering', function(req, res) {
+  res.redirect(302, '/workshops');
+});
+
+// Marketing links
+app.get('/ny', function(req, res) {
+  res.redirect(302, '/workshops/newyork-august-2017');
+});
+app.get('/nyc', function(req, res) {
+  res.redirect(302, '/workshops/newyork-august-2017');
+});
+
+// Workshop pages
+
 app.get('/workshops', function(req, res) {
   res.render('workshops', {
     title: 'Brush Lettering Workshops',
     navWorkshops: true,
     workshops: nonHiddenWorkshops
   });
-});
-
-app.get('/workshops/brush-lettering', function(req, res) {
-  res.redirect(302, '/workshops');
 });
 
 for (var i in workshops) {
