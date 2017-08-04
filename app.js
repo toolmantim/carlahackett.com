@@ -19,7 +19,7 @@ var workshops = [
     date: '5th-6th August 2017',
     price: 400,
     currency: 'USD',
-    soldOut: false,
+    soldOut: true,
     includesFreeLearnBrushLettering: true
   },
   {
@@ -29,7 +29,7 @@ var workshops = [
     date: '12th-13th August 2017',
     price: 360,
     currency: 'GBP',
-    soldOut: false,
+    soldOut: true,
     includesFreeLearnBrushLettering: true
   },
   {
