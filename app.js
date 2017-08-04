@@ -59,7 +59,8 @@ var workshops = [
     date: '1st July 2017',
     price: 250,
     currency: 'AUD',
-    soldOut: false
+    soldOut: false,
+    hidden: true
   },
   {
     url: 'melbourne-showcard-july-2017',
@@ -68,7 +69,8 @@ var workshops = [
     date: '8th-9th July 2017',
     price: 430,
     currency: 'AUD',
-    soldOut: false
+    soldOut: false,
+    hidden: true
   }
 ];
 
