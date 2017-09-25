@@ -20,7 +20,8 @@ var workshops = [
     price: 400,
     currency: 'USD',
     soldOut: true,
-    includesFreeLearnBrushLettering: true
+    includesFreeLearnBrushLettering: true,
+    hidden: true
   },
   {
     url: 'london-august-2017',
@@ -30,7 +31,8 @@ var workshops = [
     price: 360,
     currency: 'GBP',
     soldOut: true,
-    includesFreeLearnBrushLettering: true
+    includesFreeLearnBrushLettering: true,
+    hidden: true
   },
   {
     url: 'london-showcard-august-2017',
@@ -39,8 +41,9 @@ var workshops = [
     date: '19th-20th August 2017',
     price: 360,
     currency: 'GBP',
-    soldOut: false,
-    includesFreeLearnBrushLettering: true
+    soldOut: true,
+    includesFreeLearnBrushLettering: true,
+    hidden: true
   },
   {
     url: 'melbourne-may-2017',
@@ -59,7 +62,7 @@ var workshops = [
     date: '1st July 2017',
     price: 250,
     currency: 'AUD',
-    soldOut: false,
+    soldOut: true,
     hidden: true
   },
   {
@@ -69,8 +72,18 @@ var workshops = [
     date: '8th-9th July 2017',
     price: 430,
     currency: 'AUD',
-    soldOut: false,
+    soldOut: true,
     hidden: true
+  },
+  {
+    url: 'melbourne-nov-2017',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '4th-5th Nov 2017',
+    price: 550,
+    currency: 'AUD',
+    soldOut: false,
+    hidden: false
   }
 ];
 

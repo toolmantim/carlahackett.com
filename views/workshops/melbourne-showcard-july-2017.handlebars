@@ -47,9 +47,11 @@
       </ol>
     </div>
 
-    <div class="other-workshops">
-      <h2>Other Workshops</h2>
-      {{> workshops/circles }}
-    </div>
+    {{#if workshops}}
+      <div class="other-workshops">
+        <h2>Other Workshops</h2>
+        {{> workshops/circles }}
+      </div>
+    {{/if}}
   </div>
 </section>

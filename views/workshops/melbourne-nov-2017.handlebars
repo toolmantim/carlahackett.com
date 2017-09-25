@@ -9,29 +9,28 @@
         <source src="{{imageUrl '/videos/workshops/brush-lettering-barbara-2.mp4'}}" type="video/mp4">
         <source src="{{imageUrl '/videos/workshops/brush-lettering-barbara-2.ogv'}}" type="video/ogg">
       </video>
-      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0876.jpg'}}" alt="New York" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4961.jpg'}}" alt="Close up of lettering" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4695.jpg'}}" alt="Birds eye view" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_4699.jpg'}}" alt="Carla teaching" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_8710.jpg'}}" alt="Learning the brush strokes" />
+      <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_9103.jpg'}}" alt="Thankyou" />
       <img src="{{imageUrl '/images/workshops/brush-lettering/IMG_0709.jpg'}}" alt="Workbench" />
     </div><div class="details">
 
       {{> workshops/price }}
 
       <div class="top-details">
-        <p><strong>Includes:</strong> Two full days of expert hands-on tuition, your own professional lettering brush, a folder (with your name painted by Barbara) containing practice sheets covering four different lettering styles, free access to learnbrushlettering.com (worth US$299), and lunch on both days.</p>
+        <p><strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days</p>
         <p><strong>Time:</strong> 10-4pm both days</p>
-        <p><strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/Craftsman+Ave/@40.6712574,-73.9960438,17z/data=!3m1!4b1!4m5!3m4!1s0x89c25afa6d1c421d:0x492fac7becd6f8ce!8m2!3d40.6712574!4d-73.9938551">Craftsman Avenue, 117B, 11th Street, 11215 Brooklyn, NY</a></p>
-        <p><strong>Availability:</strong> Strictly limited to 15 students</p>
-        <p><strong>Hosted by:</strong> <a href="http://craftsmanave.com/v2/product/brush-lettering/">Craftsman Ave</a></p>
+        <p><strong>Location:</strong> <a target="_blank" href="https://www.google.com.au/maps/place/13+Little+Gold+St,+Brunswick+VIC+3056/@-37.774713,144.9575443,17z/data=!3m1!4b1!4m5!3m4!1s0x6ad65cca97ea50d3:0x207502ddbe1553f8!8m2!3d-37.774713!4d144.959733">13 Little Gold St, Brunswick</a></p>
+        <p><strong>Availability:</strong> Strictly limited to 12 students</p>
       </div>
 
       <div class="book">
         {{#if workshop.soldOut}}
           {{> workshops/sold-out }}
         {{else}}
-          <p><a href="http://craftsmanave.com/v2/product/brush-lettering/" class="button">Book Now</a>
+          <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
         {{/if}}
       </div>
 
