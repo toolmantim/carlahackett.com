@@ -13,7 +13,7 @@
     <meta property="og:description" content="{{#if description}}{{description}}{{else}}Carla is a Melbourne-based letterer who works with a range of clients in creative industries, including fashion, music, food, branding, retail, hospitality, magazines, books, weddings and conferences.{{/if}}">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{currentUrl}}">
-    <meta property="og:image" content="{{#if image}}{{image}}{{else}}{{imageUrl "/images/logo.png"}}{{/if}}">
+    <meta property="og:image" content="{{#if image}}{{image}}{{else}}{{imageUrl "/images/logo.png?v2"}}{{/if}}">
     <meta property="og:site_name" content="Carla Hackett">
     {{#if preRender}}
       <link href="{{preRender}}" rel="prerender">
@@ -25,7 +25,7 @@
   <body>
     {{#unless noHeader}}
     <header class="top-header">
-      <h1 class="top-header--logo"><a href="/"><img src="{{imageUrl "/images/logo.svg"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
+      <h1 class="top-header--logo"><a href="/"><img src="{{imageUrl "/images/logo.svg?v2"}}" alt="Carla Hackett">{{#unless noHeaderLink}}</a>{{/unless}}</h1>
       <nav class="top-header--nav">
         <ol>
           <li><a class="{{#if navPortfolio}}active{{/if}}" href="/">{{svg "../../public/images/header/portfolio.svg" role='img' aria-label='Portfolio'}}</a></li>
