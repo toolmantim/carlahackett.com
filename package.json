@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "7.x",
-    "yarn": "0.23.x"
+    "node": "8.x",
+    "yarn": "1.1.x"
   },
   "scripts": {
     "start": "supervisor -i node_modules app.js",
@@ -12,27 +12,27 @@
     "watch": "grunt watch"
   },
   "dependencies": {
-    "compression": "^x",
-    "currency-formatter": "^1.2.1",
+    "compression": "^1.7.1",
+    "currency-formatter": "^1.3.0",
     "dentist": "^1.0.3",
     "errorhandler": "x",
-    "express": "x",
+    "express": "4.16.1",
     "express-handlebars": "x",
     "handlebars-helper-svg": "^2.0.1",
     "marked": "x",
-    "morgan": "x"
+    "morgan": "1.9.0"
   },
   "devDependencies": {
-    "autoprefixer": "x",
+    "autoprefixer": "7.1.4",
     "cssnano": "^3.10.0",
     "grunt": "x",
     "grunt-cli": "x",
     "grunt-contrib-watch": "x",
-    "grunt-postcss": "x",
+    "grunt-postcss": "0.9.0",
     "grunt-sass": "x",
     "load-grunt-tasks": "x",
-    "matchdep": "x",
-    "node-normalize-scss": "x",
+    "matchdep": "2.0.0",
+    "node-normalize-scss": "3.0.0",
     "supervisor": "x"
   }
 }
