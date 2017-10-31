@@ -82,7 +82,7 @@ var workshops = [
     date: '4th-5th Nov 2017',
     price: 550,
     currency: 'AUD',
-    soldOut: false,
+    soldOut: true,
     hidden: false
   }
 ];
