@@ -83,8 +83,18 @@ var workshops = [
     price: 550,
     currency: 'AUD',
     soldOut: true,
+    hidden: true
+  },
+  {
+    url: 'melbourne-july-2018',
+    city: 'Melbourne',
+    type: 'One Day Beginner Workshop',
+    date: '7th July 2018',
+    price: 250,
+    currency: 'AUD',
+    soldOut: false,
     hidden: false
-  }
+  },
 ];
 
 const nonHiddenWorkshops = workshops.filter(function(w) { return !w['hidden']; });
