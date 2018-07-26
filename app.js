@@ -102,15 +102,15 @@ const nonHiddenWorkshops = workshops.filter(function(w) { return !w['hidden']; }
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
-app.set('imageHost', process.env["IMAGE_HOST"] || "localhost:3000");
-app.set('appHost', process.env["APP_HOST"] || "localhost:3000");
+app.set('imageHost', process.env["IMAGE_HOST"] || "http://localhost:3000");
+app.set('appHost', process.env["APP_HOST"] || "http://localhost:3000");
 app.set('staticMaxAge', 3600); // one hour
 
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
     imageUrl: function() {
-      return "http://" + app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
+      return app.get('imageHost') + Array.prototype.slice.call(arguments, 0,-1).join('');
     },
     markdown: function(options) {
       return marked(dedent(options.fn(this)));
@@ -145,7 +145,7 @@ app.set('view engine', 'handlebars');
 app.use(morgan('combined'));
 app.use(compression());
 app.use(function(req, res, next) {
-  res.locals.currentUrl = 'http://' + app.get('appHost') + req.originalUrl;
+  res.locals.currentUrl = app.get('appHost') + req.originalUrl;
   next();
 });
 app.use(express.static(path.join(__dirname, 'public'), {maxAge:app.get('staticMaxAge')}));
@@ -217,7 +217,7 @@ app.get('/projects/:slug', function(req, res) {
     project: project,
     nextProject: next,
     description: project.about.textWithoutLinks,
-    image: "http://" + app.get('imageHost') + "/projects/" + project.slug + "/cover.jpg",
+    image: app.get('imageHost') + "/projects/" + project.slug + "/cover.jpg",
     preRender: next && ('/projects/' + next.slug),
     navPortfolio: true
   });
@@ -289,7 +289,7 @@ for (var i in workshops) {
       res.render('workshops/' + workshop.url, {
         title: 'Brush Lettering Workshop, ' + workshop.city + ' ' + workshop.date,
         description: 'Learn your brush strokes from one of Australia’s most experienced letterers',
-        image: "http://" + app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
+        image: app.get('imageHost') + "/images/workshops/brush-lettering/title.jpg",
         pinJs: true,
         navWorkshops: true,
         workshop: workshop,
@@ -319,7 +319,7 @@ var server = http.createServer(app);
 
 server.on('error', function(err) {
   if (err.errno === 'EADDRINUSE')
-    console.log("Website is already running at http://" + app.get('appHost') + '/');
+    console.log("Website is already running at " + app.get('appHost') + '/');
   else
     console.log(err);
 
@@ -327,7 +327,7 @@ server.on('error', function(err) {
 });
 
 server.listen(app.get('port'), function(){
-  var url = 'http://' + app.get('appHost') + "/";
+  var url = app.get('appHost') + "/";
   console.log("Carla Hackett site running at " + url);
   if (process.env["OPEN_BROWSER"])
     require('child_process').spawn('open', [url]);
