@@ -92,6 +92,16 @@ var workshops = [
     date: '7th July 2018',
     price: 250,
     currency: 'AUD',
+    soldOut: true,
+    hidden: true
+  },
+  {
+    url: 'melbourne-nov-2018',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '10th-11th Nov 2018',
+    price: 550,
+    currency: 'AUD',
     soldOut: false,
     hidden: false
   },
