@@ -113,7 +113,7 @@ var workshops = [
     soldOut: false,
     hidden: false,
     priceOptions: [
-      { price: 340, currency: 'AUD', primary: true },
+      { label: 'Two Days', price: 340, currency: 'AUD', primary: true },
       { label: 'Saturday Only', price: 195, currency: 'AUD', secondary: true },
       { label: 'Sunday Only', price: 195, currency: 'AUD', secondary: true }
     ]
