@@ -103,7 +103,20 @@ var workshops = [
     price: 550,
     currency: 'AUD',
     soldOut: false,
-    hidden: false
+    hidden: true
+  },
+  {
+    url: 'melbourne-mar-2019',
+    city: 'Melbourne',
+    type: 'Brush Up Sessions',
+    date: '2nd-3rd Mar 2019',
+    soldOut: false,
+    hidden: false,
+    priceOptions: [
+      { price: 340, currency: 'AUD', primary: true },
+      { label: 'Saturday Only', price: 195, currency: 'AUD', secondary: true },
+      { label: 'Sunday Only', price: 195, currency: 'AUD', secondary: true }
+    ]
   },
 ];
 
@@ -127,8 +140,8 @@ app.engine('handlebars', exphbs({
     },
     svg: handlebarsSvg,
     encodeURIComponent: encodeURIComponent,
-    fullWorkshopDescription: function(workshop) {
-      return workshop.city + ' ' + workshop.type + ', ' + workshop.date;
+    fullWorkshopDescription: function(workshop, label) {
+      return workshop.city + ' ' + workshop.type + ', ' + workshop.date + (label ? ` (${label})` : '');
     },
     formatPrice: function(amount, currency) {
       return currencyFormatter.format(amount, {
@@ -339,6 +352,4 @@ server.on('error', function(err) {
 server.listen(app.get('port'), function(){
   var url = app.get('appHost') + "/";
   console.log("Carla Hackett site running at " + url);
-  if (process.env["OPEN_BROWSER"])
-    require('child_process').spawn('open', [url]);
 });

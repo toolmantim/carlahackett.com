@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+  const sass = require('node-sass');
+
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
@@ -7,6 +9,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
+          implementation: sass,
           includePaths: [require('node-normalize-scss').includePaths],
           outputStyle: 'expanded'
         },

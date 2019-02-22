@@ -22,14 +22,20 @@
         <p><strong>Includes:</strong> Your own professional lettering brush, a personalised lettering kit, and lunch on both days</p>
         <p><strong>Time:</strong> 10-3pm both days</p>
         <p><strong>Location:</strong> <a target="_blank" href="https://goo.gl/maps/xR7tH6THu3T2">Nicholson Street Studios, 71c Nicholson Street, Brunswick East</a></p>
-        <p><strong>Availability:</strong> Strictly limited to 18 students</p>
+        <p><strong>Availability:</strong> Strictly limited to 15 students</p>
       </div>
 
       <div class="book">
         {{#if workshop.soldOut}}
           {{> workshops/sold-out }}
         {{else}}
-          <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
+          {{#if workshop.priceOptions}}
+            {{#workshop.priceOptions}}
+              <p><a href="https://pay.pin.net.au/qkgm?amount={{price}}&amp;amount_editable=false&amp;currency={{currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription ../workshop label)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now - {{label}}</a>
+            {{/workshop.priceOptions}}
+          {{else}}
+            <p><a href="https://pay.pin.net.au/qkgm?amount={{workshop.price}}&amp;amount_editable=false&amp;currency={{workshop.currency}}&amp;description={{encodeURIComponent (fullWorkshopDescription workshop)}}&amp;success_url=http%3A%2F%2Fcarlahackett.com%2Fworkshops%2Fbooking-complete" class="pin-payment-button button">Book Now</a>
+          {{/if}}
         {{/if}}
       </div>
 

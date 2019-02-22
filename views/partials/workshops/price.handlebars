@@ -3,7 +3,19 @@
   <span class="minor">
     {{workshop.date}}<br>
     {{workshop.type}}<br>
-    <span class="price">{{formatPrice workshop.price workshop.currency}}</span>
-    <span class="currency-note">{{currencyNote workshop.currency}}</span>
+  	{{#if workshop.priceOptions}}
+      {{#workshop.priceOptions}}
+        {{#if secondary}}<span class="second-tier-pricing">{{/if}}
+          <span class="price">{{formatPrice price currency}}</span>
+          <span class="currency-note">{{currencyNote currency}}</span>
+          <span class="price-label">{{label}}</span>
+          <br>
+        {{#if secondary}}</span>{{/if}}
+        {{#if primary}}or:<br>{{/if}}
+      {{/workshop.priceOptions}}
+  	{{else}}
+      <span class="price">{{formatPrice workshop.price workshop.currency}}</span>
+      <span class="currency-note">{{currencyNote workshop.currency}}</span>
+  	{{/if}}
   </span>
 </p>
