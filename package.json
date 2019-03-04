@@ -9,7 +9,8 @@
   "scripts": {
     "start": "supervisor -i node_modules app.js",
     "build": "grunt",
-    "watch": "grunt watch"
+    "watch": "grunt watch",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "dependencies": {
     "compression": "^1.7.1",
@@ -35,5 +36,6 @@
     "matchdep": "2.0.0",
     "node-normalize-scss": "3.0.0",
     "supervisor": "x"
-  }
+  },
+  "heroku-run-build-script": true
 }
