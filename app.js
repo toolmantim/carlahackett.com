@@ -111,12 +111,32 @@ var workshops = [
     type: 'Brush Up Sessions',
     date: '2nd-3rd Mar 2019',
     soldOut: false,
-    hidden: false,
+    hidden: true,
     priceOptions: [
       { label: 'Two Days', price: 340, currency: 'AUD', primary: true },
       { label: 'Saturday Only', price: 195, currency: 'AUD', secondary: true },
       { label: 'Sunday Only', price: 195, currency: 'AUD', secondary: true }
     ]
+  },
+  {
+    url: 'melbourne-may-2019',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '18th-19th May 2019',
+    price: 550,
+    currency: 'AUD',
+    soldOut: false,
+    hidden: false
+  },
+  {
+    url: 'melbourne-july-2019',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '6th-7th July 2019',
+    price: 550,
+    currency: 'AUD',
+    soldOut: false,
+    hidden: false
   },
 ];
 
