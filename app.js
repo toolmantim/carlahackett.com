@@ -126,6 +126,7 @@ var workshops = [
     price: 550,
     currency: 'AUD',
     soldOut: false,
+    includesFreeLearnBrushLettering: true,
     hidden: false
   },
   {
@@ -136,6 +137,7 @@ var workshops = [
     price: 550,
     currency: 'AUD',
     soldOut: false,
+    includesFreeLearnBrushLettering: true,
     hidden: false
   },
 ];
