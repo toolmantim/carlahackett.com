@@ -163,7 +163,7 @@ app.engine('handlebars', exphbs({
     svg: handlebarsSvg,
     encodeURIComponent: encodeURIComponent,
     fullWorkshopDescription: function(workshop, label) {
-      return workshop.city + ' ' + workshop.type + ', ' + workshop.date + (label ? ` (${label})` : '');
+      return workshop.city + ' ' + workshop.type + ', ' + workshop.date + (workshop.priceOptions ? ` (${label})` : '');
     },
     formatPrice: function(amount, currency) {
       return currencyFormatter.format(amount, {

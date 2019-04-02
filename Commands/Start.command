@@ -4,10 +4,10 @@ echo
 echo "Installing npm modules..."
 echo
 
-yarn install
+npm install --no-save
 
 echo
 echo "Starting carlahackett.com (Ctrl-C to stop)..."
 echo
 
-env OPEN_BROWSER=1 yarn run start
+env OPEN_BROWSER=1 npm run start

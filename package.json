@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "8.x",
-    "yarn": "1.1.x"
+    "node": "8.x"
   },
   "scripts": {
     "start": "supervisor -i node_modules app.js",
@@ -13,28 +12,28 @@
     "heroku-postbuild": "echo Skip build on Heroku"
   },
   "dependencies": {
-    "compression": "^1.7.1",
+    "compression": "^1.7.4",
     "currency-formatter": "^1.3.0",
     "dentist": "^1.0.3",
     "errorhandler": "x",
     "express": "4.16.1",
-    "express-handlebars": "x",
+    "express-handlebars": "^3.0.2",
     "handlebars-helper-svg": "^2.0.1",
     "marked": "x",
     "morgan": "^1.9.1"
   },
   "devDependencies": {
     "autoprefixer": "7.1.4",
-    "cssnano": "^3.10.0",
-    "grunt": "x",
+    "cssnano": "^4.1.10",
+    "grunt": "^1.0.4",
     "grunt-cli": "x",
     "grunt-contrib-watch": "x",
     "grunt-postcss": "0.9.0",
     "grunt-sass": "x",
     "load-grunt-tasks": "x",
-    "node-sass": "x",
     "matchdep": "2.0.0",
     "node-normalize-scss": "3.0.0",
+    "node-sass": "x",
     "supervisor": "x"
   },
   "heroku-run-build-script": true
