@@ -127,7 +127,7 @@ var workshops = [
     currency: 'AUD',
     soldOut: false,
     includesFreeLearnBrushLettering: true,
-    hidden: false
+    hidden: true
   },
   {
     url: 'melbourne-july-2019',
@@ -138,8 +138,19 @@ var workshops = [
     currency: 'AUD',
     soldOut: false,
     includesFreeLearnBrushLettering: true,
-    hidden: false
+    hidden: true
   },
+  {
+    url: 'melbourne-jan-2020',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '18-19th January 2020',
+    price: 480,
+    currency: 'AUD',
+    soldOut: false,
+    includesFreeLearnBrushLettering: true,
+    hidden: false
+  }
 ];
 
 const nonHiddenWorkshops = workshops.filter(function(w) { return !w['hidden']; });
