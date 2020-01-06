@@ -15,6 +15,7 @@
       {{/workshop.priceOptions}}
   	{{else}}
       <span class="price">{{formatPrice workshop.price workshop.currency}}</span>
+      {{#if workshop.priceNote}}<span class="price-note">{{workshop.priceNote}}</span>{{/if}}
       <span class="currency-note">{{currencyNote workshop.currency}}</span>
   	{{/if}}
   </span>

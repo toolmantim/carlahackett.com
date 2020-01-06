@@ -618,7 +618,7 @@ section.workshop {
       margin-top: 0;
       .minor { font-size: 16px; }
       .price { font-size: 38px; }
-      .currency-note { font-size: 16px; font-style: italic; }
+      .currency-note, .price-note { font-size: 16px; font-style: italic; }
       .second-tier-pricing {
         .price { font-size: 24px; }
       }
