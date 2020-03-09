@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "12.x"
+    "node": "13.x"
   },
   "scripts": {
     "start": "supervisor -i node_modules app.js",
@@ -33,7 +33,7 @@
     "load-grunt-tasks": "^5.1.0",
     "matchdep": "2.0.0",
     "node-normalize-scss": "3.0.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "supervisor": "x"
   },
   "heroku-run-build-script": true
