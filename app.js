@@ -150,6 +150,28 @@ var workshops = [
     currency: 'AUD',
     soldOut: false,
     includesFreeLearnBrushLettering: true,
+    hidden: true
+  },
+  {
+    url: 'melbourne-jul-2020',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '18-19th July 2020',
+    price: 550,
+    currency: 'AUD',
+    soldOut: false,
+    includesFreeLearnBrushLettering: true,
+    hidden: false
+  },
+  {
+    url: 'melbourne-sep-2020',
+    city: 'Melbourne',
+    type: 'Two Day Beginner Workshop',
+    date: '5-6th September 2020',
+    price: 550,
+    currency: 'AUD',
+    soldOut: false,
+    includesFreeLearnBrushLettering: true,
     hidden: false
   }
 ];
