@@ -237,24 +237,24 @@ a {
   > aside.image { max-height: 200px; }
   a.icon {
     position: relative;
-    background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200.png) center center;
+    background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/200x200.png) center center;
     border-bottom: none;
     @include high-dpi {
-      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/200x200@2x.png) center center;
+      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/200x200@2x.png) center center;
       background-size: 100% 100%;
     }
     @media (max-width: 1300px) {
       max-width: 135px; max-height: 135px;
-      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135.png) center center;
+      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/135x135.png) center center;
       @include high-dpi {
-        background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/135x135@2x.png) center center;
+        background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/135x135@2x.png) center center;
       }
     }
     @media (max-width: 950px) {
       max-width: 175px; max-height: 175px;
-      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175.png) center center;
+      background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/175x175.png) center center;
       @include high-dpi {
-        background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.95954081799300,-37.77381393618836,15/175x175@2x.png) center center;
+        background: url(https://a.tiles.mapbox.com/v3/toolmantim.map-fu86hyqj/144.9784669,-37.7752482,15/175x175@2x.png) center center;
       }
     }
     img.pin, img.shadow { width: 100%; height: 100%; }
