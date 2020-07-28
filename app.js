@@ -161,7 +161,7 @@ var workshops = [
     currency: 'AUD',
     soldOut: false,
     includesFreeLearnBrushLettering: true,
-    hidden: false
+    hidden: true
   },
   {
     url: 'melbourne-sep-2020',
@@ -172,7 +172,7 @@ var workshops = [
     currency: 'AUD',
     soldOut: false,
     includesFreeLearnBrushLettering: true,
-    hidden: false
+    hidden: true
   }
 ];
 

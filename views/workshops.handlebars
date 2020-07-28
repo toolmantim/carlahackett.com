@@ -1,6 +1,8 @@
 <section id="workshops">
-  {{> workshops/circles }}
-  <hr>
+  {{#if workshops}}
+    {{> workshops/circles }}
+    <hr>
+  {{/if}}
   <div class="more-info">
     <div class="photos">
       <img src="{{imageUrl '/images/workshops/brush-lettering/gift-vouchers.jpg'}}">
