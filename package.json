@@ -17,7 +17,7 @@
     "dentist": "1.x",
     "errorhandler": "x",
     "express": "4.x",
-    "express-handlebars": "^5.1.0",
+    "express-handlebars": "^5.3.1",
     "handlebars-helper-svg": "x",
     "marked": "x",
     "morgan": "x"
